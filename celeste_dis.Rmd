@@ -422,7 +422,7 @@ mis_cambios_de_tema <- theme(
 ```
 
 
-Y ahora podemos llamar este archivo *"cambios_graficosv2.R"* con el formato que hemos establecido para ser usado en cualquier script de `R`
+Y ahora podemos llamar este archivo *"cambios_graficosv2.R"* con el formato que hemos establecido para ser usado en cualquier script de `R`!
 
 ```{r message=FALSE, warning=FALSE, eval=FALSE}
 source("cambios_graficosv2.R")
