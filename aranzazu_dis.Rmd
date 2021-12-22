@@ -1,0 +1,372 @@
+---
+title: "Aranzazu Garmendia"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+xaringanExtra::use_panelset()
+```
+
+:::{.l-page}
+::: {.panelset}
+::: {.panel}
+## Tarea 1 {.panel-name}
+ 
+### Describa una situación hipotética donde tomará lugar la comunicación
+
+**Debe explicitar el quién-qué-cómo de la comunicación y describir brevemente el tipo de datos que utilizaría**
+
+1.	Debo presentar en una reunión con autoridades de la administración central de la Universidad Diego Portales los resultados obtenidos por ésta última en los rankings de universidades realizados, tanto a nivel nacional como internacional, durante el año 2021. La importancia de presentar estos resultados radica en mostrar cómo se encuentra posicionada la Universidad y sus distintas áreas de gestión respecto a otras universidades a nivel nacional, latinoamericano y mundial. 
+
+2.
+
+   a. La audiencia está compuesta por autoridades de la administración central de la Universidad Diego Portales tales como vicerrectores y directores generales de distintas áreas de la institución.
+
+   b. Para la audiencia soy la analista senior de la Dirección de Análisis Institucional de la Universidad a cargo de monitorear y reportar periódicamente el desempeño de la UDP en todas las clasificaciones de instituciones de educación superior a nivel mundial y nacional. Con todos los miembros de la audiencia existe una relación jerárquica, donde nos conocemos por haber participado anteriormente de otros procesos como acreditación institucional, reuniones de trabajo, jornadas de planificación UDP, entre otras. Pese a existir una distancia por la jerarquía, existe una relación amable y de relativa confianza. De cierto modo está establecida la credibilidad, ya que están en conocimiento que dentro de la Universidad soy la persona que está pendiente de monitorear y difundir todo lo relativo al desempeño de la institución en estas clasificaciones de universidades. 
+
+
+3.
+
+   a. Necesito que la audiencia tome conocimiento de las posiciones relativas que ocupa la UDP respecto a las demás universidades a nivel general y por dimensiones específicas -Docencia, Investigación, Perspectiva Internacional, Citaciones- en los 15 rankings nacionales e internacionales en los que la Universidad ha sido clasificada durante el año 2021.
+   
+   b. Realizaré una presentación telemática donde comenzaré mostrando el listado de rankings publicados durante 2021, haré un resumen de los principales resultados encontrados para enfocar la atención de la presentación. Luego mostraré los resultados de lo general a lo particular, a través de gráficos donde se expondrá la posición de la UDP a nivel mundial, latinoamericano y nacional, según el alcance del ranking. Finalmente, expondré los resultados en las dimensiones específicas de Docencia, Investigación, Perspectiva Internacional y Citaciones haciendo especial énfasis en los temas de interés de las autoridades de la audiencia.
+   
+   c. El tono de la comunicación será cercano, pero manteniendo un perfil técnico para asegurar la credibilidad de la audiencia.  
+ 
+ 
+4.	Los datos disponibles son las planillas de Excel que se utilizan para realizar los reportes individuales de los 15 rankings nacionales e internacionales publicados durante 2021. Donde se calcula la posición de la Universidad a nivel global, latinoamericano, nacional y entre universidades privadas chilenas, tanto en el overall como en las distintas dimensiones que ponderan en estos rankings para construir el puntaje final que otorga la posición en la clasificación. 
+ 
+:::
+ 
+::: {.panel}
+## Tarea 2 {.panel-name}
+ 
+### Paso 2: Uso de kableExtra
+
+
+2.  Al igual que el documento del paso 1, cargue en este documento las librerías kableExtra, gt, flextable
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+
+3.  Al igual que el documento del paso 1, cargue en este documento las bases de datos mini_iris.csv y datos_para_tabla.csv y al igual que en el documento del paso 1, elimine las columnas 8 y 9 de datos_para_tabla
+
+```{r message=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris 
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv") 
+df_exibble
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+df_exibble
+```
+
+
+5. Tanto para los tibble df_mini_iris como para df_exibble (nombres que usó en el documento paso 1) cree tablas similares aquella con título “Recreating booktabs style table”. Cambie el título que aparece en ese ejemplo.
+
+```{r}
+df_mini_iris  %>%
+  kbl(caption = "Tabla flores") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+```{r}
+df_exibble  %>%
+  kbl(caption = "Tabla frutas") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+
+6. Tome el ejemplo de la sección Font size y para cada uno de los dos data sets, cree una tabla con tamaño de letra 16
+
+```{r}
+kbl(df_mini_iris) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+```{r}
+kbl(df_exibble) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+
+7. En la sección Column spec hay un ejemplo que comienza con mtcars[1:8, 1:8]. Modifique ese ejemplo para hacer lo siguiente:
+
+a. Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga números de color blanco y fondo que va cambiando de celda en celda (note que cada columna tiene 10 elementos). No modifique otra columna. No use las opciones popover o link
+
+```{r}
+
+df_mini_iris
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = spec_color(df_mini_iris$Sepal.Length, end = 0.7))
+```
+
+
+b. Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga números de color blanco y fondo gris (“grey”). No modifique otra columna. No use las opciones popover o link
+
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+```
+
+
+c. Una tabla a partir de df_exibble, donde la columna currency tenga números de color blanco y fondo gris (“grey”). No modifique otra columna. No use las opciones popover o link
+
+```{r}
+
+df_exibble
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+```
+
+
+d. Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga un color de fondo condicional. En vez de usar la función color_spec para darle valor al background, use esta función ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"). Si quiere puede cambiar los colores orange y white
+
+```{r}
+
+df_mini_iris
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "black",
+              background = ifelse(df_mini_iris$Sepal.Length < 6, "plum", "white"))
+```
+
+
+e. Vea la sección Tabla Footnote y cree una tabla con dos notas al pie de la tabla. Usted elija si usa df_mini_iris o df_exibble
+
+```{r}
+kbl(df_mini_iris, align = "c") %>%
+  kable_classic(full_width = F) %>%
+  kableExtra::footnote(general = "Notas al pie ",
+           number = c("Nota 1; ", "Nota 2; "))
+
+```
+
+
+f. Una tabla a partir de df_exibble, donde la columna currency tenga números de color blanco y fondo de color “lightblue”. No modifique otra columna. No use las opciones popover o link
+
+```{r}
+
+df_exibble
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+```
+
+
+### Paso 3: Uso de gt
+
+```{r}
+
+df_exibble
+
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = num ,
+    decimals = 1 
+  ) %>%
+  fmt_currency(
+    columns = currency,
+    currency = "USD"
+  )
+```
+
+
+### Paso 4: Flextable
+
+```{r}
+Tablapaso4 <- flextable(head(df_exibble), 
+  col_keys = c("datetime", "char", "fctr", "num", "currency" ))
+Tablapaso4 
+```
+
+ 
+:::
+ 
+::: {.panel}
+## Tarea 3 {.panel-name}
+ 
+### Cargar librerías
+
+A continuación debemos cargar las siguientes librerías que nos permitirán dar formato a los gráficos:
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+library(chilemapas)
+library(paletteer)
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+### Creación de gráficos
+
+Vamos a usar la base de datos `penguins` del paquete `palmerpenguins` para crear nuestros primeros gráficos tipo, a los cuales le vamos a ir personalizando el formato más adelante.
+
+Primero vamos a explorar nuestras variables. Para eso debemos escribir `penguins` en la consola y apretamos **enter.**
+
+#### 1. Gráficos de barras
+
+A continuación vamos a crear un gráfico de barras horizontales a través de la función `geom_bar` de `ggplot`, la cual permite hacer un recuento de casos por la variable que seleccionemos y además grafica.
+
+Crearemos nuestro gráfico que se llamará **barras1**. En este caso la variable **y** vaa ser `island` y **x** será el conteo de la variable `species`. Las barras serán coloreadas según las categorías de la variable especie, esto lo determinamos con la función `fill` .
+
+La función `title`nos permite ponerle el título a nuestro gráfico: **Pinguinos en archipiélago de Palmer** y por su parte la función `subtitle` el subtítulo:**Número de pinguinos en cada isla**.
+
+```{r echo=TRUE, message=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pinguinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+barras1
+```
+
+#### 2. Gráficos de puntos
+
+Ahora vamos a crear un gráfico de puntos a través de la función `geom_point` de `ggplot`.
+
+Crearemos nuestro gráfico que se llamará **puntos1**. En este caso vamos a graficar la anatomía del pico de los pinguinos, entonces la variable **y** vaa ser el largo `bill_length_mm` y **x** será el alto `bill_depth_mm`. Los puntos serán coloreadas según las categorías de la variable `species`, a diferencia de los gráficos de barras, esto lo determinamos con la función `color` .
+
+Como vimos anteriormente, la función `title`nos permite ponerle el título a nuestro gráfico: **Pinguinos en archipiélago de Palmer** y ahora cambiaremos el subtítulo por: **Dimensiones del pico de diversas especies**.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+       geom_point() + 
+       labs(title = "Pinguinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+print(puntos1)
+```
+
+### ¿Cómo crear nuestra propia paleta?
+
+Para usar o crear paletas de colores debemos trabajar con el paquete `paletteer.` Las paletas de colores pueden ser de 2 tipos; discretas y continuas. Las discretas son para cuando necesitamos determinado número de colores y las continuas permiten hacer transiciones de colores.
+
+Hay una amplia variedad de paletas de colores, por lo que en la siguiente [página](https://emilhvitfeldt.github.io/r-color-palettes/discrete.html){style="blue"} pueden encontrar algunos ejemplos de paletas discretas que les puedan servir de inspiración para elaborar sus propias paletas.
+
+A continuación vamos a explorar la paleta `awtools::ppalette` para ver los códigos de los colores que la componen.
+
+```{r}
+paletteer_d("awtools::ppalette")
+```
+
+Para utilizar los colores que nos gustaron de esta paleta crearemos un vector que se llamará `col_d_1`en el cual vamos a agupar los colores de `awtools::ppalette`.
+
+```{r}
+col_d_1 <- c("#3D98D3FF", "#EC0B88FF", "#5E35B1FF", "#F9791EFF", 
+             "#3DD378FF", "#444444FF")
+```
+
+Ahora que hemos creado el vector `col_d_1`podemos utilizar sus colores para rellenar los gráficos `barras1` y `puntos1` que creamos anteriormente. Para esto debemos utilizar la función `scale_fill_manual`para el gráfico de barras y`scale_color_manual` para los gráficos de puntos.
+
+```{r warning=FALSE}
+barras1 + scale_fill_manual(values = col_d_1)
+puntos1 + scale_color_manual(values = col_d_1)
+```
+
+Otra forma más rápida para utilizar estos mismos colores más adelante es crear un objeto al cual le podemos asignar un nombre que nos haga sentido o que represente una paleta institucional por ejemplo. De esta forma creamos el objeto `mi_fill_1` para utilizar en los gráficos de barras y otro objeto que se llame `mi_color_1` para los gráficos de puntos.
+
+```{r}
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+mi_color_1 <- scale_color_manual(values = col_d_1)
+```
+
+Ahora le daremos formato a los gráficos `barras1` y `puntos1` solo agregando el nombre de ambos objetos que contienen la paleta de colores con las que colorearemos las figuras.
+
+```{r warning=FALSE}
+barras1 + mi_fill_1
+puntos1 + mi_color_1
+```
+
+### ¿Cómo ajustar el formato o tema de los gráficos?
+
+A través del comando `theme` podemos ir ajustando el formato de nuestros gráficos tales como; tamaño de la letra, líneas de la cuadrícula, color del fondo, entre otros.
+
+A continuación tomaremos los gráficos `barras1` y `puntos1` y modificaremos el tamaño de la letra del título con el comando `plot.title` y del subtítulo con el comando `plot.subtitle` y dentro de esos argumentos también podemos modificar el color del texto con el comando `color`. Para ver los nombres de los colores disponibles podemos escribir `colors` en la consola.
+
+```{r warning=FALSE}
+barras1 + theme(
+  plot.title = element_text(size = 26, color="black"),
+  plot.subtitle = element_text(size = 10, color="grey40")
+)
+```
+
+```{r warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 24, color="darkblue"),
+  plot.subtitle = element_text(size = 9, color="grey20")
+)
+```
+
+Ahora crearemos nuestro propio tema con los ajustes que nos gusten y los guardaremos como un objeto que se llame `mi_tema` al cual vamos a poder llamar para asignar ese formato a nuestros gráficos y así personalizarlos. Con el comando `panel.grid.major` definimos el formato de la cuadrícula, con `panel.grid.minor` los ejes y con `panel.background`el fondo del gráfico.
+
+```{r}
+mi_tema <- theme (panel.grid.major = element_blank(),
+                              panel.grid.minor = element_blank(),
+                              panel.background = element_blank(),
+                              plot.title = element_text(size = 24),
+                              plot.subtitle = element_text(size = 9, color = "grey40"))
+```
+
+Ahora que hemos personalizado nuestra paleta de colores y hemos creado nuestro tema, vamos a darle formato nuevamente a los gráficos `barras1` y `puntos1` utilizando los objetos que hemos creado anteriomente.
+
+```{r warning=FALSE}
+barras1 + mi_tema + mi_fill_1 
+```
+
+```{r warning=FALSE}
+puntos1 + mi_tema + mi_color_1 
+```
+
+:::
+ 
+::: {.panel}
+## Tarea 4 {.panel-name}
+ 
+```{r echo=FALSE, out.width="40%"}
+knitr::include_url("Tarea_4_A_Garmendia_v2.html", height = 650)
+```
+ 
+
+ 
+:::
+ 
+::: {.panel}
+## Proyecto integrador {.panel-name}
+ 
+PI
+
+:::
+
+:::
+:::
+

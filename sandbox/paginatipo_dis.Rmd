@@ -1,0 +1,54 @@
+---
+title: "Nombre Apellido"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+xaringanExtra::use_panelset()
+```
+
+:::{.l-page}
+::: {.panelset}
+::: {.panel}
+## Tarea 1 {.panel-name}
+ 
+### Describa una situación hipotética donde tomará lugar la comunicación
+
+**Debe explicitar el quién-qué-cómo de la comunicación y describir brevemente el tipo de datos que utilizaría**
+
+
+:::
+ 
+::: {.panel}
+## Tarea 2 {.panel-name}
+ 
+
+ 
+:::
+ 
+::: {.panel}
+## Tarea 3 {.panel-name}
+ 
+
+:::
+ 
+::: {.panel}
+## Tarea 4 {.panel-name}
+ 
+This is tarea number 4
+ 
+:::
+ 
+::: {.panel}
+## Proyecto integrador {.panel-name}
+ 
+Aquí va el proyecto integrador
+ 
+:::
+:::
+:::
+

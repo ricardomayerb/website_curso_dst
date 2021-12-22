@@ -1,0 +1,451 @@
+---
+title: "Nombre Apellido"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+xaringanExtra::use_panelset()
+```
+
+:::{.l-page}
+::: {.panelset}
+::: {.panel}
+## Tarea 1 {.panel-name}
+ 
+### Describa una situación hipotética donde tomará lugar la comunicación
+
+**Debe explicitar el quién-qué-cómo de la comunicación y describir brevemente el tipo de datos que utilizaría**
+
+
+### Pregunta 1
+
+Presentar datos de convocados y/o matriculados de los procesos de admisión centralizados por carrera e institución, para entregar contexto de donde se encuentran ubicadas las carreras UDP en relación al entorno, respecto a algunas variables de análisis (tamaño, diversidad, selectividad).
+
+
+### Pregunta 2
+
+a.	El público objetivo es diverso:
+  - Rectoría y Vicerrectores.
+  - Decanos.
+  - Directivos de carreras: Director/a de Escuela, Secretario/a de Estudio, Secretario/a Académico.
+  - Potenciales postulantes a los programas UDP. (este puede que no sea dada la confidencialidad de la información)
+  - Potenciales padres de postulantes a los programas UDP. (este puede que no sea dada la confidencialidad de la información)
+  - Personal de Admisión.
+
+b.	Directora de Análisis Institucional, la mayoría si me conocen, soy la encargada de entregar información de procesos internos de la UDP. Creo que la credibilidad está establecida pero no estaría demás reforzarla.
+
+### Pregunta 3
+
+a.	Necesito que los Directivos de carreras entiendan donde se encuentra ubicado su programa en relación a los otros programas del sistema universitario, que puedan apreciar visualmente quiénes son nuestros postulantes y en qué nos diferenciamos de las otras Ues.
+
+b.	A través de una presentación digital, explicarles los reportes para que sean autosuficientes en interpretar y entender la información.
+
+c.	Será una presentación cercana, sesión de trabajo colaborativo.
+
+
+### Pregunta 4
+
+a.	Se tienen varias fuentes de información:
+  - Datos de los postulantes a las distintas carreras de todas las instituciones adscritas al Sistema Único de Admisión (SUA).
+   i.	Puntajes de Postulación (NEM, PSU NEM, Ranking NEM, Prueba de Lenguaje, Prueba de Matemática, Prueba de Historia, Prueba de Ciencias, Promedio PSU, Puntaje Ponderado, Año de Egreso de 4° medio, Colegio de procedencia).
+   ii.	Datos de carreras (n° de postulantes, n° de vacantes).
+  - Datos resumen del proceso de matrícula a las distintas carreras de todas las instituciones adscritas al SUA.
+   i.	Puntaje de corte.
+  ii.	Cumplimiento de vacantes.
+b.	A través de los archivos de las postulaciones se puede generar información agregada para cada programa que tiene abierta su admisión regular a través del SUA. 
+  - Para cada programa se tiene de base la cantidad de vacantes ofertadas, además de los sobrecupos asignados.
+  - De las postulaciones efectivas, se puede obtener distintas estadísticas a nivel de programa:
+    i.	N° de estudiantes convocados y en lista de espera.
+    ii.	Promedio PSU de los estudiantes convocados (selectividad)
+    iii.	% de estudiantes de establecimientos particulares pagados (diversidad).
+    iv.	Puntaje ponderado del último convocado (puntaje de corte – selectividad).
+    v.	Podríamos sacar estadísticas por género de los estudiantes.
+  - De las bases de matrícula podemos obtener información de cuántos programas cumplen con sus vacantes y cuál fue el puntaje de corte final después de correr listas de espera.
+
+c.	La idea es tener en una sola visualización más de una variable que permita apreciar en una sola mirada donde se encuentra ubicada la universidad, donde está la competencia cercana y qué tan lejos o cerca estamos de las instituciones más demandadas.
+
+
+:::
+ 
+::: {.panel}
+## Tarea 2 {.panel-name}
+ 
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+### Carguemos Datos
+
+Carguemos los data sets `mini_iris.csv` y `datos_para_tabla`
+
+```{r message=FALSE, warning=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris 
+```
+
+```{r message=FALSE, warning=FALSE}
+df_exibble <- read_csv(file = "datos_para_tabla.csv") # aquí se cargan datos y se crea df_exibble
+
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+
+df_exibble # esta línea imprime este tibble que llamamos df_exibble
+```
+
+### Paso 2.5
+```{r}
+df_mini_iris %>%
+  kbl(caption = "Datos de Iris de Flores") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+```{r}
+df_exibble %>%
+ kbl(caption = "Datos Exibble") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+### Paso 2.6
+```{r}
+kbl(df_mini_iris) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+```{r}
+kbl(df_exibble) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+### Paso 2.7.1
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = spec_color(df_mini_iris$Sepal.Length[1:10], end = 0.7))
+
+```
+
+### Paso 2.7.2
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+
+```
+
+### Paso 2.7.3
+```{r}
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+
+```
+
+### Paso 2.7.4
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1,background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "grey"))
+
+```
+
+### Paso 2.7.5
+```{r}
+kbl(df_mini_iris, align = "c") %>%
+  kable_classic(full_width = F) %>%
+  kableExtra::footnote(general = "Notas de la tabla.",
+           number = c("Largo; ", "Ancho; "),
+           alphabet = c("Largo; ", "Ancho; "),
+           general_title = "General: ", number_title = "Sepal: ",
+           alphabet_title = "Petal: ",
+           footnote_as_chunk = T, title_format = c("italic", "underline")
+           )
+```
+
+### Paso 2.7.6
+```{r}
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+
+```
+
+### Paso 3
+```{r}
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = num,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = currency,
+    currency = "USD" 
+  )
+```
+
+### Paso 4
+```{r}
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF")
+flextable(df_mini_iris)
+```
+
+
+ 
+:::
+ 
+::: {.panel}
+## Tarea 3 {.panel-name}
+ 
+### Primero carguemos los paquetes que usaremos en este tutorial
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+library(paletteer)
+```
+
+### Ejemplos de gráficos estándar
+
+Creemos dos gráficos *por defecto* para modificarlos luego.
+
+Usaremos el paquete `ggplot` y los datos de `palmerpenguins` para generar un gráfico de barras que dejará en el eje **"x"** las islas, y contará cuántos pingüinos de cada especie hay y los colores de las barras representan las especies, el que quedará guardado en el objeto *barras1*
+
+```{r message=FALSE, warning=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+```
+
+Y ahora generaremos un gráfico de puntos, donde en el eje **"x"** irá la variable `bill_lenght_mm` y en el eje **"y"** irá la variable `bill_depth_mm` y asignando un color distinto por especie, el que quedará guardado en el objeto *puntos1*
+
+```{r message=FALSE, warning=FALSE}
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+  geom_point() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+```
+
+Para ver como quedaron los gráficos utilizaremos la opción `print()`, la que desplegará en pantalla los gráficos generados
+
+```{r message=FALSE, warning=FALSE}
+print(barras1) # esta línea imprime el gráfico que llamamos barras1
+print(puntos1) # esta línea imprime el gráfico que llamamos puntos1
+```
+
+### Creemos paletas de colores
+
+Con el paquete `paletteer` podemos acceder a un variado sets de **paletas de colores** para poder modificar los colores de los gráficos ya generados, por ejemplo veremos qué colores nos ofrece la paleta `X20` del paquete `beyonce`.
+
+Al ejecutar la siguente línea, en la `consola` se despliegan los códigos alfanuméricos de los colores de esta paleta
+
+```{r message=FALSE, warning=FALSE}
+paletteer_d("beyonce::X20")
+
+```
+
+Una manera de utilizar un set de colores específicos es asignándolos a un vector, para esto copiaremos los códigos de los colores de la paleta que vimos en el paso anterior al vector `col_d_1`
+
+```{r message=FALSE, warning=FALSE}
+col_d_1 <- c("#1B0204FF", "#4E0C0DFF", "#881618FF", "#B01515FF", 
+             "#C47F4EFF", "#773924FF")
+```
+
+Para aplicar una paleta de colores a un gráfico mostraremos dos maneras:
+
+1.- Utilizar la función `scale_fill_manual()` para gráficos de barras o la función `scale_color_manual()` para gráficos de puntos, luego a nuestros gráficos ya generados les aplicamos la paleta guardada en nuestro vector `col_d_1` a través de la opción `(values = )`.
+
+```{r message=FALSE, warning=FALSE}
+
+barras1 + scale_fill_manual(values = col_d_1) # esta línea agrega la paleta de colores al gráfico barras1
+puntos1 + scale_color_manual(values = col_d_1) # esta línea agrega la paleta de colores al gráfico puntos1
+
+```
+
+2.- Otra manera de utilizar una paleta creada por nosotros, es asignar a un objeto lo que hace la función `scale_fill_manual()` para un gráfico de barras, o la función `scale_color_manual()` para un gráfico de puntos, y aplicar la paleta guardada en nuestro vector `col_d_1` a través de la opción `(values = )`.
+
+```{r message=FALSE, warning=FALSE}
+
+mi_fill_1 <- scale_fill_manual(values = col_d_1) # esta línea asigna la paleta de colores al objeto mi_fill_1
+mi_color_1 <- scale_color_manual(values = col_d_1) # esta línea asigna la paleta de colores al objeto mi_color_1
+
+```
+
+Para aplicar la paleta a los gráficos de base basta con agregar el operador **"+"** a los objetos que contienen el *gráfico* y *la paleta de colores*.
+
+```{r message=FALSE, warning=FALSE}
+
+barras1 + mi_fill_1 # esta línea aplica los cambios guardados en el objeto mi_fill_1 al gráfico barras1
+puntos1 + mi_color_1 # esta línea aplica los cambios guardados en el objeto mi_color_1 al gráfico puntos1
+```
+
+"## Ayudas para asignar paletas de colores
+
+### Cómo buscar paletas de colores
+
+Ideas para buscar paletas discretas aquí <https://emilhvitfeldt.github.io/r-color-palettes/discrete.html>
+
+### Otra opción para asignar paletas
+
+Otra manera de asignar paletas de colores es usando las funciones `scale_fill_paletteer_d()` o `scale_color_paletteer_d()` para barras1 y puntos1, te dejamos un par de ejemplos según sea apropiado (1 para barras1 y 1 para puntos1)
+
+```{r message=FALSE, warning=FALSE}
+
+barras1 + scale_fill_paletteer_d("beyonce::X7")
+
+puntos1 + scale_color_paletteer_d("beyonce::X28")
+```
+
+### Temas en ggplot2
+
+### Modificando Títulos y/o Subtítulos
+
+R nos ayuda a utilizar los distintos paquetes que hay a disposición de los usuarios para modificar gráficos, muestra de esto en https://ggplot2.tidyverse.org/articles/articles/faq-customising.html
+
+Aquí podemos encontrar opciones de cómo modificar el tamaño de la letra de los títulos y subtítulos, por ejemplo a nuestros gráficos les dejaremos más grande el tamaño de la letra del título que la del subtítulo utilizando la función `theme()` y aplicaremos la paleta de colores *mi_fill_1* y *mi_color_1* según el tipo de gráfico
+
+```{r message=FALSE, warning=FALSE}
+
+barras1 + theme(
+  plot.title = element_text(size = 16),
+  plot.subtitle = element_text(size = 9)
+) + mi_fill_1
+
+
+puntos1 + theme(
+  plot.title = element_text(size = 17),
+  plot.subtitle = element_text(size = 11)
+) + mi_color_1
+```
+
+Ahora cambiemos el color y el tamaño del subtítulo haciéndolo igual a *"grey40"*, manteniendo los nuevos tamaños definidos anteriormente
+
+```{r message=FALSE, warning=FALSE}
+
+barras1 + theme(
+  plot.title = element_text(size = 16),
+  plot.subtitle = element_text(size = 9, color = "grey40")
+) + mi_fill_1
+
+
+puntos1 + theme(
+  plot.title = element_text(size = 17),
+  plot.subtitle = element_text(size = 11, color = "grey40")
+) + mi_color_1
+```
+
+### Modificando background del interior del gráfico y eliminando las grillas mayores y menores
+
+En https://ggplot2-book.org/polishing.html podemos encontrar opciones para modificar el background y grillas mayores y menores en un gráfico, te dejamos un ejemplo de cómo hacerlo.
+
+```{r message=FALSE, warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 17,color ='grey20'),
+  plot.subtitle = element_text(size = 11, color = "grey40"),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  panel.background = element_blank()
+) + mi_color_1
+```
+
+### Guardando las preferencias de gráficos
+
+Una manera simple y útil es guardar el código que hemos escrito en los ejemplos anteriores en un objeto con el nombre que nos acomode, por ejemplo **"mis_cambios_de_tema"** y luego aplicar esos cambios a cualquier gráfico con el operador **"+"** 
+
+```{r message=FALSE, warning=FALSE}
+mis_cambios_de_tema <- theme(
+  plot.title = element_text(size = 17,color ='grey20'),
+  plot.subtitle = element_text(size = 11, color = "grey40"),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  panel.background = element_blank()
+)
+
+barras1 + mis_cambios_de_tema
+puntos1 + mis_cambios_de_tema
+```
+
+Y ahora podemos aplicar de una sola vez los cambios de *"temas"* y *"paletas de colores"* a cualquier gráfico con el operador **"+"** 
+
+```{r message=FALSE, warning=FALSE}
+barras1 + mis_cambios_de_tema + mi_fill_1
+puntos1 + mis_cambios_de_tema + mi_color_1
+
+```
+
+### Guardando las preferencias de gráficos en un archivo
+
+Otra opción bastante utilizada es guardar las preferencias de gráficos en un archivo `.R`, para lo cual se deben dejar las paletas de colores de preferencia y los temas seleccionados según la elección de cada usuario.
+
+En el *script* a continuación se dejan los cambios de formato de gráficos que cada usaurio estime y se debe guardar con un nombre y la extensión `.R`, para este ejemplo lo llamaremos *"cambios_graficosv2.R"* 
+
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+
+col_d_1 <- c("#1B0204FF", "#4E0C0DFF", "#881618FF", "#B01515FF", 
+             "#C47F4EFF", "#773924FF")
+
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+mi_color_1 <- scale_color_manual(values = col_d_1)
+
+
+mis_cambios_de_tema <- theme(
+  plot.title = element_text(size = 17,color ='grey20'),
+  plot.subtitle = element_text(size = 11, color = "grey40"),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  panel.background = element_blank()
+)
+
+```
+
+
+Y ahora podemos llamar este archivo *"cambios_graficosv2.R"* con el formato que hemos establecido para ser usado en cualquier script de `R`
+
+```{r message=FALSE, warning=FALSE, eval=FALSE}
+source("cambios_graficosv2.R")
+library(palmerpenguins)
+library(paletteer)
+
+```
+
+:::
+ 
+::: {.panel}
+## Tarea 4 {.panel-name}
+ 
+This is tarea number 4
+ 
+:::
+ 
+::: {.panel}
+## Proyecto integrador {.panel-name}
+ 
+Aquí va el proyecto integrador
+ 
+:::
+:::
+:::
+

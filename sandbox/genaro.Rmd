@@ -1,0 +1,161 @@
+---
+title: "Genaro"
+description: |
+  A new article created using the Distill format.
+author:
+  - name: Nora Jones 
+    url: https://example.com/norajones
+    affiliation: Spacely Sprockets
+    affiliation_url: https://example.com/spacelysprokets
+date: "`r Sys.Date()`"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Tarea 3
+
+### Cargar librerías
+
+A continuación debemos cargar las siguientes librerías que nos permitirán dar formato a los gráficos:
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+library(chilemapas)
+library(paletteer)
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+### Creación de gráficos
+
+Vamos a usar la base de datos `penguins` del paquete `palmerpenguins` para crear nuestros primeros gráficos tipo, a los cuales le vamos a ir personalizando el formato más adelante.
+
+Primero vamos a explorar nuestras variables. Para eso debemos escribir `penguins` en la consola y apretamos **enter.**
+
+#### 1. Gráficos de barras
+
+A continuación vamos a crear un gráfico de barras horizontales a través de la función `geom_bar` de `ggplot`, la cual permite hacer un recuento de casos por la variable que seleccionemos y además grafica.
+
+Crearemos nuestro gráfico que se llamará **barras1**. En este caso la variable **y** vaa ser `island` y **x** será el conteo de la variable `species`. Las barras serán coloreadas según las categorías de la variable especie, esto lo determinamos con la función `fill` .
+
+La función `title`nos permite ponerle el título a nuestro gráfico: **Pinguinos en archipiélago de Palmer** y por su parte la función `subtitle` el subtítulo:**Número de pinguinos en cada isla**.
+
+```{r echo=TRUE, message=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pinguinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+barras1
+```
+
+#### 2. Gráficos de puntos
+
+Ahora vamos a crear un gráfico de puntos a través de la función `geom_point` de `ggplot`.
+
+Crearemos nuestro gráfico que se llamará **puntos1**. En este caso vamos a graficar la anatomía del pico de los pinguinos, entonces la variable **y** vaa ser el largo `bill_length_mm` y **x** será el alto `bill_depth_mm`. Los puntos serán coloreadas según las categorías de la variable `species`, a diferencia de los gráficos de barras, esto lo determinamos con la función `color` .
+
+Como vimos anteriormente, la función `title`nos permite ponerle el título a nuestro gráfico: **Pinguinos en archipiélago de Palmer** y ahora cambiaremos el subtítulo por: **Dimensiones del pico de diversas especies**.
+
+```{r echo=TRUE, message=FALSE, warning=FALSE, paged.print=TRUE}
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+       geom_point() + 
+       labs(title = "Pinguinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+print(puntos1)
+```
+
+### ¿Cómo crear nuestra propia paleta?
+
+Para usar o crear paletas de colores debemos trabajar con el paquete `paletteer.` Las paletas de colores pueden ser de 2 tipos; discretas y continuas. Las discretas son para cuando necesitamos determinado número de colores y las continuas permiten hacer transiciones de colores.
+
+Hay una amplia variedad de paletas de colores, por lo que en la siguiente [página](https://emilhvitfeldt.github.io/r-color-palettes/discrete.html){style="blue"} pueden encontrar algunos ejemplos de paletas discretas que les puedan servir de inspiración para elaborar sus propias paletas.
+
+A continuación vamos a explorar la paleta `awtools::ppalette` para ver los códigos de los colores que la componen.
+
+```{r}
+paletteer_d("awtools::ppalette")
+```
+
+Para utilizar los colores que nos gustaron de esta paleta crearemos un vector que se llamará `col_d_1`en el cual vamos a agupar los colores de `awtools::ppalette`.
+
+```{r}
+col_d_1 <- c("#3D98D3FF", "#EC0B88FF", "#5E35B1FF", "#F9791EFF", 
+             "#3DD378FF", "#444444FF")
+```
+
+Ahora que hemos creado el vector `col_d_1`podemos utilizar sus colores para rellenar los gráficos `barras1` y `puntos1` que creamos anteriormente. Para esto debemos utilizar la función `scale_fill_manual`para el gráfico de barras y`scale_color_manual` para los gráficos de puntos.
+
+```{r warning=FALSE}
+barras1 + scale_fill_manual(values = col_d_1)
+puntos1 + scale_color_manual(values = col_d_1)
+```
+
+Otra forma más rápida para utilizar estos mismos colores más adelante es crear un objeto al cual le podemos asignar un nombre que nos haga sentido o que represente una paleta institucional por ejemplo. De esta forma creamos el objeto `mi_fill_1` para utilizar en los gráficos de barras y otro objeto que se llame `mi_color_1` para los gráficos de puntos.
+
+```{r}
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+mi_color_1 <- scale_color_manual(values = col_d_1)
+```
+
+Ahora le daremos formato a los gráficos `barras1` y `puntos1` solo agregando el nombre de ambos objetos que contienen la paleta de colores con las que colorearemos las figuras.
+
+```{r warning=FALSE}
+barras1 + mi_fill_1
+puntos1 + mi_color_1
+```
+
+### ¿Cómo ajustar el formato o tema de los gráficos?
+
+A través del comando `theme` podemos ir ajustando el formato de nuestros gráficos tales como; tamaño de la letra, líneas de la cuadrícula, color del fondo, entre otros.
+
+A continuación tomaremos los gráficos `barras1` y `puntos1` y modificaremos el tamaño de la letra del título con el comando `plot.title` y del subtítulo con el comando `plot.subtitle` y dentro de esos argumentos también podemos modificar el color del texto con el comando `color`. Para ver los nombres de los colores disponibles podemos escribir `colors` en la consola.
+
+```{r warning=FALSE}
+barras1 + theme(
+  plot.title = element_text(size = 26, color="black"),
+  plot.subtitle = element_text(size = 10, color="grey40")
+)
+```
+
+```{r warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 24, color="darkblue"),
+  plot.subtitle = element_text(size = 9, color="grey20")
+)
+```
+
+Ahora crearemos nuestro propio tema con los ajustes que nos gusten y los guardaremos como un objeto que se llame `mi_tema` al cual vamos a poder llamar para asignar ese formato a nuestros gráficos y así personalizarlos. Con el comando `panel.grid.major` definimos el formato de la cuadrícula, con `panel.grid.minor` los ejes y con `panel.background`el fondo del gráfico.
+
+```{r}
+mi_tema <- theme (panel.grid.major = element_blank(),
+                              panel.grid.minor = element_blank(),
+                              panel.background = element_blank(),
+                              plot.title = element_text(size = 24),
+                              plot.subtitle = element_text(size = 9, color = "grey40"))
+```
+
+Ahora que hemos personalizado nuestra paleta de colores y hemos creado nuestro tema, vamos a darle formato nuevamente a los gráficos `barras1` y `puntos1` utilizando los objetos que hemos creado anteriomente.
+
+```{r warning=FALSE}
+barras1 + mi_tema + mi_fill_1 
+```
+
+```{r warning=FALSE}
+puntos1 + mi_tema + mi_color_1 
+```
+
+
+
+
+
+
+
+
+

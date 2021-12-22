@@ -1,0 +1,3827 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>aranzazu.knit</title>
+
+<!--radix_placeholder_navigation_in_header-->
+<meta name="distill:offset" content=""/>
+
+<script type="application/javascript">
+
+  window.headroom_prevent_pin = false;
+
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+
+    // initialize headroom for banner
+    var header = $('header').get(0);
+    var headerHeight = header.offsetHeight;
+    var headroom = new Headroom(header, {
+      tolerance: 5,
+      onPin : function() {
+        if (window.headroom_prevent_pin) {
+          window.headroom_prevent_pin = false;
+          headroom.unpin();
+        }
+      }
+    });
+    headroom.init();
+    if(window.location.hash)
+      headroom.unpin();
+    $(header).addClass('headroom--transition');
+
+    // offset scroll location for banner on hash change
+    // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
+    window.addEventListener("hashchange", function(event) {
+      window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
+    });
+
+    // responsive menu
+    $('.distill-site-header').each(function(i, val) {
+      var topnav = $(this);
+      var toggle = topnav.find('.nav-toggle');
+      toggle.on('click', function() {
+        topnav.toggleClass('responsive');
+      });
+    });
+
+    // nav dropdowns
+    $('.nav-dropbtn').click(function(e) {
+      $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
+      $(this).parent().siblings('.nav-dropdown')
+         .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $("body").click(function(e){
+      $('.nav-dropdown-content').removeClass('nav-dropdown-active');
+    });
+    $(".nav-dropdown").click(function(e){
+      e.stopPropagation();
+    });
+  });
+</script>
+
+<style type="text/css">
+
+/* Theme (user-documented overrideables for nav appearance) */
+
+.distill-site-nav {
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #0F2E3D;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.distill-site-nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.distill-site-nav a:hover {
+  color: white;
+}
+
+@media print {
+  .distill-site-nav {
+    display: none;
+  }
+}
+
+.distill-site-header {
+
+}
+
+.distill-site-footer {
+
+}
+
+
+/* Site Header */
+
+.distill-site-header {
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 3;
+}
+
+.distill-site-header .nav-left {
+  display: inline-block;
+  margin-left: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header .nav-left {
+    margin-left: 0;
+  }
+}
+
+
+.distill-site-header .nav-right {
+  float: right;
+  margin-right: 8px;
+}
+
+.distill-site-header a,
+.distill-site-header .title {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 10px 14px 10px;
+}
+
+.distill-site-header .title {
+  font-size: 18px;
+  min-width: 150px;
+}
+
+.distill-site-header .logo {
+  padding: 0;
+}
+
+.distill-site-header .logo img {
+  display: none;
+  max-height: 20px;
+  width: auto;
+  margin-bottom: -4px;
+}
+
+.distill-site-header .nav-image img {
+  max-height: 18px;
+  width: auto;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .distill-site-header .logo img {
+    display: inline-block;
+  }
+  .distill-site-header .nav-left {
+    margin-left: 20px;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 20px;
+  }
+  .distill-site-header .title {
+    padding-left: 12px;
+  }
+}
+
+
+.distill-site-header .nav-toggle {
+  display: none;
+}
+
+.nav-dropdown {
+  display: inline-block;
+  position: relative;
+}
+
+.nav-dropdown .nav-dropbtn {
+  border: none;
+  outline: none;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 16px 10px;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  margin: 0;
+  margin-top: 1px;
+  z-index: 2;
+}
+
+.nav-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 4px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+  z-index: 1;
+  margin-top: 2px;
+  white-space: nowrap;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.nav-dropdown-content hr {
+  margin-top: 4px;
+  margin-bottom: 4px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-dropdown-active {
+  display: block;
+}
+
+.nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
+  color: black;
+  padding: 6px 24px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.nav-dropdown-content .nav-dropdown-header {
+  display: block;
+  padding: 5px 24px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #999999;
+  white-space: nowrap;
+}
+
+.nav-dropdown:hover .nav-dropbtn {
+  color: white;
+}
+
+.nav-dropdown-content a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.nav-right .nav-dropdown-content {
+  margin-left: -45%;
+  right: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
+  .distill-site-header a.nav-toggle {
+    float: right;
+    display: block;
+  }
+  .distill-site-header .title {
+    margin-left: 0;
+  }
+  .distill-site-header .nav-right {
+    margin-right: 0;
+  }
+  .distill-site-header {
+    overflow: hidden;
+  }
+  .nav-right .nav-dropdown-content {
+    margin-left: 0;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-header.responsive {position: relative; min-height: 500px; }
+  .distill-site-header.responsive a.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .distill-site-header.responsive a,
+  .distill-site-header.responsive .nav-dropdown {
+    display: block;
+    text-align: left;
+  }
+  .distill-site-header.responsive .nav-left,
+  .distill-site-header.responsive .nav-right {
+    width: 100%;
+  }
+  .distill-site-header.responsive .nav-dropdown {float: none;}
+  .distill-site-header.responsive .nav-dropdown-content {position: relative;}
+  .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* Site Footer */
+
+.distill-site-footer {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  z-index: 3;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+/* Headroom */
+
+d-title {
+  padding-top: 6rem;
+}
+
+@media print {
+  d-title {
+    padding-top: 4rem;
+  }
+}
+
+.headroom {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.headroom--transition {
+  transition: all .4s ease-in-out;
+}
+
+.headroom--unpinned {
+  top: -100px;
+}
+
+.headroom--pinned {
+  top: 0;
+}
+
+/* adjust viewport for navbar height */
+/* helps vertically center bootstrap (non-distill) content */
+.min-vh-100 {
+  min-height: calc(100vh - 100px) !important;
+}
+
+</style>
+
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
+<script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+<script src="site_libs/autocomplete-0.37.1/autocomplete.min.js"></script>
+<script src="site_libs/fuse-6.4.1/fuse.min.js"></script>
+
+<script type="application/javascript">
+
+function getMeta(metaName) {
+  var metas = document.getElementsByTagName('meta');
+  for (let i = 0; i < metas.length; i++) {
+    if (metas[i].getAttribute('name') === metaName) {
+      return metas[i].getAttribute('content');
+    }
+  }
+  return '';
+}
+
+function offsetURL(url) {
+  var offset = getMeta('distill:offset');
+  return offset ? offset + '/' + url : url;
+}
+
+function createFuseIndex() {
+
+  // create fuse index
+  var options = {
+    keys: [
+      { name: 'title', weight: 20 },
+      { name: 'categories', weight: 15 },
+      { name: 'description', weight: 10 },
+      { name: 'contents', weight: 5 },
+    ],
+    ignoreLocation: true,
+    threshold: 0
+  };
+  var fuse = new window.Fuse([], options);
+
+  // fetch the main search.json
+  return fetch(offsetURL('search.json'))
+    .then(function(response) {
+      if (response.status == 200) {
+        return response.json().then(function(json) {
+          // index main articles
+          json.articles.forEach(function(article) {
+            fuse.add(article);
+          });
+          // download collections and index their articles
+          return Promise.all(json.collections.map(function(collection) {
+            return fetch(offsetURL(collection)).then(function(response) {
+              if (response.status === 200) {
+                return response.json().then(function(articles) {
+                  articles.forEach(function(article) {
+                    fuse.add(article);
+                  });
+                })
+              } else {
+                return Promise.reject(
+                  new Error('Unexpected status from search index request: ' +
+                            response.status)
+                );
+              }
+            });
+          })).then(function() {
+            return fuse;
+          });
+        });
+
+      } else {
+        return Promise.reject(
+          new Error('Unexpected status from search index request: ' +
+                      response.status)
+        );
+      }
+    });
+}
+
+window.document.addEventListener("DOMContentLoaded", function (event) {
+
+  // get search element (bail if we don't have one)
+  var searchEl = window.document.getElementById('distill-search');
+  if (!searchEl)
+    return;
+
+  createFuseIndex()
+    .then(function(fuse) {
+
+      // make search box visible
+      searchEl.classList.remove('hidden');
+
+      // initialize autocomplete
+      var options = {
+        autoselect: true,
+        hint: false,
+        minLength: 2,
+      };
+      window.autocomplete(searchEl, options, [{
+        source: function(query, callback) {
+          const searchOptions = {
+            isCaseSensitive: false,
+            shouldSort: true,
+            minMatchCharLength: 2,
+            limit: 10,
+          };
+          var results = fuse.search(query, searchOptions);
+          callback(results
+            .map(function(result) { return result.item; })
+          );
+        },
+        templates: {
+          suggestion: function(suggestion) {
+            var img = suggestion.preview && Object.keys(suggestion.preview).length > 0
+              ? `<img src="${offsetURL(suggestion.preview)}"</img>`
+              : '';
+            var html = `
+              <div class="search-item">
+                <h3>${suggestion.title}</h3>
+                <div class="search-item-description">
+                  ${suggestion.description || ''}
+                </div>
+                <div class="search-item-preview">
+                  ${img}
+                </div>
+              </div>
+            `;
+            return html;
+          }
+        }
+      }]).on('autocomplete:selected', function(event, suggestion) {
+        window.location.href = offsetURL(suggestion.path);
+      });
+      // remove inline display style on autocompleter (we want to
+      // manage responsive display via css)
+      $('.algolia-autocomplete').css("display", "");
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+
+});
+
+</script>
+
+<style type="text/css">
+
+.nav-search {
+  font-size: x-small;
+}
+
+/* Algolioa Autocomplete */
+
+.algolia-autocomplete {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: sub;
+  background-color: white;
+  color: black;
+  padding: 6px;
+  padding-top: 8px;
+  padding-bottom: 0;
+  border-radius: 6px;
+  border: 1px #0F2E3D solid;
+  width: 180px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .distill-site-nav .algolia-autocomplete {
+    display: none;
+    visibility: hidden;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete {
+    display: inline-block;
+    visibility: visible;
+  }
+  .distill-site-nav.responsive .algolia-autocomplete .aa-dropdown-menu {
+    margin-left: 0;
+    width: 400px;
+    max-height: 400px;
+  }
+}
+
+.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
+  width: 90%;
+  outline: none;
+  border: none;
+}
+
+.algolia-autocomplete .aa-hint {
+  color: #999;
+}
+.algolia-autocomplete .aa-dropdown-menu {
+  width: 550px;
+  max-height: 70vh;
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+  margin-top: 3px;
+  margin-left: -150px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+  border-top: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+  cursor: pointer;
+  padding: 5px 4px;
+  border-bottom: 1px solid #eee;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion:last-of-type {
+  border-bottom: none;
+  margin-bottom: 2px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item {
+  overflow: hidden;
+  font-size: 0.8em;
+  line-height: 1.4em;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item h3 {
+  font-size: 1rem;
+  margin-block-start: 0;
+  margin-block-end: 5px;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-description {
+  display: inline-block;
+  overflow: hidden;
+  height: 2.8em;
+  width: 80%;
+  margin-right: 4%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview {
+  display: inline-block;
+  width: 15%;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img {
+  height: 3em;
+  width: auto;
+  display: none;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion .search-item-preview img[src] {
+  display: initial;
+}
+
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
+  background-color: #eee;
+}
+.algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+</style>
+
+
+<!--/radix_placeholder_navigation_in_header-->
+<!--radix_placeholder_site_in_header-->
+<!--/radix_placeholder_site_in_header-->
+
+<style type="text/css">
+body {
+  padding-top: 60px;
+}
+</style>
+<script src="C:\Users\ricardo.mayer\R\R-Library\rmarkdown\rmd\h\pandoc\header-attrs.js"></script>
+<script src="C:\Users\ricardo.mayer\R\R-Library\jquerylib\lib\3.6.0\jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="C:\Users\ricardo.mayer\R\R-Library\rmarkdown\rmd\h\bootstrap\css\bootstrap.min.css" rel="stylesheet" />
+<script src="C:\Users\ricardo.mayer\R\R-Library\rmarkdown\rmd\h\bootstrap\js\bootstrap.min.js"></script>
+<script src="C:\Users\ricardo.mayer\R\R-Library\rmarkdown\rmd\h\bootstrap\shim\html5shiv.min.js"></script>
+<script src="C:\Users\ricardo.mayer\R\R-Library\rmarkdown\rmd\h\bootstrap\shim\respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="C:\Users\ricardo.mayer\R\R-Library\rmarkdown\rmd\h\navigation-1.1\tabsets.js"></script>
+<link href="C:\Users\ricardo.mayer\R\R-Library\rmarkdown\rmd\h\highlightjs\default.css" rel="stylesheet" />
+<script src="C:\Users\ricardo.mayer\R\R-Library\rmarkdown\rmd\h\highlightjs\highlight.js"></script>
+<script src="C:\Users\ricardo.mayer\R\R-Library\kableExtra\kePrint-0.0.1\kePrint.js"></script>
+<link href="C:\Users\ricardo.mayer\R\R-Library\kableExtra\lightable-0.0.1\lightable.css" rel="stylesheet" />
+<link href="C:\Users\ricardo.mayer\R\R-Library\flextable\web_1.0.0\tabwid.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+<!--radix_placeholder_navigation_before_body-->
+<header class="header header--fixed" role="banner">
+<nav class="distill-site-nav distill-site-header">
+<div class="nav-left">
+<a href="index.html" class="title">Data Storytelling</a>
+</div>
+<div class="nav-right">
+<a href="index.html">Home</a>
+<div class="nav-dropdown">
+<button class="nav-dropbtn">
+Estudiantes
+ 
+<span class="down-arrow">&#x25BE;</span>
+</button>
+<div class="nav-dropdown-content">
+<a href="aranzazu_dis.html">Aranzazu</a>
+<a href="celeste_dis.html">Celeste</a>
+<a href="paginatipo_dis.html">Cristobal</a>
+<a href="paginatipo_dis.html">Genaro</a>
+</div>
+</div>
+<a href="about.html">Viz</a>
+<a href="about.html">About</a>
+<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
+</div>
+</nav>
+</header>
+<!--/radix_placeholder_navigation_before_body-->
+<!--radix_placeholder_site_before_body-->
+<!--/radix_placeholder_site_before_body-->
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Estudiantes
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="aranzazu_dis.html">Aranzazu</a>
+    </li>
+    <li>
+      <a href="celeste_dis.html">Celeste</a>
+    </li>
+    <li>
+      <a href="paginatipo_dis.html">Cristobal</a>
+    </li>
+    <li>
+      <a href="paginatipo_dis.html">Genaro</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="about.html">Viz</a>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+
+</div>
+
+
+<div id="bar" class="section level1 tabset tabset-fade tabset-pills">
+<h1 class="tabset tabset-fade tabset-pills">bar</h1>
+<div id="tarea-1" class="section level2">
+<h2>Tarea 1</h2>
+<div id="describa-una-situación-hipotética-donde-tomará-lugar-la-comunicación" class="section level3">
+<h3>Describa una situación hipotética donde tomará lugar la comunicación</h3>
+<p><strong>Debe explicitar el quién-qué-cómo de la comunicación y describir brevemente el tipo de datos que utilizaría</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Debo presentar en una reunión con autoridades de la administración central de la Universidad Diego Portales los resultados obtenidos por ésta última en los rankings de universidades realizados, tanto a nivel nacional como internacional, durante el año 2021. La importancia de presentar estos resultados radica en mostrar cómo se encuentra posicionada la Universidad y sus distintas áreas de gestión respecto a otras universidades a nivel nacional, latinoamericano y mundial.</p></li>
+<li><ol style="list-style-type: lower-alpha">
+<li><p>La audiencia está compuesta por autoridades de la administración central de la Universidad Diego Portales tales como vicerrectores y directores generales de distintas áreas de la institución.</p></li>
+<li><p>Para la audiencia soy la analista senior de la Dirección de Análisis Institucional de la Universidad a cargo de monitorear y reportar periódicamente el desempeño de la UDP en todas las clasificaciones de instituciones de educación superior a nivel mundial y nacional. Con todos los miembros de la audiencia existe una relación jerárquica, donde nos conocemos por haber participado anteriormente de otros procesos como acreditación institucional, reuniones de trabajo, jornadas de planificación UDP, entre otras. Pese a existir una distancia por la jerarquía, existe una relación amable y de relativa confianza. De cierto modo está establecida la credibilidad, ya que están en conocimiento que dentro de la Universidad soy la persona que está pendiente de monitorear y difundir todo lo relativo al desempeño de la institución en estas clasificaciones de universidades.</p></li>
+</ol></li>
+<li><ol style="list-style-type: lower-alpha">
+<li><p>Necesito que la audiencia tome conocimiento de las posiciones relativas que ocupa la UDP respecto a las demás universidades a nivel general y por dimensiones específicas -Docencia, Investigación, Perspectiva Internacional, Citaciones- en los 15 rankings nacionales e internacionales en los que la Universidad ha sido clasificada durante el año 2021.</p></li>
+<li><p>Realizaré una presentación telemática donde comenzaré mostrando el listado de rankings publicados durante 2021, haré un resumen de los principales resultados encontrados para enfocar la atención de la presentación. Luego mostraré los resultados de lo general a lo particular, a través de gráficos donde se expondrá la posición de la UDP a nivel mundial, latinoamericano y nacional, según el alcance del ranking. Finalmente, expondré los resultados en las dimensiones específicas de Docencia, Investigación, Perspectiva Internacional y Citaciones haciendo especial énfasis en los temas de interés de las autoridades de la audiencia.</p></li>
+<li><p>El tono de la comunicación será cercano, pero manteniendo un perfil técnico para asegurar la credibilidad de la audiencia.</p></li>
+</ol></li>
+<li><p>Los datos disponibles son las planillas de Excel que se utilizan para realizar los reportes individuales de los 15 rankings nacionales e internacionales publicados durante 2021. Donde se calcula la posición de la Universidad a nivel global, latinoamericano, nacional y entre universidades privadas chilenas, tanto en el overall como en las distintas dimensiones que ponderan en estos rankings para construir el puntaje final que otorga la posición en la clasificación.</p></li>
+</ol>
+</div>
+</div>
+<div id="tarea-2" class="section level2">
+<h2>Tarea 2</h2>
+<div id="paso-2-uso-de-kableextra" class="section level3">
+<h3>Paso 2: Uso de kableExtra</h3>
+<ol start="2" style="list-style-type: decimal">
+<li>Al igual que el documento del paso 1, cargue en este documento las librerías kableExtra, gt, flextable</li>
+</ol>
+<pre class="r"><code>library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Al igual que el documento del paso 1, cargue en este documento las bases de datos mini_iris.csv y datos_para_tabla.csv y al igual que en el documento del paso 1, elimine las columnas 8 y 9 de datos_para_tabla</li>
+</ol>
+<pre class="r"><code>df_mini_iris &lt;- read_csv(file = &quot;mini_iris.csv&quot;)
+df_mini_iris </code></pre>
+<pre><code>## # A tibble: 10 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species   
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;     
+##  1          6.7         2.5          5.8         1.8 virginica 
+##  2          6.5         3            5.2         2   virginica 
+##  3          7.9         3.8          6.4         2   virginica 
+##  4          6.7         3.3          5.7         2.1 virginica 
+##  5          6.5         3.2          5.1         2   virginica 
+##  6          4.4         2.9          1.4         0.2 setosa    
+##  7          5.1         2.5          3           1.1 versicolor
+##  8          5.1         3.8          1.9         0.4 setosa    
+##  9          6.2         2.8          4.8         1.8 virginica 
+## 10          5.4         3.9          1.3         0.4 setosa</code></pre>
+<pre class="r"><code>df_exibble &lt;- read_csv(file = &quot;datos_para_tabla.csv&quot;) 
+df_exibble</code></pre>
+<pre><code>## # A tibble: 8 x 9
+##        num char  fctr  date       time  datetime            currency row   group
+##      &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt; &lt;date&gt;     &lt;tim&gt; &lt;dttm&gt;                 &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;
+## 1  1.11e-1 apri~ one   2015-01-15 13:35 2018-01-01 02:22:00    50.0  row_1 grp_a
+## 2  2.22e+0 bana~ two   2015-02-15 14:40 2018-02-02 14:33:00    18.0  row_2 grp_a
+## 3  3.33e+1 coco~ three 2015-03-15 15:45 2018-03-03 03:44:00     1.39 row_3 grp_a
+## 4  4.44e+2 duri~ four  2015-04-15 16:50 2018-04-04 15:55:00 65100    row_4 grp_a
+## 5  5.55e+3 &lt;NA&gt;  five  2015-05-15 17:55 2018-05-05 04:00:00  1326.   row_5 grp_b
+## 6 NA       fig   six   2015-06-15    NA 2018-06-06 16:11:00    13.3  row_6 grp_b
+## 7  7.77e+5 grap~ seven NA         19:10 2018-07-07 05:22:00    NA    row_7 grp_b
+## 8  8.88e+6 hone~ eight 2015-08-15 20:20 NA                      0.44 row_8 grp_b</code></pre>
+<pre class="r"><code>df_exibble &lt;- df_exibble %&gt;% select(-c(8,9))
+df_exibble</code></pre>
+<pre><code>## # A tibble: 8 x 7
+##           num char       fctr  date       time   datetime            currency
+##         &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;date&gt;     &lt;time&gt; &lt;dttm&gt;                 &lt;dbl&gt;
+## 1       0.111 apricot    one   2015-01-15 13:35  2018-01-01 02:22:00    50.0 
+## 2       2.22  banana     two   2015-02-15 14:40  2018-02-02 14:33:00    18.0 
+## 3      33.3   coconut    three 2015-03-15 15:45  2018-03-03 03:44:00     1.39
+## 4     444.    durian     four  2015-04-15 16:50  2018-04-04 15:55:00 65100   
+## 5    5550     &lt;NA&gt;       five  2015-05-15 17:55  2018-05-05 04:00:00  1326.  
+## 6      NA     fig        six   2015-06-15    NA  2018-06-06 16:11:00    13.3 
+## 7  777000     grapefruit seven NA         19:10  2018-07-07 05:22:00    NA   
+## 8 8880000     honeydew   eight 2015-08-15 20:20  NA                      0.44</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Tanto para los tibble df_mini_iris como para df_exibble (nombres que usó en el documento paso 1) cree tablas similares aquella con título “Recreating booktabs style table”. Cambie el título que aparece en ese ejemplo.</li>
+</ol>
+<pre class="r"><code>df_mini_iris  %&gt;%
+  kbl(caption = &quot;Tabla flores&quot;) %&gt;%
+  kable_classic(full_width = F, html_font = &quot;Cambria&quot;)</code></pre>
+<table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Tabla flores
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+6.7
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+5.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+5.2
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7.9
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+6.4
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.7
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+<td style="text-align:right;">
+5.7
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.5
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.4
+</td>
+<td style="text-align:right;">
+2.9
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.1
+</td>
+<td style="text-align:left;">
+versicolor
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+1.9
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.2
+</td>
+<td style="text-align:right;">
+2.8
+</td>
+<td style="text-align:right;">
+4.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>df_exibble  %&gt;%
+  kbl(caption = &quot;Tabla frutas&quot;) %&gt;%
+  kable_classic(full_width = F, html_font = &quot;Cambria&quot;)</code></pre>
+<table class=" lightable-classic" style="font-family: Cambria; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+Tabla frutas
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+num
+</th>
+<th style="text-align:left;">
+char
+</th>
+<th style="text-align:left;">
+fctr
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:left;">
+time
+</th>
+<th style="text-align:left;">
+datetime
+</th>
+<th style="text-align:right;">
+currency
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.111e-01
+</td>
+<td style="text-align:left;">
+apricot
+</td>
+<td style="text-align:left;">
+one
+</td>
+<td style="text-align:left;">
+2015-01-15
+</td>
+<td style="text-align:left;">
+13:35:00
+</td>
+<td style="text-align:left;">
+2018-01-01 02:22:00
+</td>
+<td style="text-align:right;">
+49.950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.222e+00
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:left;">
+2015-02-15
+</td>
+<td style="text-align:left;">
+14:40:00
+</td>
+<td style="text-align:left;">
+2018-02-02 14:33:00
+</td>
+<td style="text-align:right;">
+17.950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.333e+01
+</td>
+<td style="text-align:left;">
+coconut
+</td>
+<td style="text-align:left;">
+three
+</td>
+<td style="text-align:left;">
+2015-03-15
+</td>
+<td style="text-align:left;">
+15:45:00
+</td>
+<td style="text-align:left;">
+2018-03-03 03:44:00
+</td>
+<td style="text-align:right;">
+1.390
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.444e+02
+</td>
+<td style="text-align:left;">
+durian
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:left;">
+2015-04-15
+</td>
+<td style="text-align:left;">
+16:50:00
+</td>
+<td style="text-align:left;">
+2018-04-04 15:55:00
+</td>
+<td style="text-align:right;">
+65100.000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.550e+03
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+five
+</td>
+<td style="text-align:left;">
+2015-05-15
+</td>
+<td style="text-align:left;">
+17:55:00
+</td>
+<td style="text-align:left;">
+2018-05-05 04:00:00
+</td>
+<td style="text-align:right;">
+1325.810
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+fig
+</td>
+<td style="text-align:left;">
+six
+</td>
+<td style="text-align:left;">
+2015-06-15
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+2018-06-06 16:11:00
+</td>
+<td style="text-align:right;">
+13.255
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7.770e+05
+</td>
+<td style="text-align:left;">
+grapefruit
+</td>
+<td style="text-align:left;">
+seven
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+19:10:00
+</td>
+<td style="text-align:left;">
+2018-07-07 05:22:00
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8.880e+06
+</td>
+<td style="text-align:left;">
+honeydew
+</td>
+<td style="text-align:left;">
+eight
+</td>
+<td style="text-align:left;">
+2015-08-15
+</td>
+<td style="text-align:left;">
+20:20:00
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+0.440
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="6" style="list-style-type: decimal">
+<li>Tome el ejemplo de la sección Font size y para cada uno de los dos data sets, cree una tabla con tamaño de letra 16</li>
+</ol>
+<pre class="r"><code>kbl(df_mini_iris) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, font_size = 16)</code></pre>
+<table class="table table-striped" style="font-size: 16px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+6.7
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+5.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+5.2
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7.9
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+6.4
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.7
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+<td style="text-align:right;">
+5.7
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.5
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.4
+</td>
+<td style="text-align:right;">
+2.9
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.1
+</td>
+<td style="text-align:left;">
+versicolor
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+1.9
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6.2
+</td>
+<td style="text-align:right;">
+2.8
+</td>
+<td style="text-align:right;">
+4.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>kbl(df_exibble) %&gt;%
+  kable_styling(bootstrap_options = &quot;striped&quot;, font_size = 16)</code></pre>
+<table class="table table-striped" style="font-size: 16px; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+num
+</th>
+<th style="text-align:left;">
+char
+</th>
+<th style="text-align:left;">
+fctr
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:left;">
+time
+</th>
+<th style="text-align:left;">
+datetime
+</th>
+<th style="text-align:right;">
+currency
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.111e-01
+</td>
+<td style="text-align:left;">
+apricot
+</td>
+<td style="text-align:left;">
+one
+</td>
+<td style="text-align:left;">
+2015-01-15
+</td>
+<td style="text-align:left;">
+13:35:00
+</td>
+<td style="text-align:left;">
+2018-01-01 02:22:00
+</td>
+<td style="text-align:right;">
+49.950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.222e+00
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:left;">
+2015-02-15
+</td>
+<td style="text-align:left;">
+14:40:00
+</td>
+<td style="text-align:left;">
+2018-02-02 14:33:00
+</td>
+<td style="text-align:right;">
+17.950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.333e+01
+</td>
+<td style="text-align:left;">
+coconut
+</td>
+<td style="text-align:left;">
+three
+</td>
+<td style="text-align:left;">
+2015-03-15
+</td>
+<td style="text-align:left;">
+15:45:00
+</td>
+<td style="text-align:left;">
+2018-03-03 03:44:00
+</td>
+<td style="text-align:right;">
+1.390
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.444e+02
+</td>
+<td style="text-align:left;">
+durian
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:left;">
+2015-04-15
+</td>
+<td style="text-align:left;">
+16:50:00
+</td>
+<td style="text-align:left;">
+2018-04-04 15:55:00
+</td>
+<td style="text-align:right;">
+65100.000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.550e+03
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+five
+</td>
+<td style="text-align:left;">
+2015-05-15
+</td>
+<td style="text-align:left;">
+17:55:00
+</td>
+<td style="text-align:left;">
+2018-05-05 04:00:00
+</td>
+<td style="text-align:right;">
+1325.810
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+fig
+</td>
+<td style="text-align:left;">
+six
+</td>
+<td style="text-align:left;">
+2015-06-15
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+2018-06-06 16:11:00
+</td>
+<td style="text-align:right;">
+13.255
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7.770e+05
+</td>
+<td style="text-align:left;">
+grapefruit
+</td>
+<td style="text-align:left;">
+seven
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+19:10:00
+</td>
+<td style="text-align:left;">
+2018-07-07 05:22:00
+</td>
+<td style="text-align:right;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8.880e+06
+</td>
+<td style="text-align:left;">
+honeydew
+</td>
+<td style="text-align:left;">
+eight
+</td>
+<td style="text-align:left;">
+2015-08-15
+</td>
+<td style="text-align:left;">
+20:20:00
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+0.440
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="7" style="list-style-type: decimal">
+<li>En la sección Column spec hay un ejemplo que comienza con mtcars[1:8, 1:8]. Modifique ese ejemplo para hacer lo siguiente:</li>
+</ol>
+<ol style="list-style-type: lower-alpha">
+<li>Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga números de color blanco y fondo que va cambiando de celda en celda (note que cada columna tiene 10 elementos). No modifique otra columna. No use las opciones popover o link</li>
+</ol>
+<pre class="r"><code>df_mini_iris</code></pre>
+<pre><code>## # A tibble: 10 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species   
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;     
+##  1          6.7         2.5          5.8         1.8 virginica 
+##  2          6.5         3            5.2         2   virginica 
+##  3          7.9         3.8          6.4         2   virginica 
+##  4          6.7         3.3          5.7         2.1 virginica 
+##  5          6.5         3.2          5.1         2   virginica 
+##  6          4.4         2.9          1.4         0.2 setosa    
+##  7          5.1         2.5          3           1.1 versicolor
+##  8          5.1         3.8          1.9         0.4 setosa    
+##  9          6.2         2.8          4.8         1.8 virginica 
+## 10          5.4         3.9          1.3         0.4 setosa</code></pre>
+<pre class="r"><code>df_mini_iris %&gt;%
+  kbl() %&gt;%
+  kable_paper(full_width = F) %&gt;%
+  column_spec(1, color = &quot;white&quot;,
+              background = spec_color(df_mini_iris$Sepal.Length, end = 0.7))</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(36, 135, 142, 1) !important;">
+6.7
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+5.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(40, 125, 142, 1) !important;">
+6.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+5.2
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(67, 191, 113, 1) !important;">
+7.9
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+6.4
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(36, 135, 142, 1) !important;">
+6.7
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+<td style="text-align:right;">
+5.7
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(40, 125, 142, 1) !important;">
+6.5
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(68, 1, 84, 1) !important;">
+4.4
+</td>
+<td style="text-align:right;">
+2.9
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(70, 49, 126, 1) !important;">
+5.1
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.1
+</td>
+<td style="text-align:left;">
+versicolor
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(70, 49, 126, 1) !important;">
+5.1
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+1.9
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(46, 111, 142, 1) !important;">
+6.2
+</td>
+<td style="text-align:right;">
+2.8
+</td>
+<td style="text-align:right;">
+4.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: rgba(65, 68, 135, 1) !important;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga números de color blanco y fondo gris (“grey”). No modifique otra columna. No use las opciones popover o link</li>
+</ol>
+<pre class="r"><code>df_mini_iris %&gt;%
+  kbl() %&gt;%
+  kable_paper(full_width = F) %&gt;%
+  column_spec(1, color = &quot;white&quot;,
+              background = &quot;grey&quot;)</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+6.7
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+5.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+6.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+5.2
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+7.9
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+6.4
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+6.7
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+<td style="text-align:right;">
+5.7
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+6.5
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+4.4
+</td>
+<td style="text-align:right;">
+2.9
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+5.1
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.1
+</td>
+<td style="text-align:left;">
+versicolor
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+5.1
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+1.9
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+6.2
+</td>
+<td style="text-align:right;">
+2.8
+</td>
+<td style="text-align:right;">
+4.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Una tabla a partir de df_exibble, donde la columna currency tenga números de color blanco y fondo gris (“grey”). No modifique otra columna. No use las opciones popover o link</li>
+</ol>
+<pre class="r"><code>df_exibble</code></pre>
+<pre><code>## # A tibble: 8 x 7
+##           num char       fctr  date       time   datetime            currency
+##         &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;date&gt;     &lt;time&gt; &lt;dttm&gt;                 &lt;dbl&gt;
+## 1       0.111 apricot    one   2015-01-15 13:35  2018-01-01 02:22:00    50.0 
+## 2       2.22  banana     two   2015-02-15 14:40  2018-02-02 14:33:00    18.0 
+## 3      33.3   coconut    three 2015-03-15 15:45  2018-03-03 03:44:00     1.39
+## 4     444.    durian     four  2015-04-15 16:50  2018-04-04 15:55:00 65100   
+## 5    5550     &lt;NA&gt;       five  2015-05-15 17:55  2018-05-05 04:00:00  1326.  
+## 6      NA     fig        six   2015-06-15    NA  2018-06-06 16:11:00    13.3 
+## 7  777000     grapefruit seven NA         19:10  2018-07-07 05:22:00    NA   
+## 8 8880000     honeydew   eight 2015-08-15 20:20  NA                      0.44</code></pre>
+<pre class="r"><code>df_exibble %&gt;%
+  kbl() %&gt;%
+  kable_paper(full_width = F) %&gt;%
+  column_spec(7, color = &quot;white&quot;,
+              background = &quot;grey&quot;)</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+num
+</th>
+<th style="text-align:left;">
+char
+</th>
+<th style="text-align:left;">
+fctr
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:left;">
+time
+</th>
+<th style="text-align:left;">
+datetime
+</th>
+<th style="text-align:right;">
+currency
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.111e-01
+</td>
+<td style="text-align:left;">
+apricot
+</td>
+<td style="text-align:left;">
+one
+</td>
+<td style="text-align:left;">
+2015-01-15
+</td>
+<td style="text-align:left;">
+13:35:00
+</td>
+<td style="text-align:left;">
+2018-01-01 02:22:00
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+49.950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.222e+00
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:left;">
+2015-02-15
+</td>
+<td style="text-align:left;">
+14:40:00
+</td>
+<td style="text-align:left;">
+2018-02-02 14:33:00
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+17.950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.333e+01
+</td>
+<td style="text-align:left;">
+coconut
+</td>
+<td style="text-align:left;">
+three
+</td>
+<td style="text-align:left;">
+2015-03-15
+</td>
+<td style="text-align:left;">
+15:45:00
+</td>
+<td style="text-align:left;">
+2018-03-03 03:44:00
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+1.390
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.444e+02
+</td>
+<td style="text-align:left;">
+durian
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:left;">
+2015-04-15
+</td>
+<td style="text-align:left;">
+16:50:00
+</td>
+<td style="text-align:left;">
+2018-04-04 15:55:00
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+65100.000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.550e+03
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+five
+</td>
+<td style="text-align:left;">
+2015-05-15
+</td>
+<td style="text-align:left;">
+17:55:00
+</td>
+<td style="text-align:left;">
+2018-05-05 04:00:00
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+1325.810
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+fig
+</td>
+<td style="text-align:left;">
+six
+</td>
+<td style="text-align:left;">
+2015-06-15
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+2018-06-06 16:11:00
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+13.255
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7.770e+05
+</td>
+<td style="text-align:left;">
+grapefruit
+</td>
+<td style="text-align:left;">
+seven
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+19:10:00
+</td>
+<td style="text-align:left;">
+2018-07-07 05:22:00
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8.880e+06
+</td>
+<td style="text-align:left;">
+honeydew
+</td>
+<td style="text-align:left;">
+eight
+</td>
+<td style="text-align:left;">
+2015-08-15
+</td>
+<td style="text-align:left;">
+20:20:00
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;color: white !important;background-color: grey !important;">
+0.440
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga un color de fondo condicional. En vez de usar la función color_spec para darle valor al background, use esta función ifelse(df_mini_iris$Sepal.Length &lt; 6, “orange”, “white”). Si quiere puede cambiar los colores orange y white</li>
+</ol>
+<pre class="r"><code>df_mini_iris</code></pre>
+<pre><code>## # A tibble: 10 x 5
+##    Sepal.Length Sepal.Width Petal.Length Petal.Width Species   
+##           &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;chr&gt;     
+##  1          6.7         2.5          5.8         1.8 virginica 
+##  2          6.5         3            5.2         2   virginica 
+##  3          7.9         3.8          6.4         2   virginica 
+##  4          6.7         3.3          5.7         2.1 virginica 
+##  5          6.5         3.2          5.1         2   virginica 
+##  6          4.4         2.9          1.4         0.2 setosa    
+##  7          5.1         2.5          3           1.1 versicolor
+##  8          5.1         3.8          1.9         0.4 setosa    
+##  9          6.2         2.8          4.8         1.8 virginica 
+## 10          5.4         3.9          1.3         0.4 setosa</code></pre>
+<pre class="r"><code>df_mini_iris %&gt;%
+  kbl() %&gt;%
+  kable_paper(full_width = F) %&gt;%
+  column_spec(1, color = &quot;black&quot;,
+              background = ifelse(df_mini_iris$Sepal.Length &lt; 6, &quot;plum&quot;, &quot;white&quot;))</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+Sepal.Length
+</th>
+<th style="text-align:right;">
+Sepal.Width
+</th>
+<th style="text-align:right;">
+Petal.Length
+</th>
+<th style="text-align:right;">
+Petal.Width
+</th>
+<th style="text-align:left;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+6.7
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+5.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+6.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+5.2
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+7.9
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+6.4
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+6.7
+</td>
+<td style="text-align:right;">
+3.3
+</td>
+<td style="text-align:right;">
+5.7
+</td>
+<td style="text-align:right;">
+2.1
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+6.5
+</td>
+<td style="text-align:right;">
+3.2
+</td>
+<td style="text-align:right;">
+5.1
+</td>
+<td style="text-align:right;">
+2.0
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: plum !important;">
+4.4
+</td>
+<td style="text-align:right;">
+2.9
+</td>
+<td style="text-align:right;">
+1.4
+</td>
+<td style="text-align:right;">
+0.2
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: plum !important;">
+5.1
+</td>
+<td style="text-align:right;">
+2.5
+</td>
+<td style="text-align:right;">
+3.0
+</td>
+<td style="text-align:right;">
+1.1
+</td>
+<td style="text-align:left;">
+versicolor
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: plum !important;">
+5.1
+</td>
+<td style="text-align:right;">
+3.8
+</td>
+<td style="text-align:right;">
+1.9
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: white !important;">
+6.2
+</td>
+<td style="text-align:right;">
+2.8
+</td>
+<td style="text-align:right;">
+4.8
+</td>
+<td style="text-align:right;">
+1.8
+</td>
+<td style="text-align:left;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:right;color: black !important;background-color: plum !important;">
+5.4
+</td>
+<td style="text-align:right;">
+3.9
+</td>
+<td style="text-align:right;">
+1.3
+</td>
+<td style="text-align:right;">
+0.4
+</td>
+<td style="text-align:left;">
+setosa
+</td>
+</tr>
+</tbody>
+</table>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Vea la sección Tabla Footnote y cree una tabla con dos notas al pie de la tabla. Usted elija si usa df_mini_iris o df_exibble</li>
+</ol>
+<pre class="r"><code>kbl(df_mini_iris, align = &quot;c&quot;) %&gt;%
+  kable_classic(full_width = F) %&gt;%
+  kableExtra::footnote(general = &quot;Notas al pie &quot;,
+           number = c(&quot;Nota 1; &quot;, &quot;Nota 2; &quot;))</code></pre>
+<table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;border-bottom: 0;">
+<thead>
+<tr>
+<th style="text-align:center;">
+Sepal.Length
+</th>
+<th style="text-align:center;">
+Sepal.Width
+</th>
+<th style="text-align:center;">
+Petal.Length
+</th>
+<th style="text-align:center;">
+Petal.Width
+</th>
+<th style="text-align:center;">
+Species
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+6.7
+</td>
+<td style="text-align:center;">
+2.5
+</td>
+<td style="text-align:center;">
+5.8
+</td>
+<td style="text-align:center;">
+1.8
+</td>
+<td style="text-align:center;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6.5
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+5.2
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7.9
+</td>
+<td style="text-align:center;">
+3.8
+</td>
+<td style="text-align:center;">
+6.4
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6.7
+</td>
+<td style="text-align:center;">
+3.3
+</td>
+<td style="text-align:center;">
+5.7
+</td>
+<td style="text-align:center;">
+2.1
+</td>
+<td style="text-align:center;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6.5
+</td>
+<td style="text-align:center;">
+3.2
+</td>
+<td style="text-align:center;">
+5.1
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+<td style="text-align:center;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4.4
+</td>
+<td style="text-align:center;">
+2.9
+</td>
+<td style="text-align:center;">
+1.4
+</td>
+<td style="text-align:center;">
+0.2
+</td>
+<td style="text-align:center;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5.1
+</td>
+<td style="text-align:center;">
+2.5
+</td>
+<td style="text-align:center;">
+3.0
+</td>
+<td style="text-align:center;">
+1.1
+</td>
+<td style="text-align:center;">
+versicolor
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5.1
+</td>
+<td style="text-align:center;">
+3.8
+</td>
+<td style="text-align:center;">
+1.9
+</td>
+<td style="text-align:center;">
+0.4
+</td>
+<td style="text-align:center;">
+setosa
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6.2
+</td>
+<td style="text-align:center;">
+2.8
+</td>
+<td style="text-align:center;">
+4.8
+</td>
+<td style="text-align:center;">
+1.8
+</td>
+<td style="text-align:center;">
+virginica
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5.4
+</td>
+<td style="text-align:center;">
+3.9
+</td>
+<td style="text-align:center;">
+1.3
+</td>
+<td style="text-align:center;">
+0.4
+</td>
+<td style="text-align:center;">
+setosa
+</td>
+</tr>
+</tbody>
+<tfoot>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<span style="font-style: italic;">Note: </span>
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup></sup> Notas al pie
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup>1</sup> Nota 1;
+</td>
+</tr>
+<tr>
+<td style="padding: 0; " colspan="100%">
+<sup>2</sup> Nota 2;
+</td>
+</tr>
+</tfoot>
+</table>
+<ol start="6" style="list-style-type: lower-alpha">
+<li>Una tabla a partir de df_exibble, donde la columna currency tenga números de color blanco y fondo de color “lightblue”. No modifique otra columna. No use las opciones popover o link</li>
+</ol>
+<pre class="r"><code>df_exibble</code></pre>
+<pre><code>## # A tibble: 8 x 7
+##           num char       fctr  date       time   datetime            currency
+##         &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;date&gt;     &lt;time&gt; &lt;dttm&gt;                 &lt;dbl&gt;
+## 1       0.111 apricot    one   2015-01-15 13:35  2018-01-01 02:22:00    50.0 
+## 2       2.22  banana     two   2015-02-15 14:40  2018-02-02 14:33:00    18.0 
+## 3      33.3   coconut    three 2015-03-15 15:45  2018-03-03 03:44:00     1.39
+## 4     444.    durian     four  2015-04-15 16:50  2018-04-04 15:55:00 65100   
+## 5    5550     &lt;NA&gt;       five  2015-05-15 17:55  2018-05-05 04:00:00  1326.  
+## 6      NA     fig        six   2015-06-15    NA  2018-06-06 16:11:00    13.3 
+## 7  777000     grapefruit seven NA         19:10  2018-07-07 05:22:00    NA   
+## 8 8880000     honeydew   eight 2015-08-15 20:20  NA                      0.44</code></pre>
+<pre class="r"><code>df_exibble %&gt;%
+  kbl() %&gt;%
+  kable_paper(full_width = F) %&gt;%
+  column_spec(7, color = &quot;white&quot;,
+              background = &quot;lightblue&quot;)</code></pre>
+<table class=" lightable-paper" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+num
+</th>
+<th style="text-align:left;">
+char
+</th>
+<th style="text-align:left;">
+fctr
+</th>
+<th style="text-align:left;">
+date
+</th>
+<th style="text-align:left;">
+time
+</th>
+<th style="text-align:left;">
+datetime
+</th>
+<th style="text-align:right;">
+currency
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.111e-01
+</td>
+<td style="text-align:left;">
+apricot
+</td>
+<td style="text-align:left;">
+one
+</td>
+<td style="text-align:left;">
+2015-01-15
+</td>
+<td style="text-align:left;">
+13:35:00
+</td>
+<td style="text-align:left;">
+2018-01-01 02:22:00
+</td>
+<td style="text-align:right;color: white !important;background-color: lightblue !important;">
+49.950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2.222e+00
+</td>
+<td style="text-align:left;">
+banana
+</td>
+<td style="text-align:left;">
+two
+</td>
+<td style="text-align:left;">
+2015-02-15
+</td>
+<td style="text-align:left;">
+14:40:00
+</td>
+<td style="text-align:left;">
+2018-02-02 14:33:00
+</td>
+<td style="text-align:right;color: white !important;background-color: lightblue !important;">
+17.950
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3.333e+01
+</td>
+<td style="text-align:left;">
+coconut
+</td>
+<td style="text-align:left;">
+three
+</td>
+<td style="text-align:left;">
+2015-03-15
+</td>
+<td style="text-align:left;">
+15:45:00
+</td>
+<td style="text-align:left;">
+2018-03-03 03:44:00
+</td>
+<td style="text-align:right;color: white !important;background-color: lightblue !important;">
+1.390
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4.444e+02
+</td>
+<td style="text-align:left;">
+durian
+</td>
+<td style="text-align:left;">
+four
+</td>
+<td style="text-align:left;">
+2015-04-15
+</td>
+<td style="text-align:left;">
+16:50:00
+</td>
+<td style="text-align:left;">
+2018-04-04 15:55:00
+</td>
+<td style="text-align:right;color: white !important;background-color: lightblue !important;">
+65100.000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5.550e+03
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+five
+</td>
+<td style="text-align:left;">
+2015-05-15
+</td>
+<td style="text-align:left;">
+17:55:00
+</td>
+<td style="text-align:left;">
+2018-05-05 04:00:00
+</td>
+<td style="text-align:right;color: white !important;background-color: lightblue !important;">
+1325.810
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+NA
+</td>
+<td style="text-align:left;">
+fig
+</td>
+<td style="text-align:left;">
+six
+</td>
+<td style="text-align:left;">
+2015-06-15
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+2018-06-06 16:11:00
+</td>
+<td style="text-align:right;color: white !important;background-color: lightblue !important;">
+13.255
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+7.770e+05
+</td>
+<td style="text-align:left;">
+grapefruit
+</td>
+<td style="text-align:left;">
+seven
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:left;">
+19:10:00
+</td>
+<td style="text-align:left;">
+2018-07-07 05:22:00
+</td>
+<td style="text-align:right;color: white !important;background-color: lightblue !important;">
+NA
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8.880e+06
+</td>
+<td style="text-align:left;">
+honeydew
+</td>
+<td style="text-align:left;">
+eight
+</td>
+<td style="text-align:left;">
+2015-08-15
+</td>
+<td style="text-align:left;">
+20:20:00
+</td>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;color: white !important;background-color: lightblue !important;">
+0.440
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="paso-3-uso-de-gt" class="section level3">
+<h3>Paso 3: Uso de gt</h3>
+<pre class="r"><code>df_exibble</code></pre>
+<pre><code>## # A tibble: 8 x 7
+##           num char       fctr  date       time   datetime            currency
+##         &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;date&gt;     &lt;time&gt; &lt;dttm&gt;                 &lt;dbl&gt;
+## 1       0.111 apricot    one   2015-01-15 13:35  2018-01-01 02:22:00    50.0 
+## 2       2.22  banana     two   2015-02-15 14:40  2018-02-02 14:33:00    18.0 
+## 3      33.3   coconut    three 2015-03-15 15:45  2018-03-03 03:44:00     1.39
+## 4     444.    durian     four  2015-04-15 16:50  2018-04-04 15:55:00 65100   
+## 5    5550     &lt;NA&gt;       five  2015-05-15 17:55  2018-05-05 04:00:00  1326.  
+## 6      NA     fig        six   2015-06-15    NA  2018-06-06 16:11:00    13.3 
+## 7  777000     grapefruit seven NA         19:10  2018-07-07 05:22:00    NA   
+## 8 8880000     honeydew   eight 2015-08-15 20:20  NA                      0.44</code></pre>
+<pre class="r"><code>df_exibble %&gt;%
+  gt()  %&gt;%
+  fmt_number(
+    columns = num ,
+    decimals = 1 
+  ) %&gt;%
+  fmt_currency(
+    columns = currency,
+    currency = &quot;USD&quot;
+  )</code></pre>
+<div id="lvnplmwmjw" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#lvnplmwmjw .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#lvnplmwmjw .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#lvnplmwmjw .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#lvnplmwmjw .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#lvnplmwmjw .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#lvnplmwmjw .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#lvnplmwmjw .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#lvnplmwmjw .gt_group_heading {
+  padding: 8px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lvnplmwmjw .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#lvnplmwmjw .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#lvnplmwmjw .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#lvnplmwmjw .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#lvnplmwmjw .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 12px;
+}
+
+#lvnplmwmjw .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lvnplmwmjw .gt_first_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#lvnplmwmjw .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#lvnplmwmjw .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding: 4px;
+}
+
+#lvnplmwmjw .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#lvnplmwmjw .gt_sourcenote {
+  font-size: 90%;
+  padding: 4px;
+}
+
+#lvnplmwmjw .gt_left {
+  text-align: left;
+}
+
+#lvnplmwmjw .gt_center {
+  text-align: center;
+}
+
+#lvnplmwmjw .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#lvnplmwmjw .gt_font_normal {
+  font-weight: normal;
+}
+
+#lvnplmwmjw .gt_font_bold {
+  font-weight: bold;
+}
+
+#lvnplmwmjw .gt_font_italic {
+  font-style: italic;
+}
+
+#lvnplmwmjw .gt_super {
+  font-size: 65%;
+}
+
+#lvnplmwmjw .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 65%;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">num</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">char</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">fctr</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">date</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1">time</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">datetime</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">currency</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_right">0.1</td>
+<td class="gt_row gt_left">apricot</td>
+<td class="gt_row gt_left">one</td>
+<td class="gt_row gt_left">2015-01-15</td>
+<td class="gt_row gt_center">13:35:00</td>
+<td class="gt_row gt_left">2018-01-01 02:22:00</td>
+<td class="gt_row gt_right">$49.95</td></tr>
+    <tr><td class="gt_row gt_right">2.2</td>
+<td class="gt_row gt_left">banana</td>
+<td class="gt_row gt_left">two</td>
+<td class="gt_row gt_left">2015-02-15</td>
+<td class="gt_row gt_center">14:40:00</td>
+<td class="gt_row gt_left">2018-02-02 14:33:00</td>
+<td class="gt_row gt_right">$17.95</td></tr>
+    <tr><td class="gt_row gt_right">33.3</td>
+<td class="gt_row gt_left">coconut</td>
+<td class="gt_row gt_left">three</td>
+<td class="gt_row gt_left">2015-03-15</td>
+<td class="gt_row gt_center">15:45:00</td>
+<td class="gt_row gt_left">2018-03-03 03:44:00</td>
+<td class="gt_row gt_right">$1.39</td></tr>
+    <tr><td class="gt_row gt_right">444.4</td>
+<td class="gt_row gt_left">durian</td>
+<td class="gt_row gt_left">four</td>
+<td class="gt_row gt_left">2015-04-15</td>
+<td class="gt_row gt_center">16:50:00</td>
+<td class="gt_row gt_left">2018-04-04 15:55:00</td>
+<td class="gt_row gt_right">$65,100.00</td></tr>
+    <tr><td class="gt_row gt_right">5,550.0</td>
+<td class="gt_row gt_left">NA</td>
+<td class="gt_row gt_left">five</td>
+<td class="gt_row gt_left">2015-05-15</td>
+<td class="gt_row gt_center">17:55:00</td>
+<td class="gt_row gt_left">2018-05-05 04:00:00</td>
+<td class="gt_row gt_right">$1,325.81</td></tr>
+    <tr><td class="gt_row gt_right">NA</td>
+<td class="gt_row gt_left">fig</td>
+<td class="gt_row gt_left">six</td>
+<td class="gt_row gt_left">2015-06-15</td>
+<td class="gt_row gt_center">NA</td>
+<td class="gt_row gt_left">2018-06-06 16:11:00</td>
+<td class="gt_row gt_right">$13.26</td></tr>
+    <tr><td class="gt_row gt_right">777,000.0</td>
+<td class="gt_row gt_left">grapefruit</td>
+<td class="gt_row gt_left">seven</td>
+<td class="gt_row gt_left">NA</td>
+<td class="gt_row gt_center">19:10:00</td>
+<td class="gt_row gt_left">2018-07-07 05:22:00</td>
+<td class="gt_row gt_right">NA</td></tr>
+    <tr><td class="gt_row gt_right">8,880,000.0</td>
+<td class="gt_row gt_left">honeydew</td>
+<td class="gt_row gt_left">eight</td>
+<td class="gt_row gt_left">2015-08-15</td>
+<td class="gt_row gt_center">20:20:00</td>
+<td class="gt_row gt_left">NA</td>
+<td class="gt_row gt_right">$0.44</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+<div id="paso-4-flextable" class="section level3">
+<h3>Paso 4: Flextable</h3>
+<pre class="r"><code>Tablapaso4 &lt;- flextable(head(df_exibble), 
+  col_keys = c(&quot;datetime&quot;, &quot;char&quot;, &quot;fctr&quot;, &quot;num&quot;, &quot;currency&quot; ))
+Tablapaso4 </code></pre>
+<template id="715d4cae-1059-4179-87ff-7eb756e45d71"><style>
+.tabwid table{
+  border-spacing:0px !important;
+  border-collapse:collapse;
+  line-height:1;
+  margin-left:auto;
+  margin-right:auto;
+  border-width: 0;
+  display: table;
+  margin-top: 1.275em;
+  margin-bottom: 1.275em;
+  border-color: transparent;
+}
+.tabwid_left table{
+  margin-left:0;
+}
+.tabwid_right table{
+  margin-right:0;
+}
+.tabwid td {
+    padding: 0;
+}
+.tabwid a {
+  text-decoration: none;
+}
+.tabwid thead {
+    background-color: transparent;
+}
+.tabwid tfoot {
+    background-color: transparent;
+}
+.tabwid table tr {
+background-color: transparent;
+}
+</style><div class="tabwid"><style>.cl-481cc83c{}.cl-480d056e{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-480d6022{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-480d6023{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-480d8854{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-480d8855{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-480d8856{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-480d8857{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-480d8858{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-480d8859{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-481cc83c'>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-480d8858"><p class="cl-480d6022"><span class="cl-480d056e">datetime</span></p></td><td class="cl-480d8859"><p class="cl-480d6023"><span class="cl-480d056e">char</span></p></td><td class="cl-480d8859"><p class="cl-480d6023"><span class="cl-480d056e">fctr</span></p></td><td class="cl-480d8858"><p class="cl-480d6022"><span class="cl-480d056e">num</span></p></td><td class="cl-480d8858"><p class="cl-480d6022"><span class="cl-480d056e">currency</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">2018-01-01 02:22:00</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">apricot</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">one</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">0.1111</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">49.950</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">2018-02-02 14:33:00</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">banana</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">two</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">2.2220</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">17.950</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">2018-03-03 03:44:00</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">coconut</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">three</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">33.3300</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">1.390</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">2018-04-04 15:55:00</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">durian</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">four</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">444.4000</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">65,100.000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">2018-05-05 04:00:00</span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e"></span></p></td><td class="cl-480d8854"><p class="cl-480d6023"><span class="cl-480d056e">five</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">5,550.0000</span></p></td><td class="cl-480d8855"><p class="cl-480d6022"><span class="cl-480d056e">1,325.810</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-480d8857"><p class="cl-480d6022"><span class="cl-480d056e">2018-06-06 16:11:00</span></p></td><td class="cl-480d8856"><p class="cl-480d6023"><span class="cl-480d056e">fig</span></p></td><td class="cl-480d8856"><p class="cl-480d6023"><span class="cl-480d056e">six</span></p></td><td class="cl-480d8857"><p class="cl-480d6022"><span class="cl-480d056e"></span></p></td><td class="cl-480d8857"><p class="cl-480d6022"><span class="cl-480d056e">13.255</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="71c0db47-4b34-4d3a-861d-e65f6325c90f"></div>
+<script>
+var dest = document.getElementById("71c0db47-4b34-4d3a-861d-e65f6325c90f");
+var template = document.getElementById("715d4cae-1059-4179-87ff-7eb756e45d71");
+var caption = template.content.querySelector("caption");
+if(caption) {
+  caption.style.cssText = "display:block;text-align:center;";
+  var newcapt = document.createElement("p");
+  newcapt.appendChild(caption)
+  dest.parentNode.insertBefore(newcapt, dest.previousSibling);
+}
+var fantome = dest.attachShadow({mode: 'open'});
+var templateContent = template.content;
+fantome.appendChild(templateContent);
+</script>
+
+</div>
+</div>
+<div id="tarea-3" class="section level2">
+<h2>Tarea 3</h2>
+<div id="cargar-librerías" class="section level3">
+<h3>Cargar librerías</h3>
+<p>A continuación debemos cargar las siguientes librerías que nos permitirán dar formato a los gráficos:</p>
+<pre class="r"><code>library(tidyverse)
+library(palmerpenguins)
+library(chilemapas)
+library(paletteer)
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)</code></pre>
+</div>
+<div id="creación-de-gráficos" class="section level3">
+<h3>Creación de gráficos</h3>
+<p>Vamos a usar la base de datos <code>penguins</code> del paquete <code>palmerpenguins</code> para crear nuestros primeros gráficos tipo, a los cuales le vamos a ir personalizando el formato más adelante.</p>
+<p>Primero vamos a explorar nuestras variables. Para eso debemos escribir <code>penguins</code> en la consola y apretamos <strong>enter.</strong></p>
+<div id="gráficos-de-barras" class="section level4">
+<h4>1. Gráficos de barras</h4>
+<p>A continuación vamos a crear un gráfico de barras horizontales a través de la función <code>geom_bar</code> de <code>ggplot</code>, la cual permite hacer un recuento de casos por la variable que seleccionemos y además grafica.</p>
+<p>Crearemos nuestro gráfico que se llamará <strong>barras1</strong>. En este caso la variable <strong>y</strong> vaa ser <code>island</code> y <strong>x</strong> será el conteo de la variable <code>species</code>. Las barras serán coloreadas según las categorías de la variable especie, esto lo determinamos con la función <code>fill</code> .</p>
+<p>La función <code>title</code>nos permite ponerle el título a nuestro gráfico: <strong>Pinguinos en archipiélago de Palmer</strong> y por su parte la función <code>subtitle</code> el subtítulo:<strong>Número de pinguinos en cada isla</strong>.</p>
+<pre class="r"><code>barras1 &lt;- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = &quot;Pinguinos en archipiélago de Palmer&quot;,
+       subtitle = &quot;Número de pinguinos en cada isla&quot;)
+barras1</code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+</div>
+<div id="gráficos-de-puntos" class="section level4">
+<h4>2. Gráficos de puntos</h4>
+<p>Ahora vamos a crear un gráfico de puntos a través de la función <code>geom_point</code> de <code>ggplot</code>.</p>
+<p>Crearemos nuestro gráfico que se llamará <strong>puntos1</strong>. En este caso vamos a graficar la anatomía del pico de los pinguinos, entonces la variable <strong>y</strong> vaa ser el largo <code>bill_length_mm</code> y <strong>x</strong> será el alto <code>bill_depth_mm</code>. Los puntos serán coloreadas según las categorías de la variable <code>species</code>, a diferencia de los gráficos de barras, esto lo determinamos con la función <code>color</code> .</p>
+<p>Como vimos anteriormente, la función <code>title</code>nos permite ponerle el título a nuestro gráfico: <strong>Pinguinos en archipiélago de Palmer</strong> y ahora cambiaremos el subtítulo por: <strong>Dimensiones del pico de diversas especies</strong>.</p>
+<pre class="r"><code>puntos1 &lt;- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+       geom_point() + 
+       labs(title = &quot;Pinguinos en archipiélago de Palmer&quot;,
+       subtitle = &quot;Dimensiones del pico de diversas especies&quot;)
+print(puntos1)</code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+</div>
+</div>
+<div id="cómo-crear-nuestra-propia-paleta" class="section level3">
+<h3>¿Cómo crear nuestra propia paleta?</h3>
+<p>Para usar o crear paletas de colores debemos trabajar con el paquete <code>paletteer.</code> Las paletas de colores pueden ser de 2 tipos; discretas y continuas. Las discretas son para cuando necesitamos determinado número de colores y las continuas permiten hacer transiciones de colores.</p>
+<p>Hay una amplia variedad de paletas de colores, por lo que en la siguiente <a href="https://emilhvitfeldt.github.io/r-color-palettes/discrete.html" style="blue">página</a> pueden encontrar algunos ejemplos de paletas discretas que les puedan servir de inspiración para elaborar sus propias paletas.</p>
+<p>A continuación vamos a explorar la paleta <code>awtools::ppalette</code> para ver los códigos de los colores que la componen.</p>
+<pre class="r"><code>paletteer_d(&quot;awtools::ppalette&quot;)</code></pre>
+<pre><code>## &lt;colors&gt;
+## #F7DC05FF #3D98D3FF #EC0B88FF #5E35B1FF #F9791EFF #3DD378FF #C6C6C6FF #444444FF</code></pre>
+<p>Para utilizar los colores que nos gustaron de esta paleta crearemos un vector que se llamará <code>col_d_1</code>en el cual vamos a agupar los colores de <code>awtools::ppalette</code>.</p>
+<pre class="r"><code>col_d_1 &lt;- c(&quot;#3D98D3FF&quot;, &quot;#EC0B88FF&quot;, &quot;#5E35B1FF&quot;, &quot;#F9791EFF&quot;, 
+             &quot;#3DD378FF&quot;, &quot;#444444FF&quot;)</code></pre>
+<p>Ahora que hemos creado el vector <code>col_d_1</code>podemos utilizar sus colores para rellenar los gráficos <code>barras1</code> y <code>puntos1</code> que creamos anteriormente. Para esto debemos utilizar la función <code>scale_fill_manual</code>para el gráfico de barras y<code>scale_color_manual</code> para los gráficos de puntos.</p>
+<pre class="r"><code>barras1 + scale_fill_manual(values = col_d_1)</code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<pre class="r"><code>puntos1 + scale_color_manual(values = col_d_1)</code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-20-2.png" width="672" /></p>
+<p>Otra forma más rápida para utilizar estos mismos colores más adelante es crear un objeto al cual le podemos asignar un nombre que nos haga sentido o que represente una paleta institucional por ejemplo. De esta forma creamos el objeto <code>mi_fill_1</code> para utilizar en los gráficos de barras y otro objeto que se llame <code>mi_color_1</code> para los gráficos de puntos.</p>
+<pre class="r"><code>mi_fill_1 &lt;- scale_fill_manual(values = col_d_1)
+mi_color_1 &lt;- scale_color_manual(values = col_d_1)</code></pre>
+<p>Ahora le daremos formato a los gráficos <code>barras1</code> y <code>puntos1</code> solo agregando el nombre de ambos objetos que contienen la paleta de colores con las que colorearemos las figuras.</p>
+<pre class="r"><code>barras1 + mi_fill_1</code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<pre class="r"><code>puntos1 + mi_color_1</code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-22-2.png" width="672" /></p>
+</div>
+<div id="cómo-ajustar-el-formato-o-tema-de-los-gráficos" class="section level3">
+<h3>¿Cómo ajustar el formato o tema de los gráficos?</h3>
+<p>A través del comando <code>theme</code> podemos ir ajustando el formato de nuestros gráficos tales como; tamaño de la letra, líneas de la cuadrícula, color del fondo, entre otros.</p>
+<p>A continuación tomaremos los gráficos <code>barras1</code> y <code>puntos1</code> y modificaremos el tamaño de la letra del título con el comando <code>plot.title</code> y del subtítulo con el comando <code>plot.subtitle</code> y dentro de esos argumentos también podemos modificar el color del texto con el comando <code>color</code>. Para ver los nombres de los colores disponibles podemos escribir <code>colors</code> en la consola.</p>
+<pre class="r"><code>barras1 + theme(
+  plot.title = element_text(size = 26, color=&quot;black&quot;),
+  plot.subtitle = element_text(size = 10, color=&quot;grey40&quot;)
+)</code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+<pre class="r"><code>puntos1 + theme(
+  plot.title = element_text(size = 24, color=&quot;darkblue&quot;),
+  plot.subtitle = element_text(size = 9, color=&quot;grey20&quot;)
+)</code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Ahora crearemos nuestro propio tema con los ajustes que nos gusten y los guardaremos como un objeto que se llame <code>mi_tema</code> al cual vamos a poder llamar para asignar ese formato a nuestros gráficos y así personalizarlos. Con el comando <code>panel.grid.major</code> definimos el formato de la cuadrícula, con <code>panel.grid.minor</code> los ejes y con <code>panel.background</code>el fondo del gráfico.</p>
+<pre class="r"><code>mi_tema &lt;- theme (panel.grid.major = element_blank(),
+                              panel.grid.minor = element_blank(),
+                              panel.background = element_blank(),
+                              plot.title = element_text(size = 24),
+                              plot.subtitle = element_text(size = 9, color = &quot;grey40&quot;))</code></pre>
+<p>Ahora que hemos personalizado nuestra paleta de colores y hemos creado nuestro tema, vamos a darle formato nuevamente a los gráficos <code>barras1</code> y <code>puntos1</code> utilizando los objetos que hemos creado anteriomente.</p>
+<pre class="r"><code>barras1 + mi_tema + mi_fill_1 </code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<pre class="r"><code>puntos1 + mi_tema + mi_color_1 </code></pre>
+<p><img src="aranzazu_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+</div>
+</div>
+<div id="tarea-4" class="section level2">
+<h2>Tarea 4</h2>
+<iframe src="Tarea_4_A_Garmendia_v2.html" width="672" height="400px" data-external="1">
+</iframe>
+</div>
+<div id="proyecto-final" class="section level2">
+<h2>Proyecto final</h2>
+<p>chau</p>
+</div>
+</div>
+
+<!--radix_placeholder_site_after_body-->
+<!--/radix_placeholder_site_after_body-->
+<!--radix_placeholder_navigation_after_body-->
+<!--/radix_placeholder_navigation_after_body-->
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

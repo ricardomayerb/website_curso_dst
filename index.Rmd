@@ -1,9 +1,10 @@
 ---
-title: "Website DST"
+title: "Data Storytelling"
 description: |
-  Welcome to the website. I hope you enjoy it!
+  Portafolio del curso ofrecido por CIEN-UDP
 site: distill::distill_website
 ---
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)

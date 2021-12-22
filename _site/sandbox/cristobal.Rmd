@@ -1,0 +1,32 @@
+---
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# bar {.tabset .tabset-fade  .tabset-pills}
+
+## Tarea 1
+
+hola
+
+## Tarea 2
+
+chau
+
+
+## Tarea 3
+
+chau
+
+
+## Tarea 4
+
+chau
+
+
+## Proyecto final
+
+chau

@@ -1,12 +1,27 @@
-name: "foooo"
-title: "Website DST"
+name: "website_curso_dst"
+title: "Data Storytelling"
 description: |
-  Website DST
+  Portafolio del curso ofrecido por CIEN-UDP
 output_dir: "_site"
 navbar:
   right:
     - text: "Home"
       href: index.html
+    - text: "Estudiantes"
+      menu:
+       - text: "Aranzazu"
+         href: aranzazu_dis.html
+       - text: "Celeste"
+         href: celeste_dis.html
+       - text: "Cristobal"
+         href: paginatipo_dis.html
+       - text: "Genaro"
+         href: paginatipo_dis.html
+    - text: "Viz"
+      href: about.html
     - text: "About"
       href: about.html
+      
 output: distill::distill_article
+      
+
