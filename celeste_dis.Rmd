@@ -436,7 +436,12 @@ library(paletteer)
 ::: {.panel}
 ## Tarea 4 {.panel-name}
  
-This is tarea number 4
+ 
+```{r echo=FALSE, out.width="40%"}
+knitr::include_url("Tarea4.html", height = 650)
+```
+ 
+
  
 :::
  
