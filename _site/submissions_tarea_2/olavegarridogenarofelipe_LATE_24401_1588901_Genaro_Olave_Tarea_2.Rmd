@@ -1,0 +1,109 @@
+---
+title: "Genaro_Olave_Tarea_2"
+author: "Genaro Olave"
+date: "23-11-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Paso 2
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+```{r, message=FALSE, warning=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv") # aquí se cargan datos y se crea df_exibble
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+
+df_exibble # esta línea imprime este tibble que llamamos df_exibble
+```
+
+```{r, message=FALSE, warning=FALSE}
+df_mini_iris %>%
+  kbl(caption = "Tabla df_mini_iris") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+
+df_exibble %>%
+  kbl(caption = "Tabla df_exibble") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+
+kbl(df_mini_iris) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+
+kbl(df_exibble) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = spec_color(df_mini_iris$Sepal.Length, end = 0.7))
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "green"))
+
+kbl(df_mini_iris, align = "c") %>%
+  kable_classic(full_width = F) %>%
+  kableExtra::footnote(
+           number = c("Nota al pie 1", "Nota al pie 2")
+           )
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+```
+
+# Paso 3
+
+```{r, message=FALSE, warning=FALSE}
+
+df_exibble %>%
+  gt()%>%
+  fmt_number(
+    columns = num,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = currency,
+    currency = "USD"
+  )
+```
+
+# Paso 4
+
+```{r, message=FALSE, warning=FALSE}
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF")
+flextable(df_mini_iris)
+```
+
+

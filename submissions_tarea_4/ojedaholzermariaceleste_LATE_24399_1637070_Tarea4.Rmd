@@ -1,0 +1,336 @@
+---
+title: 'Creando paletas de colores y modificando temas'
+author: "Celeste Ojeda"
+date: "13-12-2021"
+output:
+  ioslides_presentation:
+  subtitle: 'una pequeña ayuda'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Primero carguemos los paquetes que usaremos en este tutorial {style="color: gray"}
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+
+library(palmerpenguins)
+
+library(paletteer)
+```
+
+## Ejemplos de gráficos estándar - 1 {style="color: gray"}
+
+Creemos dos gráficos *por defecto* para modificarlos luego.
+
+Usaremos el paquete [ggplot2]{.red2} y los datos de [palmerpenguins]{.red2} para generar un gráfico de barras que dejará en el eje **"x"** las islas, y contará cuántos pingüinos de cada especie hay y los colores de las barras representan las especies, el que quedará guardado en el objeto *barras1*
+
+```{r message=FALSE, warning=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+```
+
+## Ejemplos de gráficos estándar - 2 {style="color: gray"}
+
+Y ahora generaremos un gráfico de puntos, donde en el eje **"x"** irá la variable [bill_lenght_mm]{.red2} y en el eje **"y"** irá la variable [bill_depth_mm]{.red2} y asignando un color distinto por especie, el que quedará guardado en el objeto *puntos1*
+
+```{r message=FALSE, warning=FALSE}
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+  geom_point() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+```
+
+## Ejemplos de gráficos estándar - 3 {.smaller style="color: gray"}
+
+Para ver como quedaron los gráficos utilizaremos la opción [print()]{.red2}, la que desplegará en pantalla los gráficos generados
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+print(barras1)
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+print(puntos1)
+```
+
+::: notes
+Estas líneas imprimen los gráficos en pantalla
+:::
+
+## Paletas de colores! {style="color: gray"}
+
+![](dibujosdepaletasdepinturas1.jpeg){width="90%"}
+
+## Creemos paletas de colores {.smaller style="color: gray"}
+
+Con el paquete [paletteer]{.red2} podemos acceder a un variado sets de **paletas de colores** para poder modificar los colores de los gráficos ya generados, por ejemplo veremos qué colores nos ofrece la paleta [X20]{.red2} del paquete [beyonce]{.red2}.
+
+Al ejecutar la siguente línea, en la [consola]{.red2} se despliegan los códigos alfanuméricos de los colores de esta paleta
+
+```{r message=FALSE, warning=FALSE}
+paletteer_d("beyonce::X20")
+
+```
+
+Una manera de utilizar un set de colores específicos es asignándolos a un vector, para esto copiaremos los códigos de los colores de la paleta que vimos en el paso anterior al vector [col_d\_1]{.red2}
+
+```{r message=FALSE, warning=FALSE}
+col_d_1 <- c("#1B0204FF", "#4E0C0DFF", "#881618FF", "#B01515FF", 
+             "#C47F4EFF", "#773924FF")
+```
+
+## Aplicando paletas de colores - 1 {.smaller style="color: gray"}
+
+Para aplicar una paleta de colores a un gráfico mostraremos dos maneras:
+
+1.- Utilizar la función [scale_fill_manual()]{.red2} para gráficos de barras o la función [scale_color_manual()]{.red2} para gráficos de puntos, luego a nuestros gráficos ya generados les aplicamos la paleta guardada en nuestro vector [col_d\_1]{.red2} a través de la opción [(values = )]{.red2}.
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+barras1 + 
+  scale_fill_manual(values = col_d_1)
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+puntos1 +
+  scale_color_manual(values = col_d_1)
+```
+
+::: notes
+Estas líneas agregan la paleta de colores al gráfico
+:::
+
+## Aplicando paletas de colores - 2 {.smaller style="color: gray"}
+
+2.- Otra manera de utilizar una paleta creada por nosotros, es asignar a un objeto lo que hace la función [scale_fill_manual()]{.red2} para un gráfico de barras, o la función [scale_color_manual()]{.red2} para un gráfico de puntos, y aplicar la paleta guardada en nuestro vector [col_d\_1]{.red2} a través de la opción [(values = )]{.red2}. Para aplicar la paleta a los gráficos de base basta con agregar el operador **"+"** a los objetos que contienen el *gráfico* y *la paleta de colores*
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+mi_fill_1 <- 
+  scale_fill_manual(values = col_d_1)
+barras1 + mi_fill_1
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+mi_color_1 <- 
+  scale_color_manual(values = col_d_1)
+puntos1 + mi_color_1
+```
+
+::: notes
+-En las primeras líneas se asigna la paleta de colores a un objeto -En las segundas líneas se aplican los cambios guardados en el objeto al gráfico
+:::
+
+## Aplicando paletas de colores - 3 {.smaller style="color: gray"}
+
+Ideas para buscar paletas discretas aquí <https://emilhvitfeldt.github.io/r-color-palettes/discrete.html>
+
+Otra manera de asignar paletas de colores es usando las funciones [scale_fill_paletteer_d()]{.red2} o [scale_color_paletteer_d()]{.red2} para barras1 y puntos1, te dejamos un par de ejemplos según sea apropiado (1 para barras1 y 1 para puntos1)
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+barras1 + 
+  scale_fill_paletteer_d("beyonce::X7")
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+puntos1 + 
+  scale_color_paletteer_d("beyonce::X28")
+```
+
+## Modificando temas! {style="color: gray"}
+
+![](prentacion.jpeg){width="90%"}
+
+## Modificando Títulos y/o Subtítulos - 1 {style="color: gray"}
+
+R nos ayuda a utilizar los distintos paquetes que hay a disposición de los usuarios para modificar gráficos, muestra de esto en <https://ggplot2.tidyverse.org/articles/articles/faq-customising.html>
+
+Aquí podemos encontrar opciones de cómo modificar el tamaño de la letra de los títulos y subtítulos, por ejemplo a nuestros gráficos les dejaremos más grande el tamaño de la letra del título que la del subtítulo utilizando la función [theme()]{.red2} y aplicaremos la paleta de colores *mi_fill_1* y *mi_color_1* según el tipo de gráfico
+
+##  {.smaller}
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+barras1 + theme(
+  plot.title = 
+    element_text(size = 16),
+  plot.subtitle = 
+    element_text(size = 9)
+) + mi_fill_1
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+
+puntos1 + theme(
+  plot.title = 
+    element_text(size = 17),
+  plot.subtitle = 
+    element_text(size = 11)
+) + mi_color_1
+```
+
+## Modificando Títulos y/o Subtítulos - 2 {style="color: gray"}
+
+Ahora cambiemos el color y el tamaño del subtítulo haciéndolo igual a *"grey40"*, manteniendo los nuevos tamaños definidos anteriormente
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+barras1 + theme(
+  plot.title = 
+    element_text(size = 16),
+  plot.subtitle = 
+    element_text(size = 9,
+        color = "grey40")
+) + mi_fill_1
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+
+puntos1 + theme(
+  plot.title = 
+    element_text(size = 17),
+  plot.subtitle = 
+    element_text(size = 11,
+       color = "grey40")
+) + mi_color_1
+```
+
+## Modificando background del interior del gráfico y eliminando las grillas mayores y menores {.smaller style="color: gray"}
+
+En <https://ggplot2-book.org/polishing.html> podemos encontrar opciones para modificar el background y grillas mayores y menores en un gráfico, te dejamos un ejemplo de cómo hacerlo.
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+ejemplo <- puntos1 + theme(
+plot.title = element_text(size = 17,
+              color ='grey20'),
+plot.subtitle = element_text(size = 11,
+              color = "grey40"),
+panel.grid.major = element_blank(),
+panel.grid.minor = element_blank(),
+panel.background = element_blank()
+) + mi_color_1
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+
+print(ejemplo)
+```
+
+## Guardando las preferencias de gráficos {style="color: gray"}
+
+Una manera simple y útil es guardar el código que hemos escrito en los ejemplos anteriores en un objeto con el nombre que nos acomode, por ejemplo **"mis_cambios_de_tema"** y luego aplicar esos cambios a cualquier gráfico con el operador **"+"**
+
+```{r message=FALSE, warning=FALSE}
+mis_cambios_de_tema <- theme(
+  plot.title = element_text(size = 17,color ='grey20'),
+  plot.subtitle = element_text(size = 11, color = "grey40"),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  panel.background = element_blank()
+)
+```
+
+## 
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+barras1 + 
+  mis_cambios_de_tema
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+
+puntos1 +
+  mis_cambios_de_tema
+```
+
+## 
+
+Y ahora podemos aplicar de una sola vez los cambios de *"temas"* y *"paletas de colores"* a cualquier gráfico con el operador **"+"**
+
+::: {style="float: left; width: 50%;"}
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+barras1 + 
+  mis_cambios_de_tema +
+  mi_fill_1
+```
+:::
+
+<div style="float: right; width: 50%;">
+
+```{r message=FALSE, warning=FALSE, out.width="100%"}
+
+puntos1 +
+  mis_cambios_de_tema +
+  mi_color_1
+```
+
+## Guardando las preferencias de gráficos en un archivo {style="color: gray"}
+
+Otra opción bastante utilizada es guardar las preferencias de gráficos en un archivo [.R]{.red2}, para lo cual se deben dejar las paletas de colores de preferencia y los temas seleccionados según la elección de cada usuario.
+
+En el *script* a continuación se dejan los cambios de formato de gráficos que cada usaurio estime y se debe guardar con un nombre y la extensión [.R]{.red2}, para este ejemplo lo llamaremos *"cambios_graficosv2.R"*
+
+## 
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+
+col_d_1 <- c("#1B0204FF", "#4E0C0DFF", "#881618FF", "#B01515FF", 
+             "#C47F4EFF", "#773924FF")
+
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+mi_color_1 <- scale_color_manual(values = col_d_1)
+
+
+mis_cambios_de_tema <- theme(
+  plot.title = element_text(size = 17,color ='grey20'),
+  plot.subtitle = element_text(size = 11, color = "grey40"),
+  panel.grid.major = element_blank(),
+  panel.grid.minor = element_blank(),
+  panel.background = element_blank()
+)
+
+```
+
+## Llamando el archivo con la base de formato de gráficos {style="color: gray"}
+
+Y ahora podemos llamar este archivo *"cambios_graficosv2.R"* con el formato que hemos establecido para ser usado en cualquier script de [.R]{.red2}
+
+\- source("cambios_graficosv2.R")
+
+\- library(palmerpenguins)
+
+\- library(paletteer)

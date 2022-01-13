@@ -1,0 +1,60 @@
+---
+title: "Tarea2_Cristobal_Campos1"
+author: "Cristobal Campos"
+date: "21-11-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+```{r message=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+## Ahora carguemos datos
+
+Carguemos el data set llamado `flights.csv`
+
+```{r message=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv")
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+
+df_exibble
+
+```
+
+## Tabla básica con kable ()
+
+`kable` es una función que está dentro del paquete `knitr` y es muy usado como recurso rápido para pasar de imprimir los datos a presentarlos como una tabla, aunque su apariencia por defecto no es muy satisfactoria.
+
+```{r}
+df_mini_iris %>% knitr::kable()   
+```
+
+```{r}
+df_exibble %>% knitr::kable()   
+```
+
+## Un poquito de Style
+
+```{r}
+df_mini_iris %>%
+  knitr::kable() %>% 
+  kable_styling()
+```
+
+```{r}
+df_exibble %>%
+  knitr::kable() %>% 
+  kable_styling()
+```
+

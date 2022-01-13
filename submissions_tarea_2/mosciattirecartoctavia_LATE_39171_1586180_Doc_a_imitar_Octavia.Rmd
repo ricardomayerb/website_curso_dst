@@ -1,0 +1,70 @@
+---
+title: "doc_a_imitar_Octavia"
+author: "Octavia"
+date: "11/16/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+## Carguemos Datos
+
+Carguemos los data sets mini_iris.csv y datos_para_tabla , que debería usted guardar en la carpeta de su proyecto, al igual que archivo .Rmd donde reproduzca este documento.
+
+```{r cars, message=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris 
+```
+
+```{r message=FALSE}
+df_exibble <- read_csv(file = "datos_para_tabla.csv")
+df_exibble <- df_exibble %>% select(-c(8,9))
+df_exibble
+```
+
+el data frame exibble es usado en varios ejemplos del paquete gt para ilustrar varias funcionalidades de las tablas.
+
+## Tabla básica con kable()
+
+kable es una función que está dentro del paquete knitr y es muy usado como recurso rápido para pasar de imprimir los datos a presentarlos como una tabla, aunque su apariencia por defecto no es muy satisfactoria.
+
+En esta tarea vamos a usar kable solamente como una función que transforma un tibble o data frame y lo convierte en tabla. Y aunque kable incluye varias opciones para modificar la tabla (ver por ejemplo aquí ), no profundizaremos en las opciones de esta función. En cambio invertiremos tiempo en usar el paquete kableExtra
+
+Primero, veamos la tabla que produce por defecto.
+
+En el caso de df_mini_iris, tenemos lo siguiente
+
+```{r pressure, echo=FALSE}
+df_mini_iris %>% knitr::kable()  
+```
+
+Veamos el caso de exibble, del paquete gt, que es una base de datos creada para ser incómoda de presentar como tabla:
+
+```{r}
+df_exibble %>% knitr::kable()   
+```
+
+## Un poquito de *style*
+
+Vale, las dos tablas estaban derechamente impresentables. Usando algunas opciones de rmarkdown y de kable podríamos mejorarlas, pero con la función kable_style del paquete kableExtra podemos fácilmente crear una tabla simple pero correcta:
+
+```{r}
+df_mini_iris %>%
+  knitr::kable() %>% 
+  kable_styling()
+```
+
+```{r}
+df_exibble %>%
+  knitr::kable() %>% 
+  kable_styling()
+```

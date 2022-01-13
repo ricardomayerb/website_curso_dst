@@ -1,0 +1,151 @@
+---
+title: "Tarea 3 - Octavia"
+author: "Octavia"
+date: "12/3/2021"
+output: html_document
+---
+
+# TAREA 3
+
+Para comenzar, lo primero que hay que hacer es instalar los paquetes de tidyverse, paletteer, y bases de dato para poder realizar el ejercicio. En este caso, como ejemplo, tomaremos palmerpenguins y chilemapas.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+library(chilemapas)
+library(paletteer)
+```
+
+Con esta información cargada, crearemos dos gráficos, uno de barras y otro de puntos, con los datos anteriores, para poder modificarlos más adelante:
+
+```{r message=FALSE, warning=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+  geom_point() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+
+print(barras1)
+print(puntos1)
+
+```
+
+## Crear tu propia paleta de colores
+
+Ahora, a dejar volar la imaginación y crear una paleta de colores propias. Para esto utilizaremos paletteeer y el sitio web https://emilhvitfeldt.github.io/r-color-palettes/discrete.html nos ayudará para buscar paletas de colores ya hechas.
+
+```{r message=FALSE, warning=FALSE}
+paletteer_d("beyonce::X21")
+```
+
+```{r message=FALSE, warning=FALSE}
+paletteer_d("beyonce::X13")
+```
+
+Ya tenemos diferentes códigos de colores. Podemos seleccionar los que más nos gusten y diseñar nuestra propia paleta de colores.
+
+```{r message=FALSE, warning=FALSE}
+paleta_octavia <- c("#622E82FF", "#A45789FF", "#9B3257FF", "#1D96BFF", "#8EC87AFF", "#439E5FFF")
+```
+
+Con nuestra paleta ya diseñada, podemos utilizarlas para los gráficos que hicimos anteriormente.
+
+```{r message=FALSE, warning=FALSE}
+barras1 + scale_fill_manual(values = paleta_octavia)
+puntos1 + scale_color_manual(values = paleta_octavia)
+
+mi_fill_1 <- scale_fill_manual(values = paleta_octavia)
+mi_color_1 <- scale_color_manual(values = paleta_octavia)
+
+barras1 + mi_fill_1
+puntos1 + mi_color_1
+```
+
+## Crear paleta discreta
+
+Con el mismo método anterior, creamos lo que se conoce como una paleta discreta. Haremos dos: una para el aesthetic "fill" y otra para "color". Se puede seleccionar cualquier color que sea de nuestro agrado.
+
+```{r message=FALSE, warning=FALSE}
+library(paletteer) 
+paletteer_d("beyonce::X32")
+paleta_discreta <- as.vector(paletteer_d("beyonce::X32"))
+
+go_fill_1 <- scale_fill_manual(values = paleta_discreta)
+go_color_1 <- scale_color_manual(values = paleta_discreta)
+
+barras1 + go_fill_1
+puntos1 + mi_color_1
+```
+
+## Cambiar temas y tamaños
+
+Usando la información de este sitio https://ggplot2.tidyverse.org/articles/articles/faq-customising.html, cambiaremos el tamaño de la letra y del subtítulo de tus gráficos.
+
+```{r message=FALSE, warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 10),
+  plot.subtitle = element_text(size = 5)
+)
+
+barras1 + theme(
+  plot.title = element_text(size=10),
+  plot.subtitle = element_text(size = 5)
+)
+```
+
+A continuación, y con la misma información, cambiaremos el color tanto del título como el subtítulo, manteniendo los nuevos tamaños de las letras.
+
+```{r message=FALSE, warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 10, color = "skyblue3"),
+  plot.subtitle = element_text(size = 5, color = "violetred2")
+) 
+
+barras1 + theme(
+  plot.title = element_text(size = 10, color = "turquoise4"),
+  plot.subtitle = element_text(size = 5, color = "pink")
+)
+```
+
+## Eliminar elementos
+
+Utilizando la información de https://ggplot2-book.org/polishing.html, eliminaremos el color del background del gráfico; y luego eliminaremos las grillas mayores y menores. Mantendremos los cambios realizados anteriormente.
+
+```{r message=FALSE, warning=FALSE}
+barras1 + theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 10, color = "skyblue3"),
+                plot.subtitle = element_text(size = 5, color = "violetred2"))
+
+puntos1 + theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 10, color = "turquoise4"),
+                 plot.subtitle = element_text(size = 5, color = "pink"))
+                
+```
+
+## Cambio de tema
+
+El código realizado anteriormente, lo guardaremos con el nombre que estimes conveniente. Luego, aplicaremos esos cambios a los gráficos con el operador "+".
+
+```{r message=FALSE, warning=FALSE}
+cambio_tema <- theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 10, color = "turquoise4"),
+                 plot.subtitle = element_text(size = 5, color = "pink"))
+
+barras1 + cambio_tema
+puntos1 + cambio_tema
+```
+
+
+
+

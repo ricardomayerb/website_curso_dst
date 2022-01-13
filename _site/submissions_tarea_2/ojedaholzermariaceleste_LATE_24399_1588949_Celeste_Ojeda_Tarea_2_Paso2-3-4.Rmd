@@ -1,0 +1,145 @@
+---
+title: "Un Rmd básico modificado"
+author: "Celeste Ojeda"
+date: "23-11-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+## Carguemos Datos
+
+Carguemos los data sets `mini_iris.csv` y `datos_para_tabla`
+
+```{r message=FALSE, warning=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris 
+```
+
+```{r message=FALSE, warning=FALSE}
+df_exibble <- read_csv(file = "datos_para_tabla.csv") # aquí se cargan datos y se crea df_exibble
+
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+
+df_exibble # esta línea imprime este tibble que llamamos df_exibble
+```
+
+### Paso 2.5
+```{r}
+df_mini_iris %>%
+  kbl(caption = "Datos de Iris de Flores") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+```{r}
+df_exibble %>%
+ kbl(caption = "Datos Exibble") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+### Paso 2.6
+```{r}
+kbl(df_mini_iris) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+```{r}
+kbl(df_exibble) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+### Paso 2.7.1
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = spec_color(df_mini_iris$Sepal.Length[1:10], end = 0.7))
+
+```
+
+### Paso 2.7.2
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+
+```
+
+### Paso 2.7.3
+```{r}
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+
+```
+
+### Paso 2.7.4
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1,background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "grey"))
+
+```
+
+### Paso 2.7.5
+```{r}
+kbl(df_mini_iris, align = "c") %>%
+  kable_classic(full_width = F) %>%
+  kableExtra::footnote(general = "Notas de la tabla.",
+           number = c("Largo; ", "Ancho; "),
+           alphabet = c("Largo; ", "Ancho; "),
+           general_title = "General: ", number_title = "Sepal: ",
+           alphabet_title = "Petal: ",
+           footnote_as_chunk = T, title_format = c("italic", "underline")
+           )
+```
+
+### Paso 2.7.6
+```{r}
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+
+```
+
+### Paso 3
+```{r}
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = num,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = currency,
+    currency = "USD" 
+  )
+```
+
+### Paso 4
+```{r}
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF")
+flextable(df_mini_iris)
+```
+

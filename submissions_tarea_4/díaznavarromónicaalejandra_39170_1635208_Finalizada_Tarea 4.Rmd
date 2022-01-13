@@ -1,0 +1,142 @@
+---
+title: "Crear paletas y modificar temas"
+author: "Mónica Díaz Navarro"
+date: "13-12-2021"
+output: 
+  ioslides_presentation: default
+  slidy_presentation: default
+  powerpoint_presentation: default
+  beamer_presentation: default
+subtitle: 'En gráficos de barras y puntos'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+##  <span style="color: red;">Primero: Instalar Packages</span>
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library (tidyverse)
+library (palmerpenguins)
+library (paletteer)
+library (ggplot2)
+library(datos)
+library(ggrepel)
+library(gcookbook)
+library(scales)
+library(lubridate)
+library(DT)
+library(leaflet)
+```
+
+## ![imagen](Tarea Cuatro/WhatsApp Image 2021-12-12 at 14.33.33.jpeg)
+
+## <span style="color: blue;">Segundo: Crear un gráfico de Barras</span>
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + labs(title = "Pingüinos en archipiélago de Palmer", 
+  subtitle ="Número de pinguinos en cada isla")
+print(barras1)
+
+```
+
+## <span style="color: green;">Y un gráfico de Puntos</span>
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+  geom_point() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+print(puntos1)
+```
+
+## <span style="color: red;">Tercero: Modificar gráficos con paletas de colores</span>
+<span style="color: red;">Seleccionar una paleta de colores y un paquete</span>
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+paletteer_d("calecopal::bigsur2")
+```
+<span style="color: red;">Crear un vector que incluya la paleta</span>  
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+col_d_1 <- c("#20618DFF", "#91AAC4FF", "#6B6C58FF", "#464724FF", 
+             "#83932DFF", "#CAB89FFF")
+```
+
+## <span style="color: blue;">Incorporar el vector en el código a "values" en el gráfico de barras (fill)</span> 
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+barras1 + scale_fill_manual(values = col_d_1)
+```
+
+## <span style="color: green;">Y en el código a "values" en el gráfico de puntos (color)</span>
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+puntos1 + scale_color_manual(values = col_d_1)
+```
+
+## <span style="color: red;">Se crean las funciones para ambos gráficos que contienen los colores de la paleta seleccionada</span>
+```{r echo=TRUE}
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+mi_color_1 <- scale_color_manual(values = col_d_1)
+```
+
+## <span style="color: blue;">Ejemplos de modificación de gráficos con el método</span>
+```{r message=FALSE, warning=FALSE}
+col_d_1 <-c("#2A363BFF", "#019875FF", "#99B898FF", "#FECEA8FF", "#FF847CFF", "#E84A5FFF", "#C0392BFF", "#96281BFF")
+
+barras1 + scale_fill_manual(values = col_d_1 <-c("#2A363BFF", "#019875FF", "#99B898FF", "#FECEA8FF", "#FF847CFF", "#E84A5FFF", "#C0392BFF", "#96281BFF"))
+```
+
+## <span style="color: green;">Ejemplos de modificación de gráficos con el método</span>
+```{r message=FALSE, warning=FALSE}
+puntos1 + scale_color_manual(values = col_d_1 <-c("#2A363BFF", "#019875FF", "#99B898FF", "#FECEA8FF", "#FF847CFF", "#E84A5FFF", "#C0392BFF", "#96281BFF"))
+```
+
+
+
+##  <span style="color: red;">Dividir texto en 2 columnas</span>
+<div style="float: left; width: 50%;">
++ En el texto de la izquierda
++ Podríamos explicar
++ Cuál es el mensaje
++ de esta figura
++ y quedamos como reyes
+</div>
+
+<div style="float: right; width: 50%;">
++ En el texto de la derecha
++ Se explica 
++ El sentido 
++ La forma
++ Y eso sería
+
+```{r, out.width="100%"}
+
+```
+</div> 
+<div class="notes">
+Estas notas para la presentacion
+
+- Pueden contener observaciones
+- como esta lista de temas
+</div>
+
+
+## Notas
+<div class="notes">
+Estas son mis notas para la presentacion
+
+- Pueden contener markdown
+- como esta lista
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

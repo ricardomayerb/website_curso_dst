@@ -1,0 +1,312 @@
+---
+title: "Cristóbal Campos"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+xaringanExtra::use_panelset()
+```
+
+:::{.l-page}
+::: {.panelset}
+::: {.panel}
+## Tarea 1 {.panel-name}
+ 
+### Describa una situación hipotética donde tomará lugar la comunicación
+
+**Debe explicitar el quién-qué-cómo de la comunicación y describir brevemente el tipo de datos que utilizaría**
+
+#### Pregunta 1: Describa la situación (10 puntos)
+
+A.	A principio de mes expongo de manera presencial frente al equipo de ventas los resultados del mes anterior a nivel de venta y de stock, luego de eso, les entrego la planificación del mes (metas, producto con baja rotación, sobre inventario, producto estancado, producto estrella, campañas etc.). Se realiza esta presentación mensual para que exista una retroalimentación entre el equipo, conocer percepciones, sacar conclusiones y definir objetivos para el mes
+
+
+#### Pregunta 2: Describa el Quién (20 puntos)
+
+A.	La audiencia es el equipo de promotores de venta de la marca Oster.
+
+B.	Soy el supervisor de la marca, como líder de equipo tengo contacto con ellos de manera personalizada cada día, ya sea de manera remota o en visitas presenciales a sus puntos de ventas, con ellos soy una persona cercana, empática y siempre busco motivarlos a aprender sobre los productos Oster y lograr los objetivos propuestos.
+
+
+#### Pregunta 3: Describa el Qué (30 puntos)
+
+A.	Lo primero es que conozcan personalmente su rendimiento del mes anterior, lo segundo es conocer sus conclusiones y percepciones del mes anterior, en una tercera etapa busco reforzar puntos en donde haya que mejorar destacando los positivo del promotor, en una cuarta etapa espero una mejora del rendimiento.
+
+B.	A través de una presentación presencial con un Excel, con tablas dinámicas y gráficos si la situación lo amerita.
+
+C.	Siempre es con tono liviano y muy cercano, donde las presentaciones generalmente se convierten en conversatorios donde se pierde la verticalidad y adoptamos una comunicación más horizontal de forma en que todos tengas la posibilidad de dar ideas u opiniones.
+
+
+#### Pregunta 4: Describa el Cómo (10 puntos)
+a. Qué datos hay disponibles para ayudarlo a hacer el punto que quiere hacer con su comunicación?
+
+A.	Cuento con actualización diaria de las ventas y el stock de cada tienda, a través de tablas dinámicas puedo conocer en detalle el comportamiento de los productos de la marca por cada cadena, punto de venta, familia de producto, productos con baja rotación, productos con sobre inventario etc.
+Con estos datos puedo establecer los kpi con los cuales trabajar, saber a que productos hay que darle mayor enfoque, definir estrategias comerciales para mejorar el rendimiento.
+
+
+
+:::
+ 
+::: {.panel}
+## Tarea 2 {.panel-name}
+
+
+```{r message=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+### Parte 2
+
+#### Parte 2 -Paso 2-3
+
+
+```{r message=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv")
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+
+df_exibble
+```
+
+#### Parte 2 - Paso 5
+
+```{r message=FALSE}
+df_mini_iris %>%
+  kbl(caption = "Estilo de tabla mini_iris") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+df_exibble %>%
+  kbl(caption = "Estilo de tabla exibble") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+#### Parte 2 - Paso 6
+```{r message=FALSE}
+df_mini_iris %>%
+  kbl(caption = "Estilo de tabla mini_iris") %>%
+  kable_classic(full_width = F, html_font = "Cambria", font_size =16)
+df_exibble %>%
+  kbl(caption = "Estilo de tabla exibble") %>%
+  kable_classic(full_width = F, html_font = "Cambria", font_size =16)
+```
+#### Parte 2 - 7.A
+
+```{r message=FALSE}
+df_mini_iris[1:10, 1:5] %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = spec_color(df_mini_iris$Sepal.Length[1:10]),
+              ) %>%
+  column_spec(1, color = "white",
+              background = spec_color(df_mini_iris$Sepal.Length[1:10], end = 0.7),
+              )
+
+```
+
+#### Parte 2 - 7.B
+```{r message=FALSE}
+kbl(df_mini_iris) %>%
+  kable_paper("striped", full_width = F) %>%
+  column_spec(1:1, bold = T, color = "white", background = "#808080")
+```
+#### Parte 2 - 7.C
+
+```{r message=FALSE}
+kbl(df_exibble) %>%
+  kable_paper("striped", full_width = F) %>%
+  column_spec(7:7, bold = T, color = "white", background = "#808080")
+```
+
+#### Parte 2 - 7.D
+
+```{r message=FALSE}
+df_mini_iris[1:10, 1:5] %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"),
+              )
+```
+
+#### Parte 2 - 7.E Tabla Footnote
+
+```{r message=FALSE}
+kable(df_mini_iris, "html") %>%
+  kable_styling("striped") %>%
+  add_footnote(c("virginica", "setosa", "versicolor"), notation = "symbol")
+```
+
+#### Parte 2 - 7.F
+
+```{r message=FALSE}
+kbl(df_exibble) %>%
+  kable_paper("striped", full_width = F) %>%
+  column_spec(7:7, bold = T, color = "white", background = "#808080")
+```
+
+### Paso 3 GT
+
+```{r message=FALSE}
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = num,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = currency,
+    currency = "USD"
+  )
+```
+
+### Paso 4 Flextable
+#### Tabla 1
+
+```{r message=FALSE}
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF")
+flextable(df_mini_iris)
+```
+
+#### Tabla 2
+
+```{r message=FALSE}
+set_flextable_defaults(
+  font.size = 10,
+  font.color = "black",
+  table.layout = "fixed",
+  digits = 1,
+  theme_fun = "theme_box"
+  )
+flextable(df_mini_iris)
+```
+
+
+
+
+ 
+:::
+ 
+::: {.panel}
+## Tarea 3 {.panel-name}
+ 
+
+```{r message=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+library(paletteer)
+```
+
+
+
+### Introducción
+Lo invito a ver este tutoria donde aprenderemos a realizar paletas de colores y modificaciones de temas para un gráfico de de barras y utilizando un theme de ggplot2.
+sin mas preambulos lo invito a deleitarse con este interactivo tutorial.
+
+### Primera parte
+
+En una primera instancia crearemos un grafico por defecto de la base de datos "penguins" para luego realizar modificaciones, asignando el objeto con el nombre barras1. De la siguiente función obtendremos el siguiente el gráfico.
+
+```{r message=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+
+barras1
+
+```
+
+### Segunda parte
+
+#### Crearemos nuestra paleta y la modificaremos!! sera genial
+
+comenzaremos escogiendo nuestra paleta con con la función paletteer_d
+ 
+Para este ejemplo utilizaremos la paleta "calecopal::fire"
+```{r}
+library(paletteer)
+
+paletteer_d("calecopal::fire")
+```
+
+Luego de eso asignaremos como paleta1 la paleta escogida para este tutorial
+
+```{r}
+paleta1 <- c("#B77B7BFF", "#FEEC44FF", "#F66C09FF", "#E60505FF", "#2C1B21FF")
+```
+
+Luego asignaremos el valor a lo que queremos modificar en cada grafico y asignaremos como fill1 al scale_fill_manual y color1 a scale_color_manual
+
+y obtener asi los siguientes graficos
+```{r}
+
+fill1 <- scale_fill_manual(values = paleta1)
+
+barras1 + scale_fill_manual(values = paleta1)
+
+
+
+```
+
+Ahora que logramos cambiar de color las barras te invito a que busques inspiración para crear tu propia paleta siguiendo el siguiente link:
+
+https://emilhvitfeldt.github.io/r-color-palettes/discrete.html
+
+Puedes modificar tu grafico de barras solo cambiando los valores de las funciones descritas anteriormente.
+
+### Tercera parte
+
+Te gusto el link, bien, ahora que tenemos nuestras barras listas seria bueno cambiar un poco el tamaño y color de los titulos y subtitulos, para eso utilizaremos la siguiente función, usted podra cambiar el tamaño cambiando el valor en la función "size" y el color en la función color
+
+```{r}
+barras1 + scale_fill_manual(values = paleta1) +
+  theme(
+  plot.title = element_text(size = 30, color = "#2C1B21FF" ),
+  plot.subtitle = element_text(size = 15, color = "#E60505FF")
+)
+```
+
+Y listo, con estas simples funciones podras presentar un gráfico.
+
+Ahora es tu turno intentarlo.
+
+
+
+
+
+
+
+:::
+ 
+::: {.panel}
+## Tarea 4 {.panel-name}
+ 
+ 
+```{r echo=FALSE, out.width="40%"}
+knitr::include_url("Tarea4_CristobalCampos.html", height = 650)
+```
+ 
+ 
+:::
+ 
+::: {.panel}
+## Proyecto integrador {.panel-name}
+ 
+Aquí va el proyecto integrador
+ 
+:::
+:::
+:::
+

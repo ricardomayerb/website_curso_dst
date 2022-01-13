@@ -1,0 +1,174 @@
+---
+title: "Parte II Tarea 2"
+author: "Aránzazu Garmendia"
+date: "23-11-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Paso 2: Uso de kableExtra
+
+
+2.  Al igual que el documento del paso 1, cargue en este documento las librerías kableExtra, gt, flextable
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+
+3.  Al igual que el documento del paso 1, cargue en este documento las bases de datos mini_iris.csv y datos_para_tabla.csv y al igual que en el documento del paso 1, elimine las columnas 8 y 9 de datos_para_tabla
+
+```{r message=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris 
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv") 
+df_exibble
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+df_exibble
+```
+
+
+5. Tanto para los tibble df_mini_iris como para df_exibble (nombres que usó en el documento paso 1) cree tablas similares aquella con título “Recreating booktabs style table”. Cambie el título que aparece en ese ejemplo.
+
+```{r}
+df_mini_iris  %>%
+  kbl(caption = "Tabla flores") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+```{r}
+df_exibble  %>%
+  kbl(caption = "Tabla frutas") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+
+6. Tome el ejemplo de la sección Font size y para cada uno de los dos data sets, cree una tabla con tamaño de letra 16
+
+```{r}
+kbl(df_mini_iris) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+```{r}
+kbl(df_exibble) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+
+7. En la sección Column spec hay un ejemplo que comienza con mtcars[1:8, 1:8]. Modifique ese ejemplo para hacer lo siguiente:
+
+a. Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga números de color blanco y fondo que va cambiando de celda en celda (note que cada columna tiene 10 elementos). No modifique otra columna. No use las opciones popover o link
+
+```{r}
+
+df_mini_iris
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = spec_color(df_mini_iris$Sepal.Length, end = 0.7))
+```
+
+
+b. Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga números de color blanco y fondo gris (“grey”). No modifique otra columna. No use las opciones popover o link
+
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+```
+
+
+c. Una tabla a partir de df_exibble, donde la columna currency tenga números de color blanco y fondo gris (“grey”). No modifique otra columna. No use las opciones popover o link
+
+```{r}
+
+df_exibble
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+```
+
+
+d. Una tabla a partir de df_mini_iris, donde la columna Sepal.Length tenga un color de fondo condicional. En vez de usar la función color_spec para darle valor al background, use esta función ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"). Si quiere puede cambiar los colores orange y white
+
+```{r}
+
+df_mini_iris
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "black",
+              background = ifelse(df_mini_iris$Sepal.Length < 6, "plum", "white"))
+```
+
+
+e. Vea la sección Tabla Footnote y cree una tabla con dos notas al pie de la tabla. Usted elija si usa df_mini_iris o df_exibble
+
+```{r}
+kbl(df_mini_iris, align = "c") %>%
+  kable_classic(full_width = F) %>%
+  kableExtra::footnote(general = "Notas al pie ",
+           number = c("Nota 1; ", "Nota 2; "))
+
+```
+
+
+f. Una tabla a partir de df_exibble, donde la columna currency tenga números de color blanco y fondo de color “lightblue”. No modifique otra columna. No use las opciones popover o link
+
+```{r}
+
+df_exibble
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+```
+
+
+## Paso 3: Uso de gt
+
+```{r}
+
+df_exibble
+
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = num ,
+    decimals = 1 
+  ) %>%
+  fmt_currency(
+    columns = currency,
+    currency = "USD"
+  )
+```
+
+
+## Paso 4: Flextable
+
+```{r}
+Tablapaso4 <- flextable(head(df_exibble), 
+  col_keys = c("datetime", "char", "fctr", "num", "currency" ))
+Tablapaso4 
+```
+

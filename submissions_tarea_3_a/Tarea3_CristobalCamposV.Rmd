@@ -1,0 +1,92 @@
+---
+title: "Tarea3_CristobalCampos"
+author: "Cristobal Campos"
+date: "06-12-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+library(paletteer)
+```
+
+
+## Introducción
+Lo invito a ver este tutoria donde aprenderemos a realizar paletas de colores y modificaciones de temas para un gráfico de de barras y utilizando un theme de ggplot2.
+sin mas preambulos lo invito a deleitarse con este interactivo tutorial.
+
+## Primera parte
+
+En una primera instancia crearemos un grafico por defecto de la base de datos "penguins" para luego realizar modificaciones, asignando el objeto con el nombre barras1. De la siguiente función obtendremos el siguiente el gráfico.
+
+```{r message=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+
+barras1
+
+```
+
+## Segunda parte
+
+# Crearemos nuestra paleta y la modificaremos!! sera genial
+
+comenzaremos escogiendo nuestra paleta con con la función paletteer_d
+ 
+Para este ejemplo utilizaremos la paleta "calecopal::fire"
+```{r}
+library(paletteer)
+
+paletteer_d("calecopal::fire")
+```
+
+Luego de eso asignaremos como paleta1 la paleta escogida para este tutorial
+
+```{r}
+paleta1 <- c("#B77B7BFF", "#FEEC44FF", "#F66C09FF", "#E60505FF", "#2C1B21FF")
+```
+
+Luego asignaremos el valor a lo que queremos modificar en cada grafico y asignaremos como fill1 al scale_fill_manual y color1 a scale_color_manual
+
+y obtener asi los siguientes graficos
+```{r}
+
+fill1 <- scale_fill_manual(values = paleta1)
+
+barras1 + scale_fill_manual(values = paleta1)
+
+
+
+```
+
+Ahora que logramos cambiar de color las barras te invito a que busques inspiración para crear tu propia paleta siguiendo el siguiente link:
+
+https://emilhvitfeldt.github.io/r-color-palettes/discrete.html
+
+Puedes modificar tu grafico de barras solo cambiando los valores de las funciones descritas anteriormente.
+
+## Tercera parte
+
+Te gusto el link, bien, ahora que tenemos nuestras barras listas seria bueno cambiar un poco el tamaño y color de los titulos y subtitulos, para eso utilizaremos la siguiente función, usted podra cambiar el tamaño cambiando el valor en la función "size" y el color en la función color
+
+```{r}
+barras1 + scale_fill_manual(values = paleta1) +
+  theme(
+  plot.title = element_text(size = 30, color = "#2C1B21FF" ),
+  plot.subtitle = element_text(size = 15, color = "#E60505FF")
+)
+```
+
+Y listo, con estas simples funciones podras presentar un gráfico.
+
+Ahora es tu turno intentarlo.
+
+
+

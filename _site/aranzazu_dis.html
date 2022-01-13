@@ -2078,10 +2078,13 @@ Estudiantes
 <span class="down-arrow">&#x25BE;</span>
 </button>
 <div class="nav-dropdown-content">
-<a href="aranzazu_dis.html">Aranzazu</a>
+<a href="aranzazu_dis.html">Aránzazu</a>
 <a href="celeste_dis.html">Celeste</a>
-<a href="paginatipo_dis.html">Cristobal</a>
+<a href="cristobal_dis.html">Cristobal</a>
 <a href="paginatipo_dis.html">Genaro</a>
+<a href="paginatipo_dis.html">Mónica</a>
+<a href="paginatipo_dis.html">Octavia</a>
+<a href="paginatipo_dis.html">Paula</a>
 </div>
 </div>
 <a href="about.html">Viz</a>
@@ -2178,7 +2181,7 @@ Estudiantes
 8   8.88e+6 honey~ eight 2015-08-15 20:20 NA                      0.44
 # ... with 2 more variables: row &lt;chr&gt;, group &lt;chr&gt;</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>8</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>8</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
 <span class='va'>df_exibble</span>
 </code></pre>
 </div>
@@ -2199,8 +2202,8 @@ Estudiantes
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span>  <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Tabla flores"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span>  <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Tabla flores"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2403,8 +2406,8 @@ setosa
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span>  <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Tabla frutas"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span>  <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Tabla frutas"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2630,7 +2633,7 @@ NA
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='st'>"striped"</span>, font_size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2830,7 +2833,7 @@ setosa
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='st'>"striped"</span>, font_size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3073,9 +3076,9 @@ NA
  9          6.2         2.8          4.8         1.8 virginica 
 10          5.4         3.9          1.3         0.4 setosa    </code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/spec_color.html'>spec_color</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span>, end <span class='op'>=</span> <span class='fl'>0.7</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
@@ -3279,9 +3282,9 @@ setosa
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"grey"</span><span class='op'>)</span>
 </code></pre>
@@ -3500,9 +3503,9 @@ setosa
 7   7.77e+5 grape~ seven NA         19:10 2018-07-07 05:22:00    NA   
 8   8.88e+6 honey~ eight 2015-08-15 20:20 NA                      0.44</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>7</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"grey"</span><span class='op'>)</span>
 </code></pre>
@@ -3743,9 +3746,9 @@ NA
  9          6.2         2.8          4.8         1.8 virginica 
 10          5.4         3.9          1.3         0.4 setosa    </code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"black"</span>,
               background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span> <span class='op'>&lt;</span> <span class='fl'>6</span>, <span class='st'>"plum"</span>, <span class='st'>"white"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
@@ -3949,8 +3952,8 @@ setosa
 </ol>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span>, align <span class='op'>=</span> <span class='st'>"c"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span>, align <span class='op'>=</span> <span class='st'>"c"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'>kableExtra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/footnote.html'>footnote</a></span><span class='op'>(</span>general <span class='op'>=</span> <span class='st'>"Notas al pie "</span>,
            number <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Nota 1; "</span>, <span class='st'>"Nota 2; "</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
@@ -4191,9 +4194,9 @@ setosa
 7   7.77e+5 grape~ seven NA         19:10 2018-07-07 05:22:00    NA   
 8   8.88e+6 honey~ eight 2015-08-15 20:20 NA                      0.44</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>7</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"lightblue"</span><span class='op'>)</span>
 </code></pre>
@@ -4430,24 +4433,24 @@ NA
 7   7.77e+5 grape~ seven NA         19:10 2018-07-07 05:22:00    NA   
 8   8.88e+6 honey~ eight 2015-08-15 20:20 NA                      0.44</code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>  <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/fmt_number.html'>fmt_number</a></span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>  <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/fmt_number.html'>fmt_number</a></span><span class='op'>(</span>
     columns <span class='op'>=</span> <span class='va'>num</span> ,
     decimals <span class='op'>=</span> <span class='fl'>1</span> 
-  <span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/fmt_currency.html'>fmt_currency</a></span><span class='op'>(</span>
+  <span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/fmt_currency.html'>fmt_currency</a></span><span class='op'>(</span>
     columns <span class='op'>=</span> <span class='va'>currency</span>,
     currency <span class='op'>=</span> <span class='st'>"USD"</span>
   <span class='op'>)</span>
 </code></pre>
 </div>
-<div id="yehirkmvma" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="qvuewffxts" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#yehirkmvma .gt_table {
+#qvuewffxts .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4472,7 +4475,7 @@ NA
   border-left-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_heading {
+#qvuewffxts .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4484,7 +4487,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_title {
+#qvuewffxts .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4494,7 +4497,7 @@ NA
   border-bottom-width: 0;
 }
 
-#yehirkmvma .gt_subtitle {
+#qvuewffxts .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4504,13 +4507,13 @@ NA
   border-top-width: 0;
 }
 
-#yehirkmvma .gt_bottom_border {
+#qvuewffxts .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_col_headings {
+#qvuewffxts .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4525,7 +4528,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_col_heading {
+#qvuewffxts .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4545,7 +4548,7 @@ NA
   overflow-x: hidden;
 }
 
-#yehirkmvma .gt_column_spanner_outer {
+#qvuewffxts .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4557,15 +4560,15 @@ NA
   padding-right: 4px;
 }
 
-#yehirkmvma .gt_column_spanner_outer:first-child {
+#qvuewffxts .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yehirkmvma .gt_column_spanner_outer:last-child {
+#qvuewffxts .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yehirkmvma .gt_column_spanner {
+#qvuewffxts .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4577,7 +4580,7 @@ NA
   width: 100%;
 }
 
-#yehirkmvma .gt_group_heading {
+#qvuewffxts .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4599,7 +4602,7 @@ NA
   vertical-align: middle;
 }
 
-#yehirkmvma .gt_empty_group_heading {
+#qvuewffxts .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4614,15 +4617,15 @@ NA
   vertical-align: middle;
 }
 
-#yehirkmvma .gt_from_md > :first-child {
+#qvuewffxts .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yehirkmvma .gt_from_md > :last-child {
+#qvuewffxts .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yehirkmvma .gt_row {
+#qvuewffxts .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4641,7 +4644,7 @@ NA
   overflow-x: hidden;
 }
 
-#yehirkmvma .gt_stub {
+#qvuewffxts .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4653,7 +4656,7 @@ NA
   padding-left: 12px;
 }
 
-#yehirkmvma .gt_summary_row {
+#qvuewffxts .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4663,7 +4666,7 @@ NA
   padding-right: 5px;
 }
 
-#yehirkmvma .gt_first_summary_row {
+#qvuewffxts .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4673,7 +4676,7 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_grand_summary_row {
+#qvuewffxts .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4683,7 +4686,7 @@ NA
   padding-right: 5px;
 }
 
-#yehirkmvma .gt_first_grand_summary_row {
+#qvuewffxts .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4693,11 +4696,11 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_striped {
+#qvuewffxts .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yehirkmvma .gt_table_body {
+#qvuewffxts .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4706,7 +4709,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_footnotes {
+#qvuewffxts .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4720,13 +4723,13 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_footnote {
+#qvuewffxts .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#yehirkmvma .gt_sourcenotes {
+#qvuewffxts .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4740,41 +4743,41 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#yehirkmvma .gt_sourcenote {
+#qvuewffxts .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#yehirkmvma .gt_left {
+#qvuewffxts .gt_left {
   text-align: left;
 }
 
-#yehirkmvma .gt_center {
+#qvuewffxts .gt_center {
   text-align: center;
 }
 
-#yehirkmvma .gt_right {
+#qvuewffxts .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yehirkmvma .gt_font_normal {
+#qvuewffxts .gt_font_normal {
   font-weight: normal;
 }
 
-#yehirkmvma .gt_font_bold {
+#qvuewffxts .gt_font_bold {
   font-weight: bold;
 }
 
-#yehirkmvma .gt_font_italic {
+#qvuewffxts .gt_font_italic {
   font-style: italic;
 }
 
-#yehirkmvma .gt_super {
+#qvuewffxts .gt_super {
   font-size: 65%;
 }
 
-#yehirkmvma .gt_footnote_marks {
+#qvuewffxts .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -4864,7 +4867,7 @@ NA
 <span class='va'>Tablapaso4</span> 
 </code></pre>
 </div>
-<template id="b6a98916-2693-4b30-b210-5dbe8c859d91"><style>
+<template id="523f4205-51f5-4b81-8de2-df2e5b544a79"><style>
 .tabwid table{
   border-spacing:0px !important;
   border-collapse:collapse;
@@ -4898,12 +4901,12 @@ NA
 .tabwid table tr {
 background-color: transparent;
 }
-</style><div class="tabwid"><style>.cl-f80df448{}.cl-f7f87f28{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-f7f8cd20{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f7f8cd21{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-f7f968e8{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7f968e9{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7f968ea{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7f968eb{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7f968ec{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-f7f968ed{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-f80df448'>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-f7f968ec"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">datetime</span></p></td><td class="cl-f7f968ed"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">char</span></p></td><td class="cl-f7f968ed"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">fctr</span></p></td><td class="cl-f7f968ec"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">num</span></p></td><td class="cl-f7f968ec"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">currency</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">2018-01-01 02:22:00</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">apricot</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">one</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">0.1111</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">49.950</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">2018-02-02 14:33:00</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">banana</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">two</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">2.2220</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">17.950</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">2018-03-03 03:44:00</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">coconut</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">three</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">33.3300</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">1.390</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">2018-04-04 15:55:00</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">durian</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">four</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">444.4000</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">65,100.000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">2018-05-05 04:00:00</span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28"></span></p></td><td class="cl-f7f968e8"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">five</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">5,550.0000</span></p></td><td class="cl-f7f968e9"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">1,325.810</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-f7f968eb"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">2018-06-06 16:11:00</span></p></td><td class="cl-f7f968ea"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">fig</span></p></td><td class="cl-f7f968ea"><p class="cl-f7f8cd21"><span class="cl-f7f87f28">six</span></p></td><td class="cl-f7f968eb"><p class="cl-f7f8cd20"><span class="cl-f7f87f28"></span></p></td><td class="cl-f7f968eb"><p class="cl-f7f8cd20"><span class="cl-f7f87f28">13.255</span></p></td></tr></tbody></table></div></template>
-<div class="flextable-shadow-host" id="9c77d809-4885-421c-bffe-956d9461d56a"></div>
+</style><div class="tabwid"><style>.cl-fa44b7b4{}.cl-fa2ce742{font-family:'Arial';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-fa2d0e52{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-fa2d0e53{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-fa2dae16{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fa2dae17{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fa2dae18{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fa2dae19{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fa2dae1a{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-fa2dae1b{width:54pt;background-color:transparent;vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-fa44b7b4'>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-fa2dae1a"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">datetime</span></p></td><td class="cl-fa2dae1b"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">char</span></p></td><td class="cl-fa2dae1b"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">fctr</span></p></td><td class="cl-fa2dae1a"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">num</span></p></td><td class="cl-fa2dae1a"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">currency</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">2018-01-01 02:22:00</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">apricot</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">one</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">0.1111</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">49.950</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">2018-02-02 14:33:00</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">banana</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">two</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">2.2220</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">17.950</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">2018-03-03 03:44:00</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">coconut</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">three</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">33.3300</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">1.390</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">2018-04-04 15:55:00</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">durian</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">four</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">444.4000</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">65,100.000</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">2018-05-05 04:00:00</span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742"></span></p></td><td class="cl-fa2dae16"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">five</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">5,550.0000</span></p></td><td class="cl-fa2dae17"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">1,325.810</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-fa2dae19"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">2018-06-06 16:11:00</span></p></td><td class="cl-fa2dae18"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">fig</span></p></td><td class="cl-fa2dae18"><p class="cl-fa2d0e53"><span class="cl-fa2ce742">six</span></p></td><td class="cl-fa2dae19"><p class="cl-fa2d0e52"><span class="cl-fa2ce742"></span></p></td><td class="cl-fa2dae19"><p class="cl-fa2d0e52"><span class="cl-fa2ce742">13.255</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="27ac37c9-fd48-4910-aa19-5c239bc78b4a"></div>
 <script>
-var dest = document.getElementById("9c77d809-4885-421c-bffe-956d9461d56a");
-var template = document.getElementById("b6a98916-2693-4b30-b210-5dbe8c859d91");
+var dest = document.getElementById("27ac37c9-fd48-4910-aa19-5c239bc78b4a");
+var template = document.getElementById("523f4205-51f5-4b81-8de2-df2e5b544a79");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";

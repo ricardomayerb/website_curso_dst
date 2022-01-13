@@ -1,0 +1,171 @@
+---
+title: "Tarea 2"
+author: "Paula Diaz"
+date: "11/23/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+```
+
+## Instrucciones 1 a 6
+
+```{r message=FALSE, warning=FALSE} 
+library(kableExtra)
+library(tidyverse)
+library(gt)
+library(flextable)
+```
+
+```{r message=FALSE, warning=FALSE}  
+df_mini_iris <- read.csv(file = "mini_iris.csv")
+df_mini_iris
+```
+
+```{r message=FALSE, warning=FALSE}
+df_exibble <- read.csv(file = "datos_para_tabla.csv") 
+df_exibble <- df_exibble %>% select(-c(8,9))
+df_exibble
+```
+
+
+```{r message=FALSE, warning=FALSE}
+df_mini_iris %>%     
+  kbl(caption = "Tabla Mini Iris ") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+```{r} 
+df_exibble %>%
+  kbl(caption = "Tabla Exibble ") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+  
+```
+
+```{r}
+df_exibble %>%
+  kbl (caption = "Tabla Exibble") %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl (caption = "Tabla mini iris") %>%
+  kable_styling(font_size = 16)
+```
+
+
+
+## Instrucción 7
+
+### Numeros color blanco , y fondo que va cambiando celda a celda 
+
+dt <- df_mini_iris
+df_mini_iris
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+   column_spec(1, color = "white",
+              background = spec_color(mtcars$drat[1:8], end = 0.7))
+```
+
+
+
+### Numeros color blanco, fondo gris 
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+```
+
+
+### numeros color blanco fondo gris con df_exibble 
+
+```{r}
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+```
+
+
+### df_mini_iris con Sepal.Lenght fondo condicional 
+
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+   column_spec(1, color = "white",
+   background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"))
+```
+
+
+### crear tabla con dos notas al pie de la tabla 
+
+
+```{r}
+kable(df_mini_iris, "html") %>%
+  kable_styling("striped") %>%
+  add_footnote(c("Esta tarea esta díficil", "Pero no imposible."), notation = "alphabet")
+```
+
+
+
+### tabla df_exibble donde currency tenga numeros blanco color lightblue 
+
+dt2 <- df_exibble 
+df_exibble
+
+```{r}
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+```
+
+
+# PASO 3 
+
+```{r message=FALSE, warning=FALSE}
+library(formattable)
+```
+
+
+```{r}
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = 7,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = 7,
+    currency = "USD"
+  )
+```
+
+# Paso 4 
+
+
+```{r}
+df_mini_iris <- read.csv(file = "mini_iris.csv")
+df_mini_iris
+ft <- flextable(df_mini_iris)
+
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF"
+)
+flextable(df_mini_iris)
+```
+
+
+              

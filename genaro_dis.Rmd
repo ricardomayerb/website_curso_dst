@@ -1,0 +1,307 @@
+---
+title: "Nombre Apellido"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+xaringanExtra::use_panelset()
+```
+
+:::{.l-page}
+::: {.panelset}
+::: {.panel}
+## Tarea 1 {.panel-name}
+ 
+### Describa una situación hipotética donde tomará lugar la comunicación
+
+**Debe explicitar el quién-qué-cómo de la comunicación y describir brevemente el tipo de datos que utilizaría**
+
+
+### 1.	Descripción de la situación
+
+Charla enfocada en estudiantes de cuarto medio de un colegio, en donde se publicite la carrera de Estadística de mi Universidad. Actualmente la carrera de estadística, pese a tener porcentajes de empleabilidad e ingresos bastante altos, sigue siendo desconocida para la mayoría de los estudiantes que están ad portas de elegir una carrera. En mi rol de embajador de la carrera en la Universidad fui asignado para ir a mi ex colegio a publicitar la carrera.
+
+
+### 2.	Descripción del Quién
+
+a.	La audiencia son estudiantes de cuarto medio, específicamente entre quienes tienen interés en las matemáticas, computación y ciencias. También se podría considerar en la audiencia a los profesores de matemáticas/ciencias del establecimiento. 
+b.	Los estudiantes en su mayoría me conocen por ser un ex estudiante destacado del colegio, pero no tengo mayor relación con ellos. Mi credibilidad está sustentada en lo que sus profesores les han contado de mi desempeño académico y profesional.
+
+
+### 3.	Descripción del Qué
+
+a.	Necesito que la audiencia (o al menos un porcentaje de ella) conozca y se interese en la carrera, las habilidades requeridas, la amplitud de su campo laboral, sus proyecciones futuras, entre otras, con el fin último de captarlos para nuestra Universidad.
+b.	La presentación será presencial, en su sala de clases.
+c.	El tono de la comunicación será liviano, pero con información presentada formalmente. 
+
+
+### 4.	Descripción del Cómo
+
+a.	El principal insumo para lograr el objetivo son datos comparativos entre las carreras/universidades que con mayor frecuencia deciden estudiar quienes tienen interés en el área de matemáticas. Principalmente: dificultad de carrera (medida, por ejemplo, con índices de retención) ingresos al momento de egresar, ingresos luego de una cantidad de años, posibilidades de crecimiento profesional. Todo eso en contraste con carreras del área de Ingeniería y Ciencias.
+
+
+:::
+ 
+::: {.panel}
+## Tarea 2 {.panel-name}
+ 
+
+### Paso 2
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+```{r, message=FALSE, warning=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv") # aquí se cargan datos y se crea df_exibble
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+
+df_exibble # esta línea imprime este tibble que llamamos df_exibble
+```
+
+```{r, message=FALSE, warning=FALSE}
+df_mini_iris %>%
+  kbl(caption = "Tabla df_mini_iris") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+
+df_exibble %>%
+  kbl(caption = "Tabla df_exibble") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+
+kbl(df_mini_iris) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+
+kbl(df_exibble) %>%
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = spec_color(df_mini_iris$Sepal.Length, end = 0.7))
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "green"))
+
+kbl(df_mini_iris, align = "c") %>%
+  kable_classic(full_width = F) %>%
+  kableExtra::footnote(
+           number = c("Nota al pie 1", "Nota al pie 2")
+           )
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+```
+
+### Paso 3
+
+```{r, message=FALSE, warning=FALSE}
+
+df_exibble %>%
+  gt()%>%
+  fmt_number(
+    columns = num,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = currency,
+    currency = "USD"
+  )
+```
+
+### Paso 4
+
+```{r, message=FALSE, warning=FALSE}
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF")
+flextable(df_mini_iris)
+```
+
+
+
+ 
+:::
+ 
+::: {.panel}
+## Tarea 3 {.panel-name}
+ 
+ 
+
+### Lo previo
+
+Lo primero es cargar los paquetes necesarios para este tutorial de gráficos en `R`
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+library(tidyverse)
+library(palmerpenguins)
+library(chilemapas)
+library(paletteer)
+```
+
+
+### Un primer gráfico
+
+Vamos a tomar estos dos gráficos "por defecto" para modificarlos y agregando detalles.
+
+**Gráfico de Barras**
+
+```{r, message=FALSE, warning=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+
+print(barras1)
+```
+
+**Gráfico de puntos**
+
+```{r, message=FALSE, warning=FALSE}
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+  geom_point() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+
+print(puntos1)
+```
+
+### Creando una paleta de colores
+
+El primer paso será generar nuestra propia paleta de colores. Haciendo click [aquí](https://emilhvitfeldt.github.io/r-color-palettes/discrete.html) podrá encontrar una gran cantidad de paletas disponibles:
+
+```{r, message=FALSE, warning=FALSE}
+paletteer_d("calecopal::bigsur2")
+
+col_d_1 <- c("#20618DFF", "#91AAC4FF", "#6B6C58FF", "#464724FF", 
+             "#83932DFF", "#CAB89FFF")
+
+barras1 + scale_fill_manual(values = col_d_1)
+puntos1 + scale_color_manual(values = col_d_1)
+
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+mi_color_1 <- scale_color_manual(values = col_d_1)
+
+barras1 + mi_fill_1
+puntos1 + mi_color_1
+```
+
+### Temas
+
+Usaremos la función `theme()`. Modificando los parametros de `plot.title` y `plot.subtitle` es posible modificar aspectos tales como tamaño y color.
+
+```{r, message=FALSE, warning=FALSE}
+barras1 + theme(
+  plot.title = element_text(size = 16),
+  plot.subtitle = element_text(size = 9, color = "grey40")
+) + mi_fill_1
+
+puntos1 + theme(
+  plot.title = element_text(size = 16),
+  plot.subtitle = element_text(size = 9, color = "grey40")
+) + mi_color_1
+```
+
+Por ejemplo, cambiamos el color del subtitulo a rojo y agrandaremos el tamaño del título.
+
+```{r, message=FALSE, warning=FALSE}
+barras1 + theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + mi_fill_1
+
+puntos1 + theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + mi_color_1
+```
+
+Usando `theme_minimal()` podemos eliminar el background de fondo.
+
+```{r, message=FALSE, warning=FALSE}
+barras1 + theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + mi_fill_1 + theme_minimal()
+
+puntos1 + theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + mi_color_1 + theme_minimal()
+```
+
+### Guardando lo realizado
+
+Finalmente podemos guardar todo lo realizado en una variable para poder utilizarla posteriormente:
+
+```{r, message=FALSE, warning=FALSE}
+mis_cambios_de_tema = theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + theme_minimal()
+```
+
+Por ejemplo:
+
+```{r, message=FALSE, warning=FALSE}
+puntos1 + mis_cambios_de_tema + mi_color_1
+barras1 + mis_cambios_de_tema + mi_fill_1
+``` 
+ 
+
+:::
+ 
+::: {.panel}
+## Tarea 4 {.panel-name}
+
+
+```{r echo=FALSE, out.width="40%"}
+knitr::include_url("olavegarridogenarofelipe_Tarea4.html", height = 650)
+```
+ 
+ 
+:::
+ 
+::: {.panel}
+## Proyecto integrador {.panel-name}
+ 
+Aquí va el proyecto integrador
+ 
+:::
+:::
+:::
+

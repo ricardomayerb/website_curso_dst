@@ -1,0 +1,149 @@
+---
+title: "Cristobal_Campos23"
+author: "Cristobal Campos"
+date: "21-11-2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+## Parte 2
+
+
+```{r message=FALSE}
+library(tidyverse)
+library(gt)
+library(kableExtra)
+library(flextable)
+```
+
+### Parte 2 -Paso 2-3
+```{r message=FALSE}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv")
+
+df_exibble <- df_exibble %>% select(-c(8,9))
+
+df_exibble
+```
+### Parte 2 - Paso 5
+
+```{r message=FALSE}
+df_mini_iris %>%
+  kbl(caption = "Estilo de tabla mini_iris") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+df_exibble %>%
+  kbl(caption = "Estilo de tabla exibble") %>%
+  kable_classic(full_width = F, html_font = "Cambria")
+```
+
+### Parte 2 - Paso 6
+```{r message=FALSE}
+df_mini_iris %>%
+  kbl(caption = "Estilo de tabla mini_iris") %>%
+  kable_classic(full_width = F, html_font = "Cambria", font_size =16)
+df_exibble %>%
+  kbl(caption = "Estilo de tabla exibble") %>%
+  kable_classic(full_width = F, html_font = "Cambria", font_size =16)
+```
+### Parte 2 - 7.A
+
+```{r message=FALSE}
+df_mini_iris[1:10, 1:5] %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = spec_color(df_mini_iris$Sepal.Length[1:10]),
+              ) %>%
+  column_spec(1, color = "white",
+              background = spec_color(df_mini_iris$Sepal.Length[1:10], end = 0.7),
+              )
+
+```
+
+### Parte 2 - 7.B
+```{r message=FALSE}
+kbl(df_mini_iris) %>%
+  kable_paper("striped", full_width = F) %>%
+  column_spec(1:1, bold = T, color = "white", background = "#808080")
+```
+### Parte 2 - 7.C
+
+```{r message=FALSE}
+kbl(df_exibble) %>%
+  kable_paper("striped", full_width = F) %>%
+  column_spec(7:7, bold = T, color = "white", background = "#808080")
+```
+
+### Parte 2 - 7.D
+
+```{r message=FALSE}
+df_mini_iris[1:10, 1:5] %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"),
+              )
+```
+
+### Parte 2 - 7.E Tabla Footnote
+
+```{r message=FALSE}
+kable(df_mini_iris, "html") %>%
+  kable_styling("striped") %>%
+  add_footnote(c("virginica", "setosa", "versicolor"), notation = "symbol")
+```
+
+### Parte 2 - 7.F
+
+```{r message=FALSE}
+kbl(df_exibble) %>%
+  kable_paper("striped", full_width = F) %>%
+  column_spec(7:7, bold = T, color = "white", background = "#808080")
+```
+
+## Paso 3 GT
+
+```{r message=FALSE}
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = num,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = currency,
+    currency = "USD"
+  )
+```
+
+## Paso 4 Flextable
+### Tabla 1
+
+```{r message=FALSE}
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF")
+flextable(df_mini_iris)
+```
+
+### Tabla 2
+
+```{r message=FALSE}
+set_flextable_defaults(
+  font.size = 10,
+  font.color = "black",
+  table.layout = "fixed",
+  digits = 1,
+  theme_fun = "theme_box"
+  )
+flextable(df_mini_iris)
+```
+
+
+

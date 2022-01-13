@@ -1,0 +1,218 @@
+---
+title: "Tutorial sobre paletas de colores en R"
+author: "Genaro Olave"
+date: "13-12-2021"
+output:
+  ioslides_presentation:
+    widescreen: true
+    smaller: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Lo previo
+
+Lo primero es cargar los paquetes necesarios para este tutorial de gráficos en `R`
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
+library(tidyverse)
+library(datos)
+library(ggplot2)
+library(gt)
+library(kableExtra)
+library(flextable)
+library(tidyverse)
+library(palmerpenguins)
+library(chilemapas)
+library(paletteer)
+library(ggrepel)
+library(gcookbook)
+library(scales)
+library(lubridate)
+library(DT)
+library(leaflet)
+```
+
+## Un primer gráfico
+
+Vamos a tomar estos dos gráficos "por defecto" para modificarlos y agregando detalles.
+
+**Gráfico de Barras**
+
+```{r, message=FALSE, warning=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) +
+  geom_bar(scale = 0.1) + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+
+print(barras1)
+```
+
+## Un primer gráfico
+
+Vamos a tomar estos dos gráficos "por defecto" para modificarlos y agregando detalles.
+
+**Gráfico de puntos**
+
+```{r, message=FALSE, warning=FALSE}
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+  geom_point() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+
+print(puntos1)
+```
+
+## Creando una paleta de colores {data-background=colores.jpg data-background-size="75% 75%"}
+
+El primer paso será generar nuestra propia paleta de colores. Haciendo click [aquí](https://emilhvitfeldt.github.io/r-color-palettes/discrete.html) podrá encontrar una gran cantidad de paletas disponibles:
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE}
+paletteer_d("calecopal::bigsur2")
+
+col_d_1 <- c("#20618DFF", "#91AAC4FF", "#6B6C58FF", "#464724FF", 
+             "#83932DFF", "#CAB89FFF")
+
+```
+
+<div class="notes">
+Notas
+
+- El texto de la salida de paletteer_d se copia y se pega
+
+</div>
+
+## Creando una paleta de colores
+
+Luego basta aplicar a cada gráfico
+
+**Gráfico de Barras**
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="60%"}
+barras1 + scale_fill_manual(values = col_d_1)
+```
+
+## Creando una paleta de colores
+
+O bien...
+
+**Gráfico de Barras**
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="60%"}
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+barras1 + mi_fill_1
+```
+
+
+## Creando una paleta de colores
+
+**Gráfico de Puntos**
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="60%"}
+puntos1 + scale_color_manual(values = col_d_1)
+```
+
+## Creando una paleta de colores
+
+**Gráfico de Puntos**
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="60%"}
+mi_color_1 <- scale_color_manual(values = col_d_1)
+puntos1 + mi_color_1
+```
+
+## Temas
+
+Usaremos la función `theme()`. Modificando los parametros de `plot.title` y `plot.subtitle` es posible modificar aspectos tales como tamaño y color.
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="50%"}
+barras1 + theme(
+  plot.title = element_text(size = 16),
+  plot.subtitle = element_text(size = 9, color = "grey40")
+) + mi_fill_1
+```
+
+## Temas
+
+Usaremos la función `theme()`. Modificando los parametros de `plot.title` y `plot.subtitle` es posible modificar aspectos tales como tamaño y color.
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="50%"}
+puntos1 + theme(
+  plot.title = element_text(size = 16),
+  plot.subtitle = element_text(size = 9, color = "grey40")
+) + mi_color_1
+```
+
+## Temas
+
+Por ejemplo, cambiamos el color del subtitulo a <span class="red"> rojo </span> y agrandaremos el tamaño del título.
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="50%"}
+barras1 + theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + mi_fill_1
+```
+
+## Temas
+
+Por ejemplo, cambiamos el color del subtitulo a <span class="red"> rojo </span> y agrandaremos el tamaño del título.
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="50%"}
+puntos1 + theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + mi_color_1
+```
+
+## Temas
+
+Usando `theme_minimal()` podemos eliminar el background de fondo.
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="50%"}
+barras1 + theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + mi_fill_1 + theme_minimal()
+```
+
+## Temas
+
+Usando `theme_minimal()` podemos eliminar el background de fondo.
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="50%"}
+puntos1 + theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + mi_color_1 + theme_minimal()
+```
+
+## Guardando lo realizado
+
+Finalmente podemos guardar todo lo realizado en una variable para poder utilizarla posteriormente:
+
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="100%"}
+mis_cambios_de_tema = theme(
+  plot.title = element_text(size = 20),
+  plot.subtitle = element_text(size = 9, color = "red")
+) + theme_minimal()
+```
+
+## Guardando lo realizado
+
+Por ejemplo:
+
+<div style="float: left; width: 40%;">
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="110%"}
+puntos1 + mis_cambios_de_tema + mi_color_1
+```
+</div>
+
+<div style="float: right; width: 40%;">
+```{r, message=FALSE, warning=FALSE, echo=TRUE, out.width="110%"}
+barras1 + mis_cambios_de_tema + mi_fill_1
+```
+</div>

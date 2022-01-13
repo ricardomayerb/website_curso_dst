@@ -9,13 +9,19 @@ navbar:
       href: index.html
     - text: "Estudiantes"
       menu:
-       - text: "Aranzazu"
+       - text: "Aránzazu"
          href: aranzazu_dis.html
        - text: "Celeste"
          href: celeste_dis.html
        - text: "Cristobal"
-         href: paginatipo_dis.html
+         href: cristobal_dis.html
        - text: "Genaro"
+         href: paginatipo_dis.html
+       - text: "Mónica"
+         href: paginatipo_dis.html
+       - text: "Octavia"
+         href: paginatipo_dis.html
+       - text: "Paula"
          href: paginatipo_dis.html
     - text: "Viz"
       href: about.html

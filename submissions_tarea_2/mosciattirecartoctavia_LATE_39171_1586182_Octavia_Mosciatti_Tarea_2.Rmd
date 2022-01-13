@@ -1,0 +1,166 @@
+---
+title: "Tarea 2"
+author: "Octavia"
+date: "11/15/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+```
+
+# Paso 2
+
+## Instrucciones 1 a 6
+
+```{r warning=FALSE}
+library(kableExtra)
+library(tidyverse)
+library(gt)
+library(flextable)
+
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv")
+df_exibble <- df_exibble %>% select(-c(8,9))
+df_exibble
+
+kbl(df_mini_iris)
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_styling()
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper("hover", full_width=F)
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl (caption = "Tabla mini iris") %>%
+  kable_styling(font_size = 16)
+```
+```{r warning=FALSE}
+df_exibble %>%
+  kbl() %>%
+  kable_paper("hover", full_width=F)
+```
+```{r warning=FALSE}
+df_exibble%>%
+  kbl(caption = "Tabla exibble") %>%
+  kable_styling(font_size = 16)
+```
+
+## Instrucción 7
+
+```{r warning=FALSE}
+dt <- df_mini_iris
+df_mini_iris
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+   column_spec(1, color = "white",
+              background = spec_color(mtcars$drat[1:8], end = 0.7))
+
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+```
+```{r warning=FALSE}
+dt <- df_exibble 
+df_exibble
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+   column_spec(1, color = "white",
+   background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"))
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+   column_spec(1, color = "white",
+   background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"))
+```
+```{r warning=FALSE}
+dt <- df_mini_iris
+
+kable(dt, "html") %>%
+  kable_styling("striped") %>%
+  add_footnote(c("Tarea casi lista", "Falta poco"), notation = "alphabet")
+```
+
+```{r warning=FALSE}
+dt <- df_exibble 
+df_exibble
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+
+```
+              
+
+# Paso 3
+
+```{r warning=FALSE}
+library(formattable)
+
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = 7,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = 7,
+    currency = "USD"
+  )
+
+```
+
+# Paso 4
+
+```{r warning=FALSE}
+library(flextable)
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+ft <- flextable(df_mini_iris)
+
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF"
+)
+flextable(df_mini_iris)
+
+```
+
+```{r warning=FALSE}
+myft<- flextable(head(df_exibble),
+                 col_keys = c("num", "chart", "fctr", "date", "time"))
+myft
+```
+
+
+
+
+     
