@@ -2081,7 +2081,7 @@ Estudiantes
 <a href="aranzazu_dis.html">Aránzazu</a>
 <a href="celeste_dis.html">Celeste</a>
 <a href="cristobal_dis.html">Cristobal</a>
-<a href="paginatipo_dis.html">Genaro</a>
+<a href="genaro_dis.html">Genaro</a>
 <a href="paginatipo_dis.html">Mónica</a>
 <a href="paginatipo_dis.html">Octavia</a>
 <a href="paginatipo_dis.html">Paula</a>
@@ -2210,7 +2210,7 @@ Estudiantes
 <pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"datos_para_tabla.csv"</span><span class='op'>)</span> <span class='co'># aquí se cargan datos y se crea df_exibble</span>
 
 
-<span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>8</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>8</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>df_exibble</span> <span class='co'># esta línea imprime este tibble que llamamos df_exibble</span>
 </code></pre>
@@ -2230,8 +2230,8 @@ Estudiantes
 <h3 id="paso-2.5">Paso 2.5</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Datos de Iris de Flores"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Datos de Iris de Flores"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2434,8 +2434,8 @@ setosa
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
- <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Datos Exibble"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+ <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Datos Exibble"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2659,7 +2659,7 @@ NA
 <h3 id="paso-2.6">Paso 2.6</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='st'>"striped"</span>, font_size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2859,7 +2859,7 @@ setosa
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='st'>"striped"</span>, font_size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3080,9 +3080,9 @@ NA
 <h3 id="paso-2.7.1">Paso 2.7.1</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/spec_color.html'>spec_color</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, end <span class='op'>=</span> <span class='fl'>0.7</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
@@ -3284,9 +3284,9 @@ setosa
 <h3 id="paso-2.7.2">Paso 2.7.2</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"grey"</span><span class='op'>)</span>
 </code></pre>
@@ -3488,9 +3488,9 @@ setosa
 <h3 id="paso-2.7.3">Paso 2.7.3</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>7</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"grey"</span><span class='op'>)</span>
 </code></pre>
@@ -3712,9 +3712,9 @@ NA
 <h3 id="paso-2.7.4">Paso 2.7.4</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>,background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span> <span class='op'>&lt;</span> <span class='fl'>6</span>, <span class='st'>"orange"</span>, <span class='st'>"grey"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3915,8 +3915,8 @@ setosa
 <h3 id="paso-2.7.5">Paso 2.7.5</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span>, align <span class='op'>=</span> <span class='st'>"c"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span>, align <span class='op'>=</span> <span class='st'>"c"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'>kableExtra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/footnote.html'>footnote</a></span><span class='op'>(</span>general <span class='op'>=</span> <span class='st'>"Notas de la tabla."</span>,
            number <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Largo; "</span>, <span class='st'>"Ancho; "</span><span class='op'>)</span>,
            alphabet <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Largo; "</span>, <span class='st'>"Ancho; "</span><span class='op'>)</span>,
@@ -4140,9 +4140,9 @@ setosa
 <h3 id="paso-2.7.6">Paso 2.7.6</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>7</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"lightblue"</span><span class='op'>)</span>
 </code></pre>
@@ -4364,24 +4364,24 @@ NA
 <h3 id="paso-3">Paso 3</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>  <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/fmt_number.html'>fmt_number</a></span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://gt.rstudio.com/reference/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>  <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://gt.rstudio.com/reference/fmt_number.html'>fmt_number</a></span><span class='op'>(</span>
     columns <span class='op'>=</span> <span class='va'>num</span>,
     decimals <span class='op'>=</span> <span class='fl'>1</span>
-  <span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/fmt_currency.html'>fmt_currency</a></span><span class='op'>(</span>
+  <span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://gt.rstudio.com/reference/fmt_currency.html'>fmt_currency</a></span><span class='op'>(</span>
     columns <span class='op'>=</span> <span class='va'>currency</span>,
     currency <span class='op'>=</span> <span class='st'>"USD"</span> 
   <span class='op'>)</span>
 </code></pre>
 </div>
-<div id="laxamswcqy" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="sssxevmyuz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#laxamswcqy .gt_table {
+#sssxevmyuz .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4406,7 +4406,7 @@ NA
   border-left-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_heading {
+#sssxevmyuz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4418,7 +4418,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_title {
+#sssxevmyuz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4428,7 +4428,7 @@ NA
   border-bottom-width: 0;
 }
 
-#laxamswcqy .gt_subtitle {
+#sssxevmyuz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4438,13 +4438,13 @@ NA
   border-top-width: 0;
 }
 
-#laxamswcqy .gt_bottom_border {
+#sssxevmyuz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_col_headings {
+#sssxevmyuz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4459,7 +4459,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_col_heading {
+#sssxevmyuz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4479,7 +4479,7 @@ NA
   overflow-x: hidden;
 }
 
-#laxamswcqy .gt_column_spanner_outer {
+#sssxevmyuz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4491,15 +4491,15 @@ NA
   padding-right: 4px;
 }
 
-#laxamswcqy .gt_column_spanner_outer:first-child {
+#sssxevmyuz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#laxamswcqy .gt_column_spanner_outer:last-child {
+#sssxevmyuz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#laxamswcqy .gt_column_spanner {
+#sssxevmyuz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4511,7 +4511,7 @@ NA
   width: 100%;
 }
 
-#laxamswcqy .gt_group_heading {
+#sssxevmyuz .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4533,7 +4533,7 @@ NA
   vertical-align: middle;
 }
 
-#laxamswcqy .gt_empty_group_heading {
+#sssxevmyuz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4548,15 +4548,15 @@ NA
   vertical-align: middle;
 }
 
-#laxamswcqy .gt_from_md > :first-child {
+#sssxevmyuz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#laxamswcqy .gt_from_md > :last-child {
+#sssxevmyuz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#laxamswcqy .gt_row {
+#sssxevmyuz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4575,7 +4575,7 @@ NA
   overflow-x: hidden;
 }
 
-#laxamswcqy .gt_stub {
+#sssxevmyuz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4587,7 +4587,7 @@ NA
   padding-left: 12px;
 }
 
-#laxamswcqy .gt_summary_row {
+#sssxevmyuz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4597,7 +4597,7 @@ NA
   padding-right: 5px;
 }
 
-#laxamswcqy .gt_first_summary_row {
+#sssxevmyuz .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4607,7 +4607,7 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_grand_summary_row {
+#sssxevmyuz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4617,7 +4617,7 @@ NA
   padding-right: 5px;
 }
 
-#laxamswcqy .gt_first_grand_summary_row {
+#sssxevmyuz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4627,11 +4627,11 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_striped {
+#sssxevmyuz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#laxamswcqy .gt_table_body {
+#sssxevmyuz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4640,7 +4640,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_footnotes {
+#sssxevmyuz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4654,13 +4654,13 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_footnote {
+#sssxevmyuz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#laxamswcqy .gt_sourcenotes {
+#sssxevmyuz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4674,41 +4674,41 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#laxamswcqy .gt_sourcenote {
+#sssxevmyuz .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#laxamswcqy .gt_left {
+#sssxevmyuz .gt_left {
   text-align: left;
 }
 
-#laxamswcqy .gt_center {
+#sssxevmyuz .gt_center {
   text-align: center;
 }
 
-#laxamswcqy .gt_right {
+#sssxevmyuz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#laxamswcqy .gt_font_normal {
+#sssxevmyuz .gt_font_normal {
   font-weight: normal;
 }
 
-#laxamswcqy .gt_font_bold {
+#sssxevmyuz .gt_font_bold {
   font-weight: bold;
 }
 
-#laxamswcqy .gt_font_italic {
+#sssxevmyuz .gt_font_italic {
   font-style: italic;
 }
 
-#laxamswcqy .gt_super {
+#sssxevmyuz .gt_super {
   font-size: 65%;
 }
 
-#laxamswcqy .gt_footnote_marks {
+#sssxevmyuz .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -4800,7 +4800,7 @@ NA
 <span class='fu'><a href='https://davidgohel.github.io/flextable/reference/flextable.html'>flextable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span>
 </code></pre>
 </div>
-<template id="c8efe945-e295-4346-84f2-89cdecd8500a"><style>
+<template id="7d842be6-46ed-4252-8bab-c29b0b8df154"><style>
 .tabwid table{
   border-spacing:0px !important;
   border-collapse:collapse;
@@ -4834,12 +4834,12 @@ NA
 .tabwid table tr {
 background-color: transparent;
 }
-</style><div class="tabwid"><style>.cl-1436da6c{}.cl-1429a13a{font-family:'Arial';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1429a13b{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-1429a13c{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-1429a13d{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-142a8e6a{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-142a8e6b{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-142a8e6c{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-142a8e6d{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-142a8e6e{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-142a8e6f{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-142a8e70{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-142a8e71{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-1436da6c'>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-142a8e71"><p class="cl-1429a13c"><span class="cl-1429a13a">Sepal.Length</span></p></td><td class="cl-142a8e71"><p class="cl-1429a13c"><span class="cl-1429a13a">Sepal.Width</span></p></td><td class="cl-142a8e71"><p class="cl-1429a13c"><span class="cl-1429a13a">Petal.Length</span></p></td><td class="cl-142a8e71"><p class="cl-1429a13c"><span class="cl-1429a13a">Petal.Width</span></p></td><td class="cl-142a8e70"><p class="cl-1429a13d"><span class="cl-1429a13a">Species</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6a"><p class="cl-1429a13c"><span class="cl-1429a13b">6.7</span></p></td><td class="cl-142a8e6a"><p class="cl-1429a13c"><span class="cl-1429a13b">2.5</span></p></td><td class="cl-142a8e6a"><p class="cl-1429a13c"><span class="cl-1429a13b">5.8</span></p></td><td class="cl-142a8e6a"><p class="cl-1429a13c"><span class="cl-1429a13b">1.8</span></p></td><td class="cl-142a8e6b"><p class="cl-1429a13d"><span class="cl-1429a13b">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">6.5</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">3.0</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">5.2</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">2.0</span></p></td><td class="cl-142a8e6e"><p class="cl-1429a13d"><span class="cl-1429a13b">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">7.9</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">3.8</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">6.4</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">2.0</span></p></td><td class="cl-142a8e6e"><p class="cl-1429a13d"><span class="cl-1429a13b">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">6.7</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">3.3</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">5.7</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">2.1</span></p></td><td class="cl-142a8e6e"><p class="cl-1429a13d"><span class="cl-1429a13b">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">6.5</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">3.2</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">5.1</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">2.0</span></p></td><td class="cl-142a8e6e"><p class="cl-1429a13d"><span class="cl-1429a13b">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">4.4</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">2.9</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">1.4</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">0.2</span></p></td><td class="cl-142a8e6e"><p class="cl-1429a13d"><span class="cl-1429a13b">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">5.1</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">2.5</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">3.0</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">1.1</span></p></td><td class="cl-142a8e6e"><p class="cl-1429a13d"><span class="cl-1429a13b">versicolor</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">5.1</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">3.8</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">1.9</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">0.4</span></p></td><td class="cl-142a8e6e"><p class="cl-1429a13d"><span class="cl-1429a13b">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">6.2</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">2.8</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">4.8</span></p></td><td class="cl-142a8e6f"><p class="cl-1429a13c"><span class="cl-1429a13b">1.8</span></p></td><td class="cl-142a8e6e"><p class="cl-1429a13d"><span class="cl-1429a13b">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-142a8e6c"><p class="cl-1429a13c"><span class="cl-1429a13b">5.4</span></p></td><td class="cl-142a8e6c"><p class="cl-1429a13c"><span class="cl-1429a13b">3.9</span></p></td><td class="cl-142a8e6c"><p class="cl-1429a13c"><span class="cl-1429a13b">1.3</span></p></td><td class="cl-142a8e6c"><p class="cl-1429a13c"><span class="cl-1429a13b">0.4</span></p></td><td class="cl-142a8e6d"><p class="cl-1429a13d"><span class="cl-1429a13b">setosa</span></p></td></tr></tbody></table></div></template>
-<div class="flextable-shadow-host" id="2a60eeac-f482-4272-8bf4-b2164fa1782e"></div>
+</style><div class="tabwid"><style>.cl-535114b8{}.cl-53422692{font-family:'Arial';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-53422693{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5342856a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-5342856b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-5343553a{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553b{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553c{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553d{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553e{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553f{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53435540{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53435541{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-535114b8'>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-53435541"><p class="cl-5342856a"><span class="cl-53422692">Sepal.Length</span></p></td><td class="cl-53435541"><p class="cl-5342856a"><span class="cl-53422692">Sepal.Width</span></p></td><td class="cl-53435541"><p class="cl-5342856a"><span class="cl-53422692">Petal.Length</span></p></td><td class="cl-53435541"><p class="cl-5342856a"><span class="cl-53422692">Petal.Width</span></p></td><td class="cl-53435540"><p class="cl-5342856b"><span class="cl-53422692">Species</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5343553a"><p class="cl-5342856a"><span class="cl-53422693">6.7</span></p></td><td class="cl-5343553a"><p class="cl-5342856a"><span class="cl-53422693">2.5</span></p></td><td class="cl-5343553a"><p class="cl-5342856a"><span class="cl-53422693">5.8</span></p></td><td class="cl-5343553a"><p class="cl-5342856a"><span class="cl-53422693">1.8</span></p></td><td class="cl-5343553b"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.5</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.0</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.2</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.0</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">7.9</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.8</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.4</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.0</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.7</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.3</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.7</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.1</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.5</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.2</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.1</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.0</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">4.4</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.9</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">1.4</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">0.2</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.1</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.5</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.0</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">1.1</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">versicolor</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.1</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.8</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">1.9</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">0.4</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.2</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.8</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">4.8</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">1.8</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553c"><p class="cl-5342856a"><span class="cl-53422693">5.4</span></p></td><td class="cl-5343553c"><p class="cl-5342856a"><span class="cl-53422693">3.9</span></p></td><td class="cl-5343553c"><p class="cl-5342856a"><span class="cl-53422693">1.3</span></p></td><td class="cl-5343553c"><p class="cl-5342856a"><span class="cl-53422693">0.4</span></p></td><td class="cl-5343553d"><p class="cl-5342856b"><span class="cl-53422693">setosa</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="339ef3dd-3f26-4341-9a7e-154491b42529"></div>
 <script>
-var dest = document.getElementById("2a60eeac-f482-4272-8bf4-b2164fa1782e");
-var template = document.getElementById("c8efe945-e295-4346-84f2-89cdecd8500a");
+var dest = document.getElementById("339ef3dd-3f26-4341-9a7e-154491b42529");
+var template = document.getElementById("7d842be6-46ed-4252-8bab-c29b0b8df154");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
