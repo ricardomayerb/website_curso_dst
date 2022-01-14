@@ -1,0 +1,479 @@
+---
+title: "Mónica  Díaz"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+xaringanExtra::use_panelset()
+```
+
+:::{.l-page}
+::: {.panelset}
+::: {.panel}
+## Tarea 1 {.panel-name}
+ 
+### Describa una situación hipotética donde tomará lugar la comunicación
+
+**Debe explicitar el quién-qué-cómo de la comunicación y describir brevemente el tipo de datos que utilizaría**
+
+### Primera Parte: La importancia del contexto
+
+El punto clave de la segunda clase fue destacar la importancia de analizar el contexto en que se va 
+a producir la comunicación. En esta tarea usted va a practicar algunas de las herramientas que
+ayudan a orientar su comunicación (dejaremos fuera de esta tarea la historia de tres minutos, la 
+Gran Idea y el guión gráfico)
+
+#### Pregunta 1: Describa la situación (10 puntos)
+
+Describa en unas pocas líneas una situación donde deba realizar una presentación. Sea concreto en
+el tema y la razón por la que debe hacer esa presentación.
+
+En contexto de pandemia 2020, se observa un bajo registro de las acciones de apoyo técnico en plataforma.  Se requiere que el registro de los datos se realice para analizar el proceso del apoyo y emprender acciones técnicas lideradas por las jefaturas regionales hacia los Departamentos provinciales.   Se acuerda reunión con Jefaturas regionales de Educación (16) en la que se presentarán los datos referidos al poyo técnico ministerial, que realizan los profesionales de la supervisión en los Ees asesorados, en cada uno de los territorios regionales.  Los datos objetivos se toman de los reportes que se gestionan desde una plataforma. 
+
+
+#### Pregunta 2: Describa el Quién (20 puntos)
+
+Responda lo siguiente respecto a la situación que acaba de distinguir
+
+a. Quién es la audiencia? en el caso de identificar varias audiencias potenciales, elija una y continúe 
+el resto de esta tarea.
+
+La audiencia es un grupo de 16 jefaturas de educación, en su mayoría, profesionales que fueron elegidos en la última etapa de la administración anterior y que tienen el rol de liderar y  coordinar las acciones de política educativa para el apoyo técnico pedagógico a los establecimientos educacionales, a través de los Departamentos Provinciales. 
+
+b. Quién es Usted para la audiencia? Lo conocen de antes? Tiene alguna relación con ellos? Está
+establecida su credibilidad?
+
+Profesional técnico con desempeño en la Unidad de Apoyo Técnico Pedagógico de la División de Educación General del MINEDUC, desde antes soy conocida por la mayoría de la audiencia.  Sí, tengo una relación con ellos.  En general, los profesionales que trabajan en el nivel central del MINEDUC son reconocidos y se les cree como consecuencia de la verticalidad de la cultura funcionaria ministerial. 
+
+
+#### Pregunta 3: Describa el Qué (30 puntos)
+
+Continúe respondiendo, pensando en la audiencia que eligió en la pregunta anterior
+
+a.	Acción: Qué necesita Usted que su audiencia sepa o haga?
+Necesito que las jefaturas respondan a la convocatoria, siempre y cuando no choque con la agenda de responsabilidades y acciones preestablecidas y emprendidas por ellos. Que la reunión tenga como fecha límite para su realización a fines de noviembre. Que revisen la plataforma y los datos previamente. Que internalicen la necesidad de restablecer acciones de trabajo colaborativo conjuntas, horizontales y profesionales.  Que  consideren a la retroalimentación como una capacidad inherente al cargo que desempeñan. Que se visibilice el pensamiento a través de la conversación, que se movilicen para reorientar el sentido que tiene la política de apoyo ministerial con sentido territorial.    
+
+b.	Mecanismo: describa cómo se comunicará con su audiencia (es una presentación presencial, telemática, es un informe escrito impreso, informe escrito digital, etc.?)
+Es un tipo de comunicación telemática mediante TEAMS Microsoft, en el que se mostrarán evidencias representadas en gráficas, se plantearán preguntas que activen el pensamiento y en programa PREZI.
+
+c.	Tono: describa el tono que tendrá la comunicación (solemne, liviano, celebratorio, cercano, etc.?)
+El tono que tendrá la comunicación será cercano con sentido ético, con la intención de establecer un ambiente de trabajo profesional horizontal, en el que se acuerden acciones  que la audiencia realizará en colaboración  y con apoyo técnico de los profesionales de la Unidad desde División de Educación General, si es que se requiere.  Al mismo tiempo se espera que  las acciones que emprenda la audiencia para resolver de manera efectiva el escaso registro del proceso del apoyo permitan: la acción del registro propiamente tal, el posterior análisis de los datos registrados, el diseño de acciones técnicas contextualizadas al terriorio y un reporte de resultados que se expondrá en una futura convocatoria de similares carcaterísticas.
+
+
+#### Pregunta 4: Describa el Cómo (10 puntos)
+
+a.	Qué datos hay disponibles para ayudarlo a hacer el punto que quiere hacer con su comunicación?
+Los datos están en los reportes que se extraen de una plataforma creada para el registro y gestión del apoyo técnico a nivel nacional.  Estos resportes pueden desagregarse por niveles (nacional, regional, provincial, comunal y por Establecimientos Educacionales), por usuario (autoridad nacional, jefaturas regionales, jefaturas Deprov, Jefaturas técnicas, supervisores  y supervisoras) y por temas (Focos, Acciones de mejora, Movimientos claves, porcentajes de acciones de mejora, por clasificación Urbano- Rural  del Establecimiento,  por dependencia del Establecimiento, por categoría del establecimiento de acuerdo a la evaluación de la Agencia de la Calidad, Nº de sesiones por tipo de apoyo, entre otros) .  
+
+
+### Segunda parte: Primeros pasos en con R y ggplot2
+
+#### Pregunta 5: Instale y grafique los pingüinos
+
+Siga las siguientes instrucciones:
+
+a. Abra RStudio (es importante que esté en una sesión nueva)
+
+b. Instale un paquete llamado palmerpenguins
+
+c. Cree un script nuevo (File –> New File –> New R Script)
+
+d. (5 puntos) Cargue el paquete escribiendo y ejecutando la instrucción library(palmerpenguins)
+
+e. (5 puntos) Use la función glimpse para ver los contenido del conjunto de datos penguins (glimpse
+penguins). Describa qué variables hay que tipo de variables son (numéricas? caracteres? factores?)
+
+f. (10 puntos) Tome como ejemplo el gráfico de puntos (en rigor, es un diagrama de dispersión) y cree
+su propio gráfico usando geom_point, dejando en el eje x la variable bill_length_mm y la variable
+bill_depth_mm en el eje y. Use la función labs() para agregar un título pertinente y cambiar el título
+de los ejes.
+
+g. (10 puntos) Copie el gráfico anterior y agregue lo necesario para que los puntos tomen un color 
+distinto dependiendo de la especie del pingUino que representan
+
+### Entregables
+
+Estos son los archivos que debe subir en Canvas, en Tarea 1
+
+a. Un archivo de Word con las respuestas a las preguntas 1 a 4
+
+b. Un script (archivo terminado en. R) que muestre su trabajo para las partes d, e, f y g de la pregunta 5 
+
+
+
+:::
+ 
+::: {.panel}
+## Tarea 2 {.panel-name}
+ 
+
+```{r message=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(gt)
+library(gtable)
+library(knitr)
+library(flextable)
+library(dbplyr)
+```
+
+### Cargar Datos
+
+```{r}
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+```
+```{r}
+df_exibble <- read_csv(file = "datos_para_tabla.csv") 
+df_exibble <- df_exibble %>% select(-c(8,9))
+df_exibble 
+```
+
+### Tablas básicas con Kable ()
+
+```{r}
+df_mini_iris %>%
+kable (caption = "Recreando booktabs style table")
+```
+
+```{r}
+df_exibble %>%
+kable (caption = "Recreando booktabs style table")  
+```
+
+
+#### Cambio del tamaño de la fuente()
+```{r}
+df_mini_iris %>%
+  knitr::kable() %>% 
+  kable_styling(bootstrap_options = "striped", font_size = 16)  
+```
+
+
+```{r}
+df_exibble %>%
+  knitr::kable() %>% 
+  kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+#### Especificación de columna()
+
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = spec_color(mtcars$drat[1:8], end = 0.7))
+```
+
+```{r}
+df_exibble %>%
+  kbl() %>% 
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "gray")%>%
+    kable_styling(bootstrap_options = "striped", font_size = 16)
+```
+
+```{r}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+  background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"))
+```
+
+ 
+```{r}
+kable(df_mini_iris, "html") %>%
+  kable_styling("striped") %>%
+  add_footnote(c("Esta tarea ha sido complicadísima", "Casi imposible."), notation = "alphabet")
+
+```
+
+```{r}
+df_exibble %>%
+  kbl() %>% 
+  kable_paper(full_width = F) %>%
+   column_spec(7, color = "white",
+              background ="lightblue")
+```
+### Paso tres
+
+```{r}
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = 7,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = 7,
+    currency = "USD" 
+  )
+```
+
+### Paso 4
+
+```{r}
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF")
+flextable(df_exibble)
+```
+
+
+ 
+:::
+ 
+::: {.panel}
+
+## Tarea 3 {.panel-name}
+
+
+### Cómo crear Paletas y modificar temas en ggplot2
+
+### 1 Instale los siguientes paquetes
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+library (tidyverse)
+library (palmerpenguins)
+library (paletteer)
+library (ggplot2)
+```
+
+
+### Primero: Crear dos gráficos "por defecto"de barras y de puntos
+#### El primero de Barras
+```{r}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) +
+  geom_bar() +
+  labs(title = "Pingüinos en archipiélago de Palmer",
+              subtitle = "Número de pinguinos en cada isla")
+print(barras1)
+```
+
+
+#### El segundo de Puntos
+```{r message=FALSE, warning=FALSE}
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) +
+  geom_point() +
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+print(puntos1)
+```
+
+### 3 Modificaciones de gráficos: Crear Paletas escogiendo colores
+
+##### Se slecciona una paleta de colores y un paquete
+```{r message=FALSE, warning=FALSE}
+paletteer_d("calecopal::bigsur2")
+```
+
+##### Luego se crea un vector con la paleta de colores
+```{r}
+col_d_1 <- c("#20618DFF", "#91AAC4FF", "#6B6C58FF", "#464724FF",
+             "#83932DFF", "#CAB89FFF")
+```
+
+##### A continuación, el vector se incorpora en el argumento values en cada una de las funciones para gráfico de barras fill y para el gráfico de puntos color
+```{r message=FALSE, warning=FALSE}
+barras1 + scale_fill_manual(values = col_d_1)
+```
+```{r message=FALSE, warning=FALSE}
+puntos1 + scale_color_manual(values = col_d_1)
+```
+
+
+##### Se crean las funciones para los gráficos de barras y de puntos que contienen las colores de la paleta seleccionada
+```{r}
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+mi_color_1 <- scale_color_manual(values = col_d_1)
+```
+
+##### Luego se le puede asignar un nombre que permitirá simplificar e identificar la función para utilizarla cada vez que se requiera cambiar la paleta de colores en cada uno de los gráficos
+```{r warning=FALSE}
+barras1 + mi_fill_1
+```
+```{r message=FALSE, warning=FALSE}
+puntos1 + mi_color_1
+```
+
+### 4.  Ejercicios de modificación de gráficos
+
+#### Primer ejercicio: Usar el mismo método anterior para crear una paleta discreta para barras "fill" y otra para puntos "color"
+```{r message=FALSE, warning=FALSE}
+col_d_1 <-c("#2A363BFF", "#019875FF", "#99B898FF", "#FECEA8FF", "#FF847CFF", "#E84A5FFF", "#C0392BFF", "#96281BFF")
+
+barras1 + scale_fill_manual(values = col_d_1 <-c("#2A363BFF", "#019875FF", "#99B898FF", "#FECEA8FF", "#FF847CFF", "#E84A5FFF", "#C0392BFF", "#96281BFF"))
+```
+
+```{r message=FALSE, warning=FALSE}
+puntos1 + scale_color_manual(values = col_d_1 <-c("#2A363BFF", "#019875FF", "#99B898FF", "#FECEA8FF", "#FF847CFF", "#E84A5FFF", "#C0392BFF", "#96281BFF"))
+```
+
+#### Segundo ejercicio: Usar el mismo mecanismo utilizando 10 paletas distintas (5 para barras "fill" y 5 para puntos "color")
+
+##### 5 cambios de paletas para barras "fill"
+```{r message=FALSE, warning=FALSE}
+barras1 + scale_fill_paletteer_d("awtools::mpalette")
+```
+
+```{r message=FALSE, warning=FALSE}
+barras1 + scale_fill_paletteer_d("basetheme::deepblue")
+```
+
+```{r message=FALSE, warning=FALSE}
+barras1 + scale_fill_paletteer_d("basetheme::ink")
+```
+
+```{r message=FALSE, warning=FALSE}
+barras1 + scale_fill_paletteer_d("basetheme::royal")
+```
+
+```{r}
+barras1 + scale_fill_paletteer_d("calecopal::oak")
+```
+
+##### 5 cambios de paletas para puntos "color"
+```{r warning=FALSE}
+puntos1 + scale_color_paletteer_d("awtools::mpalette")
+```
+
+```{r warning=FALSE}
+puntos1 + scale_color_paletteer_d("basetheme::deepblue")
+```
+
+```{r warning=FALSE}
+puntos1 + scale_color_paletteer_d("basetheme::ink")
+
+```
+
+```{r warning=FALSE}
+puntos1 + scale_color_paletteer_d("basetheme::royal")
+```
+
+
+```{r warning=FALSE}
+puntos1 + scale_color_paletteer_d("calecopal::oak")
+```
+
+#### Tercer ejercicio: Cambiar el tamaño de la letra del tìtulo y del subtítulo usando la información que se encuentra en https://ggplot2.tidyverse.org/articles/articles/faq-customising.html
+```{r warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 25),
+  plot.subtitle = element_text(size = 15)
+)
+```
+
+
+#### Cuarto ejercicio: Usar la información de este sitio https://ggplot2.tidyverse.org/articles/articles/faq-customising.html para cambiar el color del subtítulo, manteniendo los nuevos tamaños definidos en el Tercer Ejercicio 3
+```{r warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 25),
+  plot.subtitle = element_text(size = 15, color = "#9F248FFF")
+)
+```
+
+#### Quinto ejercicio: Usar la información que hay aquí  https://ggplot2-book.org/polishing.html para eliminar el color del backgound del interior del gráfico y para eliminar las grillas mayores y menores. Mantener las modificaciones hechas en  los ejercicios tercero y cuarto
+```{r warning=FALSE}
+puntos1 + theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 25),
+                plot.subtitle = element_text(size = 15, color = "#9F248FFF"))
+```
+
+#### Sexto ejercicio: Guardar el código que escribió en los ejercicios anteriores en un objeto de nombre "mis_cambios_de_tema" y luego aplicar esos cambios a sus gráficos con el operador "+"por ejemplo: mis_cambios_de_tema <- theme( cosas que hice en 3,4 y5) barras1 + mis_cambios_de_tema
+```{r warning=FALSE}
+
+mis_cambios_de_tema <- theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 25),
+                plot.subtitle = element_text(size = 15, color = "#9F248FFF"))
+
+
+barras1 + mis_cambios_de_tema
+
+```
+```{r warning=FALSE}
+puntos1 + mis_cambios_de_tema
+```
+
+#### Séptimo ejercicio: Aplicar una paleta favorita al resultado del Ejercicio 6, usando el operador "+"
+```{r warning=FALSE}
+barras1 + mis_cambios_de_tema + scale_color_paletteer_d("basetheme::royal")
+```
+
+```{r warning=FALSE}
+puntos1 + mis_cambios_de_tema + scale_color_paletteer_d("basetheme::royal")
+```
+
+
+#### Octavo ejercicio: guardar las paletas utilizadas y los cambios de tema en un archivo que se denomine cambios_graficos.R.  En este archivo se insertan las funciones escenciales usadas durante este tutorial
+
+a. Indicar el paquete tidyverse librería fundamental
+```{r warning=FALSE}
+library(tidyverse)
+library (paletteer)
+```
+
+b. Insertar los códigos utilizados y ejecutados para la creación de paletas
+```{r warning=FALSE}
+col_d_1 <- c("#20618DFF", "#91AAC4FF", "#6B6C58FF", "#464724FF",
+             "#83932DFF", "#CAB89FFF")
+
+mi_fill_1 <- scale_fill_manual(values = col_d_1)
+mi_color_1 <- scale_color_manual(values = col_d_1)
+```
+
+c. Insertar el código del séptimo ejercicio  mis_cambios_de_tema que refiere a todos los cambios que operaron (tamaño y color de títulos y subtítulos; eliminación de grillas y background) para gráficos de barras y de  puntos
+```{r warning=FALSE}
+mis_cambios_de_tema <- theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 25),
+                plot.subtitle = element_text(size = 15, color = "#9F248FFF"))
+```
+
+d. Crear la función source("cambios_graficos.r") que contendrá todas los cambios realizados en este tutorial a los dos gráficos por defecto, con lo cual, cada vez que se requiera realizar similares cambios (de colores y temas) se contará con la función y se señalará en el script.
+
+```{r warning=FALSE, eval=FALSE}
+source("cambios_graficos.R")
+```
+
+
+
+
+<!-- ::: -->
+
+<!-- ::: {.panel} -->
+
+## Tarea 4 {.panel-name}
+ 
+This is tarea num
+
+
+```{r echo=FALSE, out.width="40%"}
+knitr::include_url("Monica_Finalizada_Tarea-4.html", height = 650)
+```
+ 
+
+ 
+:::
+ 
+::: {.panel}
+## Proyecto integrador {.panel-name}
+ 
+Aquí va el proyecto integrador
+ 
+:::
+:::
+:::
+

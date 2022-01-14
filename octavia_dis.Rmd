@@ -1,0 +1,387 @@
+---
+title: "Octavia Mosciatti"
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r include=FALSE}
+xaringanExtra::use_panelset()
+```
+
+:::{.l-page}
+::: {.panelset}
+::: {.panel}
+## Tarea 1 {.panel-name}
+ 
+### Describa una situación hipotética donde tomará lugar la comunicación
+
+**Debe explicitar el quién-qué-cómo de la comunicación y describir brevemente el tipo de datos que utilizaría**
+
+### Pregunta 1: Describa la situación (10 puntos)
+
+Describa en unas pocas líneas una situación donde deba realizar una presentación. Sea concreto en el tema y la razón por la que debe hacer esa presentación
+
+En una empresa están entre dos opciones de desarrollo a largo plazo. La que presento yo es más ecológica y cara inicialmente, pero a largo plazo los resultados serían mejores y la inversión inicial valdría la pena. Tengp que presentar las cifras y explicar porqué mi alternativa es mejor. 
+
+### Pregunta 2: Describa el Quién (20 puntos)
+
+Responda lo siguiente respecto a la situación que acaba de distinguir
+a. Quién es la audiencia? EN el caso de identificar varias audiencias potenciales, elija una y continúe el resto de esta tarea.
+
+Mi audiencia es la directiva de la empresa
+
+b. Quién es Usted para la audiencia? Lo conocen de antes? Tiene alguna relación con ellos? Está establecida su credibilidad?
+
+Para la empresa soy una empleada de hace tiempo, por lo que me conocen de antes y tenemos una relación formal. Al llevar un tiempo trabajando con ellos ya tengo una credibilidad establecida.
+
+### Pregunta 3: Describa el Qué (30 puntos)
+
+Continúe respondiendo, pensando en al audiencia que eligió en la pregunta anterior
+
+a. Acción: Qué necesita Usted que su audiencia sepa o haga?
+
+Necesito que mi audiencia se convenza de que la alternativa que presento es la más viable a largo plazo, tanto ecológicamente como en términos de resultados monetarios para ellos. 
+
+b. Mecanismo: describa cómo se comunicará con su audiencia (es una presentación presencial, telemática, es un informe escrito impreso, informe escrito digital, etc.?)
+
+Es una presentación presencial en la que se exponen los datos de forma amplia, acompañada de un informe más detallado con las cifras y estudio que avalan mi propuesta.
+
+c. Tono: describa el tono que tendrá la comunicación (solemne, liviano, celebratorio, cercano, etc.?)
+
+El tono de la presentación será serio, informativo y educativo; mientras que el del informe será sólo serio e informativo.
+
+### Pregunta 4: Describa el Cómo (10 puntos)
+
+a. Qué datos hay disponibles para ayudarlo a hacer el punto que quiere hacer con su comunicación?
+
+Actualmente, existen investigaciones que han demostrado que, a largo plazo, la alternativa más “verde” va a ser más sostenible tanto ecológicamente como económicamente. A pesar de que la inversión puede ser mayor y los resultados no serán inmediatos, tendrá menos fallas y una durabilidad más alta, además de aportar al ganarse gran parte de la opinión púbica y entregando una “etiqueta eco friendly” a la compañía. 
+
+
+:::
+ 
+::: {.panel}
+## Tarea 2 {.panel-name}
+ 
+
+
+```{r warning=FALSE}
+library(kableExtra)
+library(tidyverse)
+library(gt)
+library(flextable)
+
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+df_exibble <- read_csv(file = "datos_para_tabla.csv")
+df_exibble <- df_exibble %>% select(-c(8,9))
+df_exibble
+
+kbl(df_mini_iris)
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_styling()
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper("hover", full_width=F)
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl (caption = "Tabla mini iris") %>%
+  kable_styling(font_size = 16)
+```
+```{r warning=FALSE}
+df_exibble %>%
+  kbl() %>%
+  kable_paper("hover", full_width=F)
+```
+```{r warning=FALSE}
+df_exibble%>%
+  kbl(caption = "Tabla exibble") %>%
+  kable_styling(font_size = 16)
+```
+
+#### Instrucción 7
+
+```{r warning=FALSE}
+dt <- df_mini_iris
+df_mini_iris
+
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+   column_spec(1, color = "white",
+              background = spec_color(mtcars$drat[1:8], end = 0.7))
+
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(1, color = "white",
+              background = "grey")
+```
+```{r warning=FALSE}
+dt <- df_exibble 
+df_exibble
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "grey")
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+   column_spec(1, color = "white",
+   background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"))
+```
+```{r warning=FALSE}
+df_mini_iris %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+   column_spec(1, color = "white",
+   background = ifelse(df_mini_iris$Sepal.Length < 6, "orange", "white"))
+```
+```{r warning=FALSE}
+dt <- df_mini_iris
+
+kable(dt, "html") %>%
+  kable_styling("striped") %>%
+  add_footnote(c("Tarea casi lista", "Falta poco"), notation = "alphabet")
+```
+
+```{r warning=FALSE}
+dt <- df_exibble 
+df_exibble
+
+df_exibble %>%
+  kbl() %>%
+  kable_paper(full_width = F) %>%
+  column_spec(7, color = "white",
+              background = "lightblue")
+
+```
+              
+
+### Paso 3
+
+```{r warning=FALSE}
+library(formattable)
+
+df_exibble %>%
+  gt()  %>%
+  fmt_number(
+    columns = 7,
+    decimals = 1
+  ) %>%
+  fmt_currency(
+    columns = 7,
+    currency = "USD"
+  )
+
+```
+
+### Paso 4
+
+```{r warning=FALSE}
+library(flextable)
+df_mini_iris <- read_csv(file = "mini_iris.csv")
+df_mini_iris
+
+ft <- flextable(df_mini_iris)
+
+set_flextable_defaults(
+  font.size = 10, theme_fun = theme_vanilla,
+  padding = 6,
+  background.color = "#EFEFEF"
+)
+flextable(df_mini_iris)
+
+```
+
+```{r warning=FALSE}
+myft<- flextable(head(df_exibble),
+                 col_keys = c("num", "chart", "fctr", "date", "time"))
+myft
+```
+
+ 
+ 
+:::
+ 
+::: {.panel}
+## Tarea 3 {.panel-name}
+
+
+
+Para comenzar, lo primero que hay que hacer es instalar los paquetes de tidyverse, paletteer, y bases de dato para poder realizar el ejercicio. En este caso, como ejemplo, tomaremos palmerpenguins y chilemapas.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(palmerpenguins)
+library(chilemapas)
+library(paletteer)
+```
+
+Con esta información cargada, crearemos dos gráficos, uno de barras y otro de puntos, con los datos anteriores, para poder modificarlos más adelante:
+
+```{r message=FALSE, warning=FALSE}
+barras1 <- ggplot(penguins, aes(y = island, fill = species)) + 
+  geom_bar() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Número de pinguinos en cada isla")
+
+puntos1 <- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm,
+                                color = species)) + 
+  geom_point() + 
+  labs(title = "Pingüinos en archipiélago de Palmer",
+       subtitle = "Dimensiones del pico de diversas especies")
+
+print(barras1)
+print(puntos1)
+
+```
+
+### Crear tu propia paleta de colores
+
+Ahora, a dejar volar la imaginación y crear una paleta de colores propias. Para esto utilizaremos paletteeer y el sitio web https://emilhvitfeldt.github.io/r-color-palettes/discrete.html nos ayudará para buscar paletas de colores ya hechas.
+
+```{r message=FALSE, warning=FALSE}
+paletteer_d("beyonce::X21")
+```
+
+```{r message=FALSE, warning=FALSE}
+paletteer_d("beyonce::X13")
+```
+
+Ya tenemos diferentes códigos de colores. Podemos seleccionar los que más nos gusten y diseñar nuestra propia paleta de colores.
+
+```{r message=FALSE, warning=FALSE}
+paleta_octavia <- c("#622E82FF", "#A45789FF", "#9B3257FF", "#1D96BFF", "#8EC87AFF", "#439E5FFF")
+```
+
+Con nuestra paleta ya diseñada, podemos utilizarlas para los gráficos que hicimos anteriormente.
+
+```{r message=FALSE, warning=FALSE}
+barras1 + scale_fill_manual(values = paleta_octavia)
+puntos1 + scale_color_manual(values = paleta_octavia)
+
+mi_fill_1 <- scale_fill_manual(values = paleta_octavia)
+mi_color_1 <- scale_color_manual(values = paleta_octavia)
+
+barras1 + mi_fill_1
+puntos1 + mi_color_1
+```
+
+### Crear paleta discreta
+
+Con el mismo método anterior, creamos lo que se conoce como una paleta discreta. Haremos dos: una para el aesthetic "fill" y otra para "color". Se puede seleccionar cualquier color que sea de nuestro agrado.
+
+```{r message=FALSE, warning=FALSE}
+library(paletteer) 
+paletteer_d("beyonce::X32")
+paleta_discreta <- as.vector(paletteer_d("beyonce::X32"))
+
+go_fill_1 <- scale_fill_manual(values = paleta_discreta)
+go_color_1 <- scale_color_manual(values = paleta_discreta)
+
+barras1 + go_fill_1
+puntos1 + mi_color_1
+```
+
+### Cambiar temas y tamaños
+
+Usando la información de este sitio https://ggplot2.tidyverse.org/articles/articles/faq-customising.html, cambiaremos el tamaño de la letra y del subtítulo de tus gráficos.
+
+```{r message=FALSE, warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 10),
+  plot.subtitle = element_text(size = 5)
+)
+
+barras1 + theme(
+  plot.title = element_text(size=10),
+  plot.subtitle = element_text(size = 5)
+)
+```
+
+A continuación, y con la misma información, cambiaremos el color tanto del título como el subtítulo, manteniendo los nuevos tamaños de las letras.
+
+```{r message=FALSE, warning=FALSE}
+puntos1 + theme(
+  plot.title = element_text(size = 10, color = "skyblue3"),
+  plot.subtitle = element_text(size = 5, color = "violetred2")
+) 
+
+barras1 + theme(
+  plot.title = element_text(size = 10, color = "turquoise4"),
+  plot.subtitle = element_text(size = 5, color = "pink")
+)
+```
+
+### Eliminar elementos
+
+Utilizando la información de https://ggplot2-book.org/polishing.html, eliminaremos el color del background del gráfico; y luego eliminaremos las grillas mayores y menores. Mantendremos los cambios realizados anteriormente.
+
+```{r message=FALSE, warning=FALSE}
+barras1 + theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 10, color = "skyblue3"),
+                plot.subtitle = element_text(size = 5, color = "violetred2"))
+
+puntos1 + theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 10, color = "turquoise4"),
+                 plot.subtitle = element_text(size = 5, color = "pink"))
+                
+```
+
+### Cambio de tema
+
+El código realizado anteriormente, lo guardaremos con el nombre que estimes conveniente. Luego, aplicaremos esos cambios a los gráficos con el operador "+".
+
+```{r message=FALSE, warning=FALSE}
+cambio_tema <- theme(panel.grid.major = element_blank(),
+                panel.grid.minor = element_blank(),
+                panel.background = element_blank(),
+                plot.title = element_text(size = 10, color = "turquoise4"),
+                 plot.subtitle = element_text(size = 5, color = "pink"))
+
+barras1 + cambio_tema
+puntos1 + cambio_tema
+```
+ 
+
+:::
+ 
+::: {.panel}
+## Tarea 4 {.panel-name}
+ 
+ 
+```{r echo=FALSE, out.width="40%"}
+knitr::include_url("mosciattirecartoctavia_Tarea-4.html", height = 650)
+```
+
+ 
+:::
+ 
+::: {.panel}
+## Proyecto integrador {.panel-name}
+ 
+Aquí va el proyecto integrador
+ 
+:::
+:::
+:::
+

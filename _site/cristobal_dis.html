@@ -2082,9 +2082,9 @@ Estudiantes
 <a href="celeste_dis.html">Celeste</a>
 <a href="cristobal_dis.html">Cristobal</a>
 <a href="genaro_dis.html">Genaro</a>
-<a href="paginatipo_dis.html">Mónica</a>
-<a href="paginatipo_dis.html">Octavia</a>
-<a href="paginatipo_dis.html">Paula</a>
+<a href="monica_dis.html">Mónica</a>
+<a href="octavia_dis.html">Octavia</a>
+<a href="paula_dis.html">Paula</a>
 </div>
 </div>
 <a href="about.html">Viz</a>
@@ -2150,7 +2150,7 @@ Estudiantes
 <h4 id="parte-2--paso-2-3">Parte 2 -Paso 2-3</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"mini_iris.csv"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/readr/man/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"mini_iris.csv"</span><span class='op'>)</span>
 <span class='va'>df_mini_iris</span>
 </code></pre>
 </div>
@@ -2168,9 +2168,9 @@ Estudiantes
  9          6.2         2.8          4.8         1.8 virginica 
 10          5.4         3.9          1.3         0.4 setosa    </code></pre>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"datos_para_tabla.csv"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/readr/man/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"datos_para_tabla.csv"</span><span class='op'>)</span>
 
-<span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>8</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://rdrr.io/pkg/dplyr/man/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>8</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>df_exibble</span>
 </code></pre>
@@ -2190,8 +2190,8 @@ Estudiantes
 <h4 id="parte-2---paso-5">Parte 2 - Paso 5</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Estilo de tabla mini_iris"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Estilo de tabla mini_iris"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2392,8 +2392,8 @@ setosa
 </tbody>
 </table>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Estilo de tabla exibble"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Estilo de tabla exibble"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2617,8 +2617,8 @@ NA
 <h4 id="parte-2---paso-6">Parte 2 - Paso 6</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Estilo de tabla mini_iris"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Estilo de tabla mini_iris"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span>, font_size <span class='op'>=</span><span class='fl'>16</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2819,8 +2819,8 @@ setosa
 </tbody>
 </table>
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Estilo de tabla exibble"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Estilo de tabla exibble"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span>, font_size <span class='op'>=</span><span class='fl'>16</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3044,11 +3044,11 @@ NA
 <h4 id="parte-2---7.a">Parte 2 - 7.A</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>]</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>]</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/spec_color.html'>spec_color</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span><span class='op'>)</span>,
-              <span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+              <span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/spec_color.html'>spec_color</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, end <span class='op'>=</span> <span class='fl'>0.7</span><span class='op'>)</span>,
               <span class='op'>)</span>
@@ -3251,8 +3251,8 @@ setosa
 <h4 id="parte-2---7.b">Parte 2 - 7.B</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span><span class='st'>"striped"</span>, full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span><span class='st'>"striped"</span>, full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>1</span>, bold <span class='op'>=</span> <span class='cn'>T</span>, color <span class='op'>=</span> <span class='st'>"white"</span>, background <span class='op'>=</span> <span class='st'>"#808080"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3453,8 +3453,8 @@ setosa
 <h4 id="parte-2---7.c">Parte 2 - 7.C</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span><span class='st'>"striped"</span>, full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span><span class='st'>"striped"</span>, full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>7</span><span class='op'>:</span><span class='fl'>7</span>, bold <span class='op'>=</span> <span class='cn'>T</span>, color <span class='op'>=</span> <span class='st'>"white"</span>, background <span class='op'>=</span> <span class='st'>"#808080"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3675,9 +3675,9 @@ NA
 <h4 id="parte-2---7.d">Parte 2 - 7.D</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>]</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span>, <span class='fl'>1</span><span class='op'>:</span><span class='fl'>5</span><span class='op'>]</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span> <span class='op'>&lt;</span> <span class='fl'>6</span>, <span class='st'>"orange"</span>, <span class='st'>"white"</span><span class='op'>)</span>,
               <span class='op'>)</span>
@@ -3880,8 +3880,8 @@ setosa
 <h4 id="parte-2---7.e-tabla-footnote">Parte 2 - 7.E Tabla Footnote</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span>, <span class='st'>"html"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span><span class='st'>"striped"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span>, <span class='st'>"html"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span><span class='st'>"striped"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/add_footnote.html'>add_footnote</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"virginica"</span>, <span class='st'>"setosa"</span>, <span class='st'>"versicolor"</span><span class='op'>)</span>, notation <span class='op'>=</span> <span class='st'>"symbol"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -4099,8 +4099,8 @@ setosa
 <h4 id="parte-2---7.f">Parte 2 - 7.F</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span><span class='st'>"striped"</span>, full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span><span class='st'>"striped"</span>, full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>7</span><span class='op'>:</span><span class='fl'>7</span>, bold <span class='op'>=</span> <span class='cn'>T</span>, color <span class='op'>=</span> <span class='st'>"white"</span>, background <span class='op'>=</span> <span class='st'>"#808080"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -4321,24 +4321,24 @@ NA
 <h3 id="paso-3-gt">Paso 3 GT</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>  <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/fmt_number.html'>fmt_number</a></span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>  <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/fmt_number.html'>fmt_number</a></span><span class='op'>(</span>
     columns <span class='op'>=</span> <span class='va'>num</span>,
     decimals <span class='op'>=</span> <span class='fl'>1</span>
-  <span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/fmt_currency.html'>fmt_currency</a></span><span class='op'>(</span>
+  <span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/fmt_currency.html'>fmt_currency</a></span><span class='op'>(</span>
     columns <span class='op'>=</span> <span class='va'>currency</span>,
     currency <span class='op'>=</span> <span class='st'>"USD"</span>
   <span class='op'>)</span>
 </code></pre>
 </div>
-<div id="covvbxqodk" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="tmimhsrgwx" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#covvbxqodk .gt_table {
+#tmimhsrgwx .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4363,7 +4363,7 @@ NA
   border-left-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_heading {
+#tmimhsrgwx .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4375,7 +4375,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_title {
+#tmimhsrgwx .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4385,7 +4385,7 @@ NA
   border-bottom-width: 0;
 }
 
-#covvbxqodk .gt_subtitle {
+#tmimhsrgwx .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4395,13 +4395,13 @@ NA
   border-top-width: 0;
 }
 
-#covvbxqodk .gt_bottom_border {
+#tmimhsrgwx .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_col_headings {
+#tmimhsrgwx .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4416,7 +4416,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_col_heading {
+#tmimhsrgwx .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4436,7 +4436,7 @@ NA
   overflow-x: hidden;
 }
 
-#covvbxqodk .gt_column_spanner_outer {
+#tmimhsrgwx .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4448,15 +4448,15 @@ NA
   padding-right: 4px;
 }
 
-#covvbxqodk .gt_column_spanner_outer:first-child {
+#tmimhsrgwx .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#covvbxqodk .gt_column_spanner_outer:last-child {
+#tmimhsrgwx .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#covvbxqodk .gt_column_spanner {
+#tmimhsrgwx .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4468,7 +4468,7 @@ NA
   width: 100%;
 }
 
-#covvbxqodk .gt_group_heading {
+#tmimhsrgwx .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4490,7 +4490,7 @@ NA
   vertical-align: middle;
 }
 
-#covvbxqodk .gt_empty_group_heading {
+#tmimhsrgwx .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4505,15 +4505,15 @@ NA
   vertical-align: middle;
 }
 
-#covvbxqodk .gt_from_md > :first-child {
+#tmimhsrgwx .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#covvbxqodk .gt_from_md > :last-child {
+#tmimhsrgwx .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#covvbxqodk .gt_row {
+#tmimhsrgwx .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4532,7 +4532,7 @@ NA
   overflow-x: hidden;
 }
 
-#covvbxqodk .gt_stub {
+#tmimhsrgwx .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4544,7 +4544,7 @@ NA
   padding-left: 12px;
 }
 
-#covvbxqodk .gt_summary_row {
+#tmimhsrgwx .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4554,7 +4554,7 @@ NA
   padding-right: 5px;
 }
 
-#covvbxqodk .gt_first_summary_row {
+#tmimhsrgwx .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4564,7 +4564,7 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_grand_summary_row {
+#tmimhsrgwx .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4574,7 +4574,7 @@ NA
   padding-right: 5px;
 }
 
-#covvbxqodk .gt_first_grand_summary_row {
+#tmimhsrgwx .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4584,11 +4584,11 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_striped {
+#tmimhsrgwx .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#covvbxqodk .gt_table_body {
+#tmimhsrgwx .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4597,7 +4597,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_footnotes {
+#tmimhsrgwx .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4611,13 +4611,13 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_footnote {
+#tmimhsrgwx .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#covvbxqodk .gt_sourcenotes {
+#tmimhsrgwx .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4631,41 +4631,41 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#covvbxqodk .gt_sourcenote {
+#tmimhsrgwx .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#covvbxqodk .gt_left {
+#tmimhsrgwx .gt_left {
   text-align: left;
 }
 
-#covvbxqodk .gt_center {
+#tmimhsrgwx .gt_center {
   text-align: center;
 }
 
-#covvbxqodk .gt_right {
+#tmimhsrgwx .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#covvbxqodk .gt_font_normal {
+#tmimhsrgwx .gt_font_normal {
   font-weight: normal;
 }
 
-#covvbxqodk .gt_font_bold {
+#tmimhsrgwx .gt_font_bold {
   font-weight: bold;
 }
 
-#covvbxqodk .gt_font_italic {
+#tmimhsrgwx .gt_font_italic {
   font-style: italic;
 }
 
-#covvbxqodk .gt_super {
+#tmimhsrgwx .gt_super {
   font-size: 65%;
 }
 
-#covvbxqodk .gt_footnote_marks {
+#tmimhsrgwx .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -4751,14 +4751,14 @@ NA
 <h4 id="tabla-1">Tabla 1</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://davidgohel.github.io/flextable/reference/set_flextable_defaults.html'>set_flextable_defaults</a></span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/flextable/man/set_flextable_defaults.html'>set_flextable_defaults</a></span><span class='op'>(</span>
   font.size <span class='op'>=</span> <span class='fl'>10</span>, theme_fun <span class='op'>=</span> <span class='va'>theme_vanilla</span>,
   padding <span class='op'>=</span> <span class='fl'>6</span>,
   background.color <span class='op'>=</span> <span class='st'>"#EFEFEF"</span><span class='op'>)</span>
-<span class='fu'><a href='https://davidgohel.github.io/flextable/reference/flextable.html'>flextable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/flextable/man/flextable.html'>flextable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span>
 </code></pre>
 </div>
-<template id="f10a0877-c79d-4501-a0e6-39e7195994e4"><style>
+<template id="b3173a1d-6c94-4d73-b8be-5f0f3df8285a"><style>
 .tabwid table{
   border-spacing:0px !important;
   border-collapse:collapse;
@@ -4792,12 +4792,12 @@ NA
 .tabwid table tr {
 background-color: transparent;
 }
-</style><div class="tabwid"><style>.cl-61526a12{}.cl-613ab14c{font-family:'Arial';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-613ab14d{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-613ad87a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-613ad87b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-613bd9b4{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-613bd9b5{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-613bd9b6{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-613bd9b7{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-613bd9b8{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-613bd9b9{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-613bd9ba{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-613bd9bb{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-61526a12'>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-613bd9bb"><p class="cl-613ad87a"><span class="cl-613ab14c">Sepal.Length</span></p></td><td class="cl-613bd9bb"><p class="cl-613ad87a"><span class="cl-613ab14c">Sepal.Width</span></p></td><td class="cl-613bd9bb"><p class="cl-613ad87a"><span class="cl-613ab14c">Petal.Length</span></p></td><td class="cl-613bd9bb"><p class="cl-613ad87a"><span class="cl-613ab14c">Petal.Width</span></p></td><td class="cl-613bd9ba"><p class="cl-613ad87b"><span class="cl-613ab14c">Species</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b4"><p class="cl-613ad87a"><span class="cl-613ab14d">6.7</span></p></td><td class="cl-613bd9b4"><p class="cl-613ad87a"><span class="cl-613ab14d">2.5</span></p></td><td class="cl-613bd9b4"><p class="cl-613ad87a"><span class="cl-613ab14d">5.8</span></p></td><td class="cl-613bd9b4"><p class="cl-613ad87a"><span class="cl-613ab14d">1.8</span></p></td><td class="cl-613bd9b5"><p class="cl-613ad87b"><span class="cl-613ab14d">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">6.5</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">3.0</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">5.2</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">2.0</span></p></td><td class="cl-613bd9b8"><p class="cl-613ad87b"><span class="cl-613ab14d">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">7.9</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">3.8</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">6.4</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">2.0</span></p></td><td class="cl-613bd9b8"><p class="cl-613ad87b"><span class="cl-613ab14d">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">6.7</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">3.3</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">5.7</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">2.1</span></p></td><td class="cl-613bd9b8"><p class="cl-613ad87b"><span class="cl-613ab14d">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">6.5</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">3.2</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">5.1</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">2.0</span></p></td><td class="cl-613bd9b8"><p class="cl-613ad87b"><span class="cl-613ab14d">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">4.4</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">2.9</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">1.4</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">0.2</span></p></td><td class="cl-613bd9b8"><p class="cl-613ad87b"><span class="cl-613ab14d">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">5.1</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">2.5</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">3.0</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">1.1</span></p></td><td class="cl-613bd9b8"><p class="cl-613ad87b"><span class="cl-613ab14d">versicolor</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">5.1</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">3.8</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">1.9</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">0.4</span></p></td><td class="cl-613bd9b8"><p class="cl-613ad87b"><span class="cl-613ab14d">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">6.2</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">2.8</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">4.8</span></p></td><td class="cl-613bd9b9"><p class="cl-613ad87a"><span class="cl-613ab14d">1.8</span></p></td><td class="cl-613bd9b8"><p class="cl-613ad87b"><span class="cl-613ab14d">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-613bd9b6"><p class="cl-613ad87a"><span class="cl-613ab14d">5.4</span></p></td><td class="cl-613bd9b6"><p class="cl-613ad87a"><span class="cl-613ab14d">3.9</span></p></td><td class="cl-613bd9b6"><p class="cl-613ad87a"><span class="cl-613ab14d">1.3</span></p></td><td class="cl-613bd9b6"><p class="cl-613ad87a"><span class="cl-613ab14d">0.4</span></p></td><td class="cl-613bd9b7"><p class="cl-613ad87b"><span class="cl-613ab14d">setosa</span></p></td></tr></tbody></table></div></template>
-<div class="flextable-shadow-host" id="cd366f10-9c56-4909-8e63-73f59224d1ef"></div>
+</style><div class="tabwid"><style>.cl-6c6bf160{}.cl-6c5becb6{font-family:'Arial';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6c5becb7{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6c5c139e{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-6c5c139f{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-6c5cb394{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c5cb395{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c5cb396{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c5cb397{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c5cb398{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c5cb399{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c5cb39a{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c5cb39b{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-6c6bf160'>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb39b"><p class="cl-6c5c139e"><span class="cl-6c5becb6">Sepal.Length</span></p></td><td class="cl-6c5cb39b"><p class="cl-6c5c139e"><span class="cl-6c5becb6">Sepal.Width</span></p></td><td class="cl-6c5cb39b"><p class="cl-6c5c139e"><span class="cl-6c5becb6">Petal.Length</span></p></td><td class="cl-6c5cb39b"><p class="cl-6c5c139e"><span class="cl-6c5becb6">Petal.Width</span></p></td><td class="cl-6c5cb39a"><p class="cl-6c5c139f"><span class="cl-6c5becb6">Species</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb394"><p class="cl-6c5c139e"><span class="cl-6c5becb7">6.7</span></p></td><td class="cl-6c5cb394"><p class="cl-6c5c139e"><span class="cl-6c5becb7">2.5</span></p></td><td class="cl-6c5cb394"><p class="cl-6c5c139e"><span class="cl-6c5becb7">5.8</span></p></td><td class="cl-6c5cb394"><p class="cl-6c5c139e"><span class="cl-6c5becb7">1.8</span></p></td><td class="cl-6c5cb395"><p class="cl-6c5c139f"><span class="cl-6c5becb7">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">6.5</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">3.0</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">5.2</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">2.0</span></p></td><td class="cl-6c5cb398"><p class="cl-6c5c139f"><span class="cl-6c5becb7">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">7.9</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">3.8</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">6.4</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">2.0</span></p></td><td class="cl-6c5cb398"><p class="cl-6c5c139f"><span class="cl-6c5becb7">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">6.7</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">3.3</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">5.7</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">2.1</span></p></td><td class="cl-6c5cb398"><p class="cl-6c5c139f"><span class="cl-6c5becb7">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">6.5</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">3.2</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">5.1</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">2.0</span></p></td><td class="cl-6c5cb398"><p class="cl-6c5c139f"><span class="cl-6c5becb7">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">4.4</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">2.9</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">1.4</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">0.2</span></p></td><td class="cl-6c5cb398"><p class="cl-6c5c139f"><span class="cl-6c5becb7">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">5.1</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">2.5</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">3.0</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">1.1</span></p></td><td class="cl-6c5cb398"><p class="cl-6c5c139f"><span class="cl-6c5becb7">versicolor</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">5.1</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">3.8</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">1.9</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">0.4</span></p></td><td class="cl-6c5cb398"><p class="cl-6c5c139f"><span class="cl-6c5becb7">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">6.2</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">2.8</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">4.8</span></p></td><td class="cl-6c5cb399"><p class="cl-6c5c139e"><span class="cl-6c5becb7">1.8</span></p></td><td class="cl-6c5cb398"><p class="cl-6c5c139f"><span class="cl-6c5becb7">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c5cb396"><p class="cl-6c5c139e"><span class="cl-6c5becb7">5.4</span></p></td><td class="cl-6c5cb396"><p class="cl-6c5c139e"><span class="cl-6c5becb7">3.9</span></p></td><td class="cl-6c5cb396"><p class="cl-6c5c139e"><span class="cl-6c5becb7">1.3</span></p></td><td class="cl-6c5cb396"><p class="cl-6c5c139e"><span class="cl-6c5becb7">0.4</span></p></td><td class="cl-6c5cb397"><p class="cl-6c5c139f"><span class="cl-6c5becb7">setosa</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="5fbe64da-48be-488c-a0fe-60a908c9929b"></div>
 <script>
-var dest = document.getElementById("cd366f10-9c56-4909-8e63-73f59224d1ef");
-var template = document.getElementById("f10a0877-c79d-4501-a0e6-39e7195994e4");
+var dest = document.getElementById("5fbe64da-48be-488c-a0fe-60a908c9929b");
+var template = document.getElementById("b3173a1d-6c94-4d73-b8be-5f0f3df8285a");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -4814,17 +4814,17 @@ fantome.appendChild(templateContent);
 <h4 id="tabla-2">Tabla 2</h4>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://davidgohel.github.io/flextable/reference/set_flextable_defaults.html'>set_flextable_defaults</a></span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/flextable/man/set_flextable_defaults.html'>set_flextable_defaults</a></span><span class='op'>(</span>
   font.size <span class='op'>=</span> <span class='fl'>10</span>,
   font.color <span class='op'>=</span> <span class='st'>"black"</span>,
   table.layout <span class='op'>=</span> <span class='st'>"fixed"</span>,
   digits <span class='op'>=</span> <span class='fl'>1</span>,
   theme_fun <span class='op'>=</span> <span class='st'>"theme_box"</span>
   <span class='op'>)</span>
-<span class='fu'><a href='https://davidgohel.github.io/flextable/reference/flextable.html'>flextable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/flextable/man/flextable.html'>flextable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span>
 </code></pre>
 </div>
-<template id="454a7707-ecd2-4c02-8f94-6d1ab27652c0"><style>
+<template id="9e3dc9ad-a217-41c6-a199-beff4b53c755"><style>
 .tabwid table{
   border-spacing:0px !important;
   border-collapse:collapse;
@@ -4858,12 +4858,12 @@ fantome.appendChild(templateContent);
 .tabwid table tr {
 background-color: transparent;
 }
-</style><div class="tabwid"><style>.cl-619adb08{}.cl-6184beb8{font-family:'Arial';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6184beb9{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6184e5aa{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-6184e5ab{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-6185e39c{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6185e39d{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6185e39e{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6185e39f{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-619adb08'>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb8">Sepal.Length</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb8">Sepal.Width</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb8">Petal.Length</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb8">Petal.Width</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb8">Species</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-6185e39c"><p class="cl-6184e5aa"><span class="cl-6184beb9">6.7</span></p></td><td class="cl-6185e39c"><p class="cl-6184e5aa"><span class="cl-6184beb9">2.5</span></p></td><td class="cl-6185e39c"><p class="cl-6184e5aa"><span class="cl-6184beb9">5.8</span></p></td><td class="cl-6185e39c"><p class="cl-6184e5aa"><span class="cl-6184beb9">1.8</span></p></td><td class="cl-6185e39d"><p class="cl-6184e5ab"><span class="cl-6184beb9">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">6.5</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">3.0</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">5.2</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">2.0</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">7.9</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">3.8</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">6.4</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">2.0</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">6.7</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">3.3</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">5.7</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">2.1</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">6.5</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">3.2</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">5.1</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">2.0</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">4.4</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">2.9</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">1.4</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">0.2</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">5.1</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">2.5</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">3.0</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">1.1</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">versicolor</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">5.1</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">3.8</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">1.9</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">0.4</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">6.2</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">2.8</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">4.8</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">1.8</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">5.4</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">3.9</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">1.3</span></p></td><td class="cl-6185e39e"><p class="cl-6184e5aa"><span class="cl-6184beb9">0.4</span></p></td><td class="cl-6185e39f"><p class="cl-6184e5ab"><span class="cl-6184beb9">setosa</span></p></td></tr></tbody></table></div></template>
-<div class="flextable-shadow-host" id="93d05826-b030-427d-8bc8-49412fa3c87a"></div>
+</style><div class="tabwid"><style>.cl-6ca2feda{}.cl-6c937820{font-family:'Arial';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6c937821{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-6c937822{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-6c937823{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-6c93f7a0{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c93f7a1{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c93f7a2{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-6c93f7a3{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 1pt solid rgba(102, 102, 102, 1.00);border-top: 1pt solid rgba(102, 102, 102, 1.00);border-left: 1pt solid rgba(102, 102, 102, 1.00);border-right: 1pt solid rgba(102, 102, 102, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-6ca2feda'>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937820">Sepal.Length</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937820">Sepal.Width</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937820">Petal.Length</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937820">Petal.Width</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937820">Species</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a0"><p class="cl-6c937822"><span class="cl-6c937821">6.7</span></p></td><td class="cl-6c93f7a0"><p class="cl-6c937822"><span class="cl-6c937821">2.5</span></p></td><td class="cl-6c93f7a0"><p class="cl-6c937822"><span class="cl-6c937821">5.8</span></p></td><td class="cl-6c93f7a0"><p class="cl-6c937822"><span class="cl-6c937821">1.8</span></p></td><td class="cl-6c93f7a1"><p class="cl-6c937823"><span class="cl-6c937821">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">6.5</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">3.0</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">5.2</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">2.0</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">7.9</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">3.8</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">6.4</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">2.0</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">6.7</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">3.3</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">5.7</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">2.1</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">6.5</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">3.2</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">5.1</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">2.0</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">4.4</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">2.9</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">1.4</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">0.2</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">5.1</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">2.5</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">3.0</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">1.1</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">versicolor</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">5.1</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">3.8</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">1.9</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">0.4</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">6.2</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">2.8</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">4.8</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">1.8</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">5.4</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">3.9</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">1.3</span></p></td><td class="cl-6c93f7a2"><p class="cl-6c937822"><span class="cl-6c937821">0.4</span></p></td><td class="cl-6c93f7a3"><p class="cl-6c937823"><span class="cl-6c937821">setosa</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="61691e9e-e999-4bd7-913e-9ca90afd6d49"></div>
 <script>
-var dest = document.getElementById("93d05826-b030-427d-8bc8-49412fa3c87a");
-var template = document.getElementById("454a7707-ecd2-4c02-8f94-6d1ab27652c0");
+var dest = document.getElementById("61691e9e-e999-4bd7-913e-9ca90afd6d49");
+var template = document.getElementById("9e3dc9ad-a217-41c6-a199-beff4b53c755");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -4894,9 +4894,9 @@ fantome.appendChild(templateContent);
 <p>En una primera instancia crearemos un grafico por defecto de la base de datos “penguins” para luego realizar modificaciones, asignando el objeto con el nombre barras1. De la siguiente función obtendremos el siguiente el gráfico.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>penguins</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>island</span>, fill <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Pingüinos en archipiélago de Palmer"</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>penguins</span>, <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>island</span>, fill <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/geom_bar.html'>geom_bar</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Pingüinos en archipiélago de Palmer"</span>,
        subtitle <span class='op'>=</span> <span class='st'>"Número de pinguinos en cada isla"</span><span class='op'>)</span>
 
 <span class='va'>barras1</span>
@@ -4929,9 +4929,9 @@ Para este ejemplo utilizaremos la paleta “calecopal::fire”
 y obtener asi los siguientes graficos
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fill1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>paleta1</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>fill1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>paleta1</span><span class='op'>)</span>
 
-<span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>paleta1</span><span class='op'>)</span>
+<span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>paleta1</span><span class='op'>)</span>
 </code></pre>
 </div>
 <p><img src="cristobal_dis_files/figure-html5/unnamed-chunk-19-1.png" width="624" /></p>
@@ -4943,10 +4943,10 @@ y obtener asi los siguientes graficos
 <p>Te gusto el link, bien, ahora que tenemos nuestras barras listas seria bueno cambiar un poco el tamaño y color de los titulos y subtitulos, para eso utilizaremos la siguiente función, usted podra cambiar el tamaño cambiando el valor en la función “size” y el color en la función color</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>paleta1</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
-  plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>30</span>, color <span class='op'>=</span> <span class='st'>"#2C1B21FF"</span> <span class='op'>)</span>,
-  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>15</span>, color <span class='op'>=</span> <span class='st'>"#E60505FF"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>paleta1</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/theme.html'>theme</a></span><span class='op'>(</span>
+  plot.title <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>30</span>, color <span class='op'>=</span> <span class='st'>"#2C1B21FF"</span> <span class='op'>)</span>,
+  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>15</span>, color <span class='op'>=</span> <span class='st'>"#E60505FF"</span><span class='op'>)</span>
 <span class='op'>)</span>
 </code></pre>
 </div>

@@ -18,11 +18,11 @@ navbar:
        - text: "Genaro"
          href: genaro_dis.html
        - text: "Mónica"
-         href: paginatipo_dis.html
+         href: monica_dis.html
        - text: "Octavia"
-         href: paginatipo_dis.html
+         href: octavia_dis.html
        - text: "Paula"
-         href: paginatipo_dis.html
+         href: paula_dis.html
     - text: "Viz"
       href: about.html
     - text: "About"

@@ -1,5 +1,5 @@
 ---
-title: "Aranzazu Garmendia"
+title: "Aránzazu Garmendia"
 output: distill::distill_article
 ---
 

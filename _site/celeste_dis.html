@@ -87,26 +87,26 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Data Storytelling: Nombre Apellido</title>
+  <title>Data Storytelling: Celeste Ojeda</title>
 
 
 
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Data Storytelling: Nombre Apellido"/>
+  <meta property="og:title" content="Data Storytelling: Celeste Ojeda"/>
   <meta property="og:type" content="article"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:site_name" content="Data Storytelling"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Data Storytelling: Nombre Apellido"/>
+  <meta property="twitter:title" content="Data Storytelling: Celeste Ojeda"/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Nombre Apellido"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","output"]}},"value":[{"type":"character","attributes":{},"value":["Celeste Ojeda"]},{"type":"character","attributes":{},"value":["distill::distill_article"]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
   <!--radix_placeholder_navigation_in_header-->
@@ -2059,7 +2059,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Nombre Apellido","authors":[]}
+{"title":"Celeste Ojeda","authors":[]}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2082,9 +2082,9 @@ Estudiantes
 <a href="celeste_dis.html">Celeste</a>
 <a href="cristobal_dis.html">Cristobal</a>
 <a href="genaro_dis.html">Genaro</a>
-<a href="paginatipo_dis.html">Mónica</a>
-<a href="paginatipo_dis.html">Octavia</a>
-<a href="paginatipo_dis.html">Paula</a>
+<a href="monica_dis.html">Mónica</a>
+<a href="octavia_dis.html">Octavia</a>
+<a href="paula_dis.html">Paula</a>
 </div>
 </div>
 <a href="about.html">Viz</a>
@@ -2098,7 +2098,7 @@ Estudiantes
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Nombre Apellido</h1>
+<h1>Celeste Ojeda</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
 
@@ -2187,7 +2187,7 @@ Estudiantes
 <p>Carguemos los data sets <code>mini_iris.csv</code> y <code>datos_para_tabla</code></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"mini_iris.csv"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/readr/man/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"mini_iris.csv"</span><span class='op'>)</span>
 <span class='va'>df_mini_iris</span> 
 </code></pre>
 </div>
@@ -2207,10 +2207,10 @@ Estudiantes
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readr.tidyverse.org/reference/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"datos_para_tabla.csv"</span><span class='op'>)</span> <span class='co'># aquí se cargan datos y se crea df_exibble</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/readr/man/read_delim.html'>read_csv</a></span><span class='op'>(</span>file <span class='op'>=</span> <span class='st'>"datos_para_tabla.csv"</span><span class='op'>)</span> <span class='co'># aquí se cargan datos y se crea df_exibble</span>
 
 
-<span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>8</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>df_exibble</span> <span class='op'>&lt;-</span> <span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span> <span class='fu'><a href='https://rdrr.io/pkg/dplyr/man/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>8</span>,<span class='fl'>9</span><span class='op'>)</span><span class='op'>)</span>
 
 <span class='va'>df_exibble</span> <span class='co'># esta línea imprime este tibble que llamamos df_exibble</span>
 </code></pre>
@@ -2230,8 +2230,8 @@ Estudiantes
 <h3 id="paso-2.5">Paso 2.5</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Datos de Iris de Flores"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Datos de Iris de Flores"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2434,8 +2434,8 @@ setosa
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
- <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Datos Exibble"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+ <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span>caption <span class='op'>=</span> <span class='st'>"Datos Exibble"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span>, html_font <span class='op'>=</span> <span class='st'>"Cambria"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2659,7 +2659,7 @@ NA
 <h3 id="paso-2.6">Paso 2.6</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='st'>"striped"</span>, font_size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -2859,7 +2859,7 @@ setosa
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_exibble</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_styling.html'>kable_styling</a></span><span class='op'>(</span>bootstrap_options <span class='op'>=</span> <span class='st'>"striped"</span>, font_size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3080,9 +3080,9 @@ NA
 <h3 id="paso-2.7.1">Paso 2.7.1</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/spec_color.html'>spec_color</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>10</span><span class='op'>]</span>, end <span class='op'>=</span> <span class='fl'>0.7</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
@@ -3284,9 +3284,9 @@ setosa
 <h3 id="paso-2.7.2">Paso 2.7.2</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"grey"</span><span class='op'>)</span>
 </code></pre>
@@ -3488,9 +3488,9 @@ setosa
 <h3 id="paso-2.7.3">Paso 2.7.3</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>7</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"grey"</span><span class='op'>)</span>
 </code></pre>
@@ -3712,9 +3712,9 @@ NA
 <h3 id="paso-2.7.4">Paso 2.7.4</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_mini_iris</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>1</span>,background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>$</span><span class='va'>Sepal.Length</span> <span class='op'>&lt;</span> <span class='fl'>6</span>, <span class='st'>"orange"</span>, <span class='st'>"grey"</span><span class='op'>)</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -3915,8 +3915,8 @@ setosa
 <h3 id="paso-2.7.5">Paso 2.7.5</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span>, align <span class='op'>=</span> <span class='st'>"c"</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span>, align <span class='op'>=</span> <span class='st'>"c"</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_classic</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'>kableExtra</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/footnote.html'>footnote</a></span><span class='op'>(</span>general <span class='op'>=</span> <span class='st'>"Notas de la tabla."</span>,
            number <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Largo; "</span>, <span class='st'>"Ancho; "</span><span class='op'>)</span>,
            alphabet <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Largo; "</span>, <span class='st'>"Ancho; "</span><span class='op'>)</span>,
@@ -4140,9 +4140,9 @@ setosa
 <h3 id="paso-2.7.6">Paso 2.7.6</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kbl.html'>kbl</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/kable_classic.html'>kable_paper</a></span><span class='op'>(</span>full_width <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://rdrr.io/pkg/kableExtra/man/column_spec.html'>column_spec</a></span><span class='op'>(</span><span class='fl'>7</span>, color <span class='op'>=</span> <span class='st'>"white"</span>,
               background <span class='op'>=</span> <span class='st'>"lightblue"</span><span class='op'>)</span>
 </code></pre>
@@ -4364,24 +4364,24 @@ NA
 <h3 id="paso-3">Paso 3</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>  <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/fmt_number.html'>fmt_number</a></span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_exibble</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/gt.html'>gt</a></span><span class='op'>(</span><span class='op'>)</span>  <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/fmt_number.html'>fmt_number</a></span><span class='op'>(</span>
     columns <span class='op'>=</span> <span class='va'>num</span>,
     decimals <span class='op'>=</span> <span class='fl'>1</span>
-  <span class='op'>)</span> <span class='op'><a href='https://gt.rstudio.com/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://gt.rstudio.com/reference/fmt_currency.html'>fmt_currency</a></span><span class='op'>(</span>
+  <span class='op'>)</span> <span class='op'><a href='https://rdrr.io/pkg/gt/man/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://rdrr.io/pkg/gt/man/fmt_currency.html'>fmt_currency</a></span><span class='op'>(</span>
     columns <span class='op'>=</span> <span class='va'>currency</span>,
     currency <span class='op'>=</span> <span class='st'>"USD"</span> 
   <span class='op'>)</span>
 </code></pre>
 </div>
-<div id="sssxevmyuz" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="larosiedxp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#sssxevmyuz .gt_table {
+#larosiedxp .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -4406,7 +4406,7 @@ NA
   border-left-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_heading {
+#larosiedxp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -4418,7 +4418,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_title {
+#larosiedxp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -4428,7 +4428,7 @@ NA
   border-bottom-width: 0;
 }
 
-#sssxevmyuz .gt_subtitle {
+#larosiedxp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -4438,13 +4438,13 @@ NA
   border-top-width: 0;
 }
 
-#sssxevmyuz .gt_bottom_border {
+#larosiedxp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_col_headings {
+#larosiedxp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4459,7 +4459,7 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_col_heading {
+#larosiedxp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4479,7 +4479,7 @@ NA
   overflow-x: hidden;
 }
 
-#sssxevmyuz .gt_column_spanner_outer {
+#larosiedxp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4491,15 +4491,15 @@ NA
   padding-right: 4px;
 }
 
-#sssxevmyuz .gt_column_spanner_outer:first-child {
+#larosiedxp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#sssxevmyuz .gt_column_spanner_outer:last-child {
+#larosiedxp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#sssxevmyuz .gt_column_spanner {
+#larosiedxp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -4511,7 +4511,7 @@ NA
   width: 100%;
 }
 
-#sssxevmyuz .gt_group_heading {
+#larosiedxp .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4533,7 +4533,7 @@ NA
   vertical-align: middle;
 }
 
-#sssxevmyuz .gt_empty_group_heading {
+#larosiedxp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -4548,15 +4548,15 @@ NA
   vertical-align: middle;
 }
 
-#sssxevmyuz .gt_from_md > :first-child {
+#larosiedxp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#sssxevmyuz .gt_from_md > :last-child {
+#larosiedxp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#sssxevmyuz .gt_row {
+#larosiedxp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4575,7 +4575,7 @@ NA
   overflow-x: hidden;
 }
 
-#sssxevmyuz .gt_stub {
+#larosiedxp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -4587,7 +4587,7 @@ NA
   padding-left: 12px;
 }
 
-#sssxevmyuz .gt_summary_row {
+#larosiedxp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4597,7 +4597,7 @@ NA
   padding-right: 5px;
 }
 
-#sssxevmyuz .gt_first_summary_row {
+#larosiedxp .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4607,7 +4607,7 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_grand_summary_row {
+#larosiedxp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -4617,7 +4617,7 @@ NA
   padding-right: 5px;
 }
 
-#sssxevmyuz .gt_first_grand_summary_row {
+#larosiedxp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -4627,11 +4627,11 @@ NA
   border-top-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_striped {
+#larosiedxp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#sssxevmyuz .gt_table_body {
+#larosiedxp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -4640,7 +4640,7 @@ NA
   border-bottom-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_footnotes {
+#larosiedxp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4654,13 +4654,13 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_footnote {
+#larosiedxp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#sssxevmyuz .gt_sourcenotes {
+#larosiedxp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -4674,41 +4674,41 @@ NA
   border-right-color: #D3D3D3;
 }
 
-#sssxevmyuz .gt_sourcenote {
+#larosiedxp .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#sssxevmyuz .gt_left {
+#larosiedxp .gt_left {
   text-align: left;
 }
 
-#sssxevmyuz .gt_center {
+#larosiedxp .gt_center {
   text-align: center;
 }
 
-#sssxevmyuz .gt_right {
+#larosiedxp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#sssxevmyuz .gt_font_normal {
+#larosiedxp .gt_font_normal {
   font-weight: normal;
 }
 
-#sssxevmyuz .gt_font_bold {
+#larosiedxp .gt_font_bold {
   font-weight: bold;
 }
 
-#sssxevmyuz .gt_font_italic {
+#larosiedxp .gt_font_italic {
   font-style: italic;
 }
 
-#sssxevmyuz .gt_super {
+#larosiedxp .gt_super {
   font-size: 65%;
 }
 
-#sssxevmyuz .gt_footnote_marks {
+#larosiedxp .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 65%;
@@ -4793,14 +4793,14 @@ NA
 <h3 id="paso-4">Paso 4</h3>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://davidgohel.github.io/flextable/reference/set_flextable_defaults.html'>set_flextable_defaults</a></span><span class='op'>(</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/pkg/flextable/man/set_flextable_defaults.html'>set_flextable_defaults</a></span><span class='op'>(</span>
   font.size <span class='op'>=</span> <span class='fl'>10</span>, theme_fun <span class='op'>=</span> <span class='va'>theme_vanilla</span>,
   padding <span class='op'>=</span> <span class='fl'>6</span>,
   background.color <span class='op'>=</span> <span class='st'>"#EFEFEF"</span><span class='op'>)</span>
-<span class='fu'><a href='https://davidgohel.github.io/flextable/reference/flextable.html'>flextable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/pkg/flextable/man/flextable.html'>flextable</a></span><span class='op'>(</span><span class='va'>df_mini_iris</span><span class='op'>)</span>
 </code></pre>
 </div>
-<template id="7d842be6-46ed-4252-8bab-c29b0b8df154"><style>
+<template id="9b9d4059-4333-4b16-9046-e574b8a9c61c"><style>
 .tabwid table{
   border-spacing:0px !important;
   border-collapse:collapse;
@@ -4834,12 +4834,12 @@ NA
 .tabwid table tr {
 background-color: transparent;
 }
-</style><div class="tabwid"><style>.cl-535114b8{}.cl-53422692{font-family:'Arial';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-53422693{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-5342856a{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-5342856b{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-5343553a{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553b{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553c{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553d{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553e{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-5343553f{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53435540{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-53435541{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-535114b8'>
-<thead><tr style="overflow-wrap:break-word;"><td class="cl-53435541"><p class="cl-5342856a"><span class="cl-53422692">Sepal.Length</span></p></td><td class="cl-53435541"><p class="cl-5342856a"><span class="cl-53422692">Sepal.Width</span></p></td><td class="cl-53435541"><p class="cl-5342856a"><span class="cl-53422692">Petal.Length</span></p></td><td class="cl-53435541"><p class="cl-5342856a"><span class="cl-53422692">Petal.Width</span></p></td><td class="cl-53435540"><p class="cl-5342856b"><span class="cl-53422692">Species</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-5343553a"><p class="cl-5342856a"><span class="cl-53422693">6.7</span></p></td><td class="cl-5343553a"><p class="cl-5342856a"><span class="cl-53422693">2.5</span></p></td><td class="cl-5343553a"><p class="cl-5342856a"><span class="cl-53422693">5.8</span></p></td><td class="cl-5343553a"><p class="cl-5342856a"><span class="cl-53422693">1.8</span></p></td><td class="cl-5343553b"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.5</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.0</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.2</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.0</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">7.9</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.8</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.4</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.0</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.7</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.3</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.7</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.1</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.5</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.2</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.1</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.0</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">4.4</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.9</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">1.4</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">0.2</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.1</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.5</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.0</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">1.1</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">versicolor</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">5.1</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">3.8</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">1.9</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">0.4</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">6.2</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">2.8</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">4.8</span></p></td><td class="cl-5343553f"><p class="cl-5342856a"><span class="cl-53422693">1.8</span></p></td><td class="cl-5343553e"><p class="cl-5342856b"><span class="cl-53422693">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-5343553c"><p class="cl-5342856a"><span class="cl-53422693">5.4</span></p></td><td class="cl-5343553c"><p class="cl-5342856a"><span class="cl-53422693">3.9</span></p></td><td class="cl-5343553c"><p class="cl-5342856a"><span class="cl-53422693">1.3</span></p></td><td class="cl-5343553c"><p class="cl-5342856a"><span class="cl-53422693">0.4</span></p></td><td class="cl-5343553d"><p class="cl-5342856b"><span class="cl-53422693">setosa</span></p></td></tr></tbody></table></div></template>
-<div class="flextable-shadow-host" id="339ef3dd-3f26-4341-9a7e-154491b42529"></div>
+</style><div class="tabwid"><style>.cl-61ed7a92{}.cl-61e27c14{font-family:'Arial';font-size:10pt;font-weight:bold;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-61e27c15{font-family:'Arial';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-61e27c16{margin:0;text-align:right;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-61e27c17{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:6pt;padding-top:6pt;padding-left:6pt;padding-right:6pt;line-height: 1;background-color:transparent;}.cl-61e31a0c{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-61e31a0d{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-61e31a0e{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-61e31a0f{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-61e31a10{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-61e31a11{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 0.5pt solid rgba(102, 102, 102, 1.00);border-top: 0.5pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-61e31a12{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-61e31a13{width:54pt;background-color:rgba(239, 239, 239, 1.00);vertical-align: middle;border-bottom: 2pt solid rgba(102, 102, 102, 1.00);border-top: 2pt solid rgba(102, 102, 102, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table class='cl-61ed7a92'>
+<thead><tr style="overflow-wrap:break-word;"><td class="cl-61e31a13"><p class="cl-61e27c16"><span class="cl-61e27c14">Sepal.Length</span></p></td><td class="cl-61e31a13"><p class="cl-61e27c16"><span class="cl-61e27c14">Sepal.Width</span></p></td><td class="cl-61e31a13"><p class="cl-61e27c16"><span class="cl-61e27c14">Petal.Length</span></p></td><td class="cl-61e31a13"><p class="cl-61e27c16"><span class="cl-61e27c14">Petal.Width</span></p></td><td class="cl-61e31a12"><p class="cl-61e27c17"><span class="cl-61e27c14">Species</span></p></td></tr></thead><tbody><tr style="overflow-wrap:break-word;"><td class="cl-61e31a0c"><p class="cl-61e27c16"><span class="cl-61e27c15">6.7</span></p></td><td class="cl-61e31a0c"><p class="cl-61e27c16"><span class="cl-61e27c15">2.5</span></p></td><td class="cl-61e31a0c"><p class="cl-61e27c16"><span class="cl-61e27c15">5.8</span></p></td><td class="cl-61e31a0c"><p class="cl-61e27c16"><span class="cl-61e27c15">1.8</span></p></td><td class="cl-61e31a0d"><p class="cl-61e27c17"><span class="cl-61e27c15">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">6.5</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">3.0</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">5.2</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">2.0</span></p></td><td class="cl-61e31a10"><p class="cl-61e27c17"><span class="cl-61e27c15">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">7.9</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">3.8</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">6.4</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">2.0</span></p></td><td class="cl-61e31a10"><p class="cl-61e27c17"><span class="cl-61e27c15">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">6.7</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">3.3</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">5.7</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">2.1</span></p></td><td class="cl-61e31a10"><p class="cl-61e27c17"><span class="cl-61e27c15">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">6.5</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">3.2</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">5.1</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">2.0</span></p></td><td class="cl-61e31a10"><p class="cl-61e27c17"><span class="cl-61e27c15">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">4.4</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">2.9</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">1.4</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">0.2</span></p></td><td class="cl-61e31a10"><p class="cl-61e27c17"><span class="cl-61e27c15">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">5.1</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">2.5</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">3.0</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">1.1</span></p></td><td class="cl-61e31a10"><p class="cl-61e27c17"><span class="cl-61e27c15">versicolor</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">5.1</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">3.8</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">1.9</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">0.4</span></p></td><td class="cl-61e31a10"><p class="cl-61e27c17"><span class="cl-61e27c15">setosa</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">6.2</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">2.8</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">4.8</span></p></td><td class="cl-61e31a11"><p class="cl-61e27c16"><span class="cl-61e27c15">1.8</span></p></td><td class="cl-61e31a10"><p class="cl-61e27c17"><span class="cl-61e27c15">virginica</span></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-61e31a0e"><p class="cl-61e27c16"><span class="cl-61e27c15">5.4</span></p></td><td class="cl-61e31a0e"><p class="cl-61e27c16"><span class="cl-61e27c15">3.9</span></p></td><td class="cl-61e31a0e"><p class="cl-61e27c16"><span class="cl-61e27c15">1.3</span></p></td><td class="cl-61e31a0e"><p class="cl-61e27c16"><span class="cl-61e27c15">0.4</span></p></td><td class="cl-61e31a0f"><p class="cl-61e27c17"><span class="cl-61e27c15">setosa</span></p></td></tr></tbody></table></div></template>
+<div class="flextable-shadow-host" id="5a796408-8f66-4646-8e08-da151157311b"></div>
 <script>
-var dest = document.getElementById("339ef3dd-3f26-4341-9a7e-154491b42529");
-var template = document.getElementById("7d842be6-46ed-4252-8bab-c29b0b8df154");
+var dest = document.getElementById("5a796408-8f66-4646-8e08-da151157311b");
+var template = document.getElementById("9b9d4059-4333-4b16-9046-e574b8a9c61c");
 var caption = template.content.querySelector("caption");
 if(caption) {
   caption.style.cssText = "display:block;text-align:center;";
@@ -4870,9 +4870,9 @@ fantome.appendChild(templateContent);
 <p>Usaremos el paquete <code>ggplot</code> y los datos de <code>palmerpenguins</code> para generar un gráfico de barras que dejará en el eje <strong>“x”</strong> las islas, y contará cuántos pingüinos de cada especie hay y los colores de las barras representan las especies, el que quedará guardado en el objeto <em>barras1</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>penguins</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>island</span>, fill <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_bar</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Pingüinos en archipiélago de Palmer"</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>penguins</span>, <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/aes.html'>aes</a></span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>island</span>, fill <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/geom_bar.html'>geom_bar</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Pingüinos en archipiélago de Palmer"</span>,
        subtitle <span class='op'>=</span> <span class='st'>"Número de pinguinos en cada isla"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -4880,10 +4880,10 @@ fantome.appendChild(templateContent);
 <p>Y ahora generaremos un gráfico de puntos, donde en el eje <strong>“x”</strong> irá la variable <code>bill_lenght_mm</code> y en el eje <strong>“y”</strong> irá la variable <code>bill_depth_mm</code> y asignando un color distinto por especie, el que quedará guardado en el objeto <em>puntos1</em></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>penguins</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>bill_length_mm</span>, y <span class='op'>=</span> <span class='va'>bill_depth_mm</span>,
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='va'>penguins</span>, <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>bill_length_mm</span>, y <span class='op'>=</span> <span class='va'>bill_depth_mm</span>,
                                 color <span class='op'>=</span> <span class='va'>species</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> 
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Pingüinos en archipiélago de Palmer"</span>,
+  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> 
+  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"Pingüinos en archipiélago de Palmer"</span>,
        subtitle <span class='op'>=</span> <span class='st'>"Dimensiones del pico de diversas especies"</span><span class='op'>)</span>
 </code></pre>
 </div>
@@ -4924,12 +4924,12 @@ fantome.appendChild(templateContent);
 <p>1.- Utilizar la función <code>scale_fill_manual()</code> para gráficos de barras o la función <code>scale_color_manual()</code> para gráficos de puntos, luego a nuestros gráficos ya generados les aplicamos la paleta guardada en nuestro vector <code>col_d_1</code> a través de la opción <code>(values = )</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span> <span class='co'># esta línea agrega la paleta de colores al gráfico barras1</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span> <span class='co'># esta línea agrega la paleta de colores al gráfico barras1</span>
 </code></pre>
 </div>
 <img src="celeste_dis_files/figure-html5/unnamed-chunk-23-1.png" width="624" />
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span> <span class='co'># esta línea agrega la paleta de colores al gráfico puntos1</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span> <span class='co'># esta línea agrega la paleta de colores al gráfico puntos1</span>
 </code></pre>
 </div>
 <p><img src="celeste_dis_files/figure-html5/unnamed-chunk-23-2.png" width="624" /></p>
@@ -4937,8 +4937,8 @@ fantome.appendChild(templateContent);
 <p>2.- Otra manera de utilizar una paleta creada por nosotros, es asignar a un objeto lo que hace la función <code>scale_fill_manual()</code> para un gráfico de barras, o la función <code>scale_color_manual()</code> para un gráfico de puntos, y aplicar la paleta guardada en nuestro vector <code>col_d_1</code> a través de la opción <code>(values = )</code>.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mi_fill_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span> <span class='co'># esta línea asigna la paleta de colores al objeto mi_fill_1</span>
-<span class='va'>mi_color_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span> <span class='co'># esta línea asigna la paleta de colores al objeto mi_color_1</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mi_fill_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span> <span class='co'># esta línea asigna la paleta de colores al objeto mi_fill_1</span>
+<span class='va'>mi_color_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span> <span class='co'># esta línea asigna la paleta de colores al objeto mi_color_1</span>
 </code></pre>
 </div>
 </div>
@@ -4978,17 +4978,17 @@ fantome.appendChild(templateContent);
 <p>Aquí podemos encontrar opciones de cómo modificar el tamaño de la letra de los títulos y subtítulos, por ejemplo a nuestros gráficos les dejaremos más grande el tamaño de la letra del título que la del subtítulo utilizando la función <code>theme()</code> y aplicaremos la paleta de colores <em>mi_fill_1</em> y <em>mi_color_1</em> según el tipo de gráfico</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
-  plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>,
-  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>9</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/theme.html'>theme</a></span><span class='op'>(</span>
+  plot.title <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>,
+  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>9</span><span class='op'>)</span>
 <span class='op'>)</span> <span class='op'>+</span> <span class='va'>mi_fill_1</span>
 </code></pre>
 </div>
 <img src="celeste_dis_files/figure-html5/unnamed-chunk-27-1.png" width="624" />
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
-  plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span><span class='op'>)</span>,
-  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/theme.html'>theme</a></span><span class='op'>(</span>
+  plot.title <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span><span class='op'>)</span>,
+  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span>
 <span class='op'>)</span> <span class='op'>+</span> <span class='va'>mi_color_1</span>
 </code></pre>
 </div>
@@ -4997,17 +4997,17 @@ fantome.appendChild(templateContent);
 <p>Ahora cambiemos el color y el tamaño del subtítulo haciéndolo igual a <em>“grey40”</em>, manteniendo los nuevos tamaños definidos anteriormente</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
-  plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>,
-  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>9</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>barras1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/theme.html'>theme</a></span><span class='op'>(</span>
+  plot.title <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>16</span><span class='op'>)</span>,
+  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>9</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>
 <span class='op'>)</span> <span class='op'>+</span> <span class='va'>mi_fill_1</span>
 </code></pre>
 </div>
 <img src="celeste_dis_files/figure-html5/unnamed-chunk-28-1.png" width="624" />
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
-  plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span><span class='op'>)</span>,
-  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/theme.html'>theme</a></span><span class='op'>(</span>
+  plot.title <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span><span class='op'>)</span>,
+  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>
 <span class='op'>)</span> <span class='op'>+</span> <span class='va'>mi_color_1</span>
 </code></pre>
 </div>
@@ -5017,12 +5017,12 @@ fantome.appendChild(templateContent);
 <p>En <a href="https://ggplot2-book.org/polishing.html" class="uri">https://ggplot2-book.org/polishing.html</a> podemos encontrar opciones para modificar el background y grillas mayores y menores en un gráfico, te dejamos un ejemplo de cómo hacerlo.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
-  plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span>,color <span class='op'>=</span><span class='st'>'grey20'</span><span class='op'>)</span>,
-  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>,
-  panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
-  panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
-  panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>puntos1</span> <span class='op'>+</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/theme.html'>theme</a></span><span class='op'>(</span>
+  plot.title <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span>,color <span class='op'>=</span><span class='st'>'grey20'</span><span class='op'>)</span>,
+  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>,
+  panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
+  panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
+  panel.background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>
 <span class='op'>)</span> <span class='op'>+</span> <span class='va'>mi_color_1</span>
 </code></pre>
 </div>
@@ -5032,12 +5032,12 @@ fantome.appendChild(templateContent);
 <p>Una manera simple y útil es guardar el código que hemos escrito en los ejemplos anteriores en un objeto con el nombre que nos acomode, por ejemplo <strong>“mis_cambios_de_tema”</strong> y luego aplicar esos cambios a cualquier gráfico con el operador <strong>“+”</strong></p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mis_cambios_de_tema</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
-  plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span>,color <span class='op'>=</span><span class='st'>'grey20'</span><span class='op'>)</span>,
-  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>,
-  panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
-  panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
-  panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>mis_cambios_de_tema</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/theme.html'>theme</a></span><span class='op'>(</span>
+  plot.title <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span>,color <span class='op'>=</span><span class='st'>'grey20'</span><span class='op'>)</span>,
+  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>,
+  panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
+  panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
+  panel.background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>
 <span class='op'>)</span>
 
 <span class='va'>barras1</span> <span class='op'>+</span> <span class='va'>mis_cambios_de_tema</span>
@@ -5073,16 +5073,16 @@ fantome.appendChild(templateContent);
 <span class='va'>col_d_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"#1B0204FF"</span>, <span class='st'>"#4E0C0DFF"</span>, <span class='st'>"#881618FF"</span>, <span class='st'>"#B01515FF"</span>, 
              <span class='st'>"#C47F4EFF"</span>, <span class='st'>"#773924FF"</span><span class='op'>)</span>
 
-<span class='va'>mi_fill_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span>
-<span class='va'>mi_color_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span>
+<span class='va'>mi_fill_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_fill_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span>
+<span class='va'>mi_color_1</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/scale_manual.html'>scale_color_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='va'>col_d_1</span><span class='op'>)</span>
 
 
-<span class='va'>mis_cambios_de_tema</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/theme.html'>theme</a></span><span class='op'>(</span>
-  plot.title <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span>,color <span class='op'>=</span><span class='st'>'grey20'</span><span class='op'>)</span>,
-  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>,
-  panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
-  panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
-  panel.background <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>
+<span class='va'>mis_cambios_de_tema</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/theme.html'>theme</a></span><span class='op'>(</span>
+  plot.title <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>17</span>,color <span class='op'>=</span><span class='st'>'grey20'</span><span class='op'>)</span>,
+  plot.subtitle <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_text</a></span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>11</span>, color <span class='op'>=</span> <span class='st'>"grey40"</span><span class='op'>)</span>,
+  panel.grid.major <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
+  panel.grid.minor <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>,
+  panel.background <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/element.html'>element_blank</a></span><span class='op'>(</span><span class='op'>)</span>
 <span class='op'>)</span>
 </code></pre>
 </div>
